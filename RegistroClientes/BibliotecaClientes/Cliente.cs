@@ -7,6 +7,7 @@ namespace BibliotecaClientes
 {
     public class Cliente
     {
+          //holanda mundeli
         //private List<Cliente> clientList = new List<Cliente>();
         //ClienteCollection clic = new ClienteCollection();
         public int Rut { get; set; }
