@@ -64,9 +64,16 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AdminClientes.xaml.cs">
+      <DependentUpon>AdminClientes.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Ventana Principal.xaml.cs">
       <DependentUpon>Ventana Principal.xaml</DependentUpon>
     </Compile>
+    <Page Include="AdminClientes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
