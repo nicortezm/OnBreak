@@ -21,7 +21,6 @@ namespace ClientesWPF
     
     public partial class AdminClientes : MetroWindow
     {
-        MainWindow mw = new MainWindow();
         public AdminClientes()
         {
             
@@ -32,7 +31,7 @@ namespace ClientesWPF
 
         private void btnRegistrar_Click(object sender, RoutedEventArgs e)
         {
-            this.mw.Show();
+            
         }
 
         private void txtMailContact_TextChanged(object sender, TextChangedEventArgs e)
@@ -74,6 +73,11 @@ namespace ClientesWPF
         private void txtTelefono_TextChanged(object sender, TextChangedEventArgs e)
         {
             
+        }
+
+        private void cboTIpo_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }

@@ -29,5 +29,15 @@ namespace ClientesWPF
         {
 
         }
+
+        private void cboActividad_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void tblClientes_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }

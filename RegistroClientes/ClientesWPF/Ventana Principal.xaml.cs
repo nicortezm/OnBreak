@@ -11,13 +11,14 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using MahApps.Metro.Controls;
 
 namespace ClientesWPF
 {
     /// <summary>
     /// Lógica de interacción para Ventana_Principal.xaml
     /// </summary>
-    public partial class Ventana_Principal : Window
+    public partial class Ventana_Principal : MetroWindow
     {
         public Ventana_Principal()
         {
