@@ -67,10 +67,24 @@
     <Compile Include="AdminClientes.xaml.cs">
       <DependentUpon>AdminClientes.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ListadoClientesAuxiliar.xaml.cs">
+      <DependentUpon>ListadoClientesAuxiliar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ListadoClientesMenu.xaml.cs">
+      <DependentUpon>ListadoClientesMenu.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Ventana Principal.xaml.cs">
       <DependentUpon>Ventana Principal.xaml</DependentUpon>
     </Compile>
     <Page Include="AdminClientes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ListadoClientesAuxiliar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ListadoClientesMenu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -125,7 +139,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="logo_transparent_background.png" />
+    <Resource Include="Imagenes\logo_transparent_background.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Imagenes\Switch-ON.png" />
