@@ -128,17 +128,10 @@
     <Resource Include="logo_transparent_background.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Switch-ON.png" />
+    <Resource Include="Imagenes\Switch-ON.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Switch-OFF.png" />
-  </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <Resource Include="Imagenes\Switch-OFF.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Imagenes\Switch-ON.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

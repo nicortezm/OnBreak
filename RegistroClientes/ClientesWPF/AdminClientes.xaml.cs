@@ -18,10 +18,13 @@ namespace ClientesWPF
     /// <summary>
     /// Lógica de interacción para AdminClientes.xaml
     /// </summary>
+    
     public partial class AdminClientes : MetroWindow
     {
+        MainWindow mw = new MainWindow();
         public AdminClientes()
         {
+            
             InitializeComponent();
         }
 
@@ -29,7 +32,7 @@ namespace ClientesWPF
 
         private void btnRegistrar_Click(object sender, RoutedEventArgs e)
         {
-
+            this.mw.Show();
         }
 
         private void txtMailContact_TextChanged(object sender, TextChangedEventArgs e)
@@ -70,7 +73,7 @@ namespace ClientesWPF
 
         private void txtTelefono_TextChanged(object sender, TextChangedEventArgs e)
         {
-
+            
         }
     }
 }
