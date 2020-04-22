@@ -32,7 +32,43 @@ namespace ClientesWPF
 
         }
 
+        private void txtMailContact_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void cboActividad_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void txtRazonSocial_TextChanged_1(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void txtRut_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void txtMailContact_TextChanged_1(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void txtDireccion_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void txtTelefono_TextChanged(object sender, TextChangedEventArgs e)
         {
 
         }
