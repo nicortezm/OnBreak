@@ -11,17 +11,23 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using MahApps.Metro.Controls;
 
 namespace ClientesWPF
 {
     /// <summary>
     /// Lógica de interacción para ListadoClientesAuxiliar.xaml
     /// </summary>
-    public partial class ListadoClientesAuxiliar : Window
+    public partial class ListadoClientesAuxiliar : MetroWindow
     {
         public ListadoClientesAuxiliar()
         {
             InitializeComponent();
+        }
+
+        private void txtRut_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
         }
     }
 }

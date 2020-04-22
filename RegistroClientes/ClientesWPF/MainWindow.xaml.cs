@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using BibliotecaClientes;
+using MahApps.Metro.Controls;
 
 namespace ClientesWPF
 {
@@ -20,7 +21,7 @@ namespace ClientesWPF
     /// <summary>
     /// Lógica de interacción para MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow : MetroWindow
     {
         private ClienteCollection clientes = new ClienteCollection();
         //Cliente cli = new Cliente();

@@ -12,13 +12,14 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using MahApps.Metro.Controls;
 
 namespace ClientesWPF
 {
     /// <summary>
     /// Lógica de interacción para ListadoClientesMenu.xaml
     /// </summary>
-    public partial class ListadoClientesMenu : Window
+    public partial class ListadoClientesMenu : MetroWindow
     {
         private ClienteCollection clientes = new ClienteCollection();
         public ListadoClientesMenu()
@@ -41,6 +42,11 @@ namespace ClientesWPF
         {
             tblClientes.ItemsSource = clientes;
             tblClientes.Items.Refresh();
+        }
+
+        private void txtRut_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
         }
     }
 }
