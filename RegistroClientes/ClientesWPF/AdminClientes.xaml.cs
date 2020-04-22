@@ -31,5 +31,10 @@ namespace ClientesWPF
         {
 
         }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }

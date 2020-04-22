@@ -9,13 +9,40 @@
         xmlns:local="clr-namespace:ClientesWPF"
         mc:Ignorable="d"
         Title="AdminClientes" Height="768" Width="1366">
-    <Grid>
-        <Label x:Name="lblTitulo" Content="Administracion  de Clientes" HorizontalAlignment="Left" Margin="344,11,0,0" VerticalAlignment="Top" Height="168" Width="810" FontSize="48"/>
-        <Button x:Name="btnRegistrar" Content="Registrar&#xa; Cliente" HorizontalAlignment="Left" Margin="48,67,0,0" VerticalAlignment="Top" Width="235" FontSize="22" Click="btnRegistrar_Click"/>
-        <Button x:Name="btnBuscarClient" Content="Buscar&#xa;Cliente" HorizontalAlignment="Left" Margin="48,166,0,0" VerticalAlignment="Top" Width="235" FontSize="22" Click="btnRegistrar_Click"/>
-        <Button x:Name="btnActualizarClient" Content="Actualizar&#xa;  Cliente" HorizontalAlignment="Left" Margin="48,269,0,0" VerticalAlignment="Top" Width="235" FontSize="22" Click="btnRegistrar_Click"/>
-        <Button x:Name="btnEliminarClient" Content="Eliminar&#xa; Cliente" HorizontalAlignment="Left" Margin="48,369,0,0" VerticalAlignment="Top" Width="235" FontSize="22" Click="btnRegistrar_Click"/>
-        <Button x:Name="btnListarClient" Content=" Listar&#xa;Cliente" HorizontalAlignment="Left" Margin="48,471,0,0" VerticalAlignment="Top" Width="235" FontSize="22" Click="btnRegistrar_Click"/>
-        <Button x:Name="btnMenuPpal" Content="  Menú&#xa;Principal" HorizontalAlignment="Left" Margin="48,653,0,0" VerticalAlignment="Top" Width="235" FontSize="22" Click="btnRegistrar_Click"/>
+    <Grid Margin="2,0,-2,0">
+        <Label x:Name="lblTitulo" Content="Administracion  de Clientes" HorizontalAlignment="Left" Margin="404,-3,0,0" VerticalAlignment="Top" Height="77" Width="810" FontSize="48"/>
+        <Button x:Name="btnRegistrar" Content="Registrar&#xa; Cliente" HorizontalAlignment="Left" Margin="48,67,0,0" VerticalAlignment="Top" Width="235" FontSize="22" Click="btnRegistrar_Click" Background="#FF2B78E4" Foreground="#FFFFFF" FontWeight="Bold"/>
+        <Button x:Name="btnBuscarClient" Content="Buscar&#xa;Cliente" HorizontalAlignment="Left" Margin="48,166,0,0" VerticalAlignment="Top" Width="235" FontSize="22" Click="btnRegistrar_Click" Background="#FF2B78E4" Foreground="#FFFFFF" FontWeight="Bold"/>
+        <Button x:Name="btnActualizarClient" Content="Actualizar&#xa;  Cliente" HorizontalAlignment="Left" Margin="48,269,0,0" VerticalAlignment="Top" Width="235" FontSize="22" Click="btnRegistrar_Click" Background="#FF2B78E4" Foreground="#FFFFFF" FontWeight="Bold"/>
+        <Button x:Name="btnEliminarClient" Content="Eliminar&#xa; Cliente" HorizontalAlignment="Left" Margin="48,369,0,0" VerticalAlignment="Top" Width="235" FontSize="22" Click="btnRegistrar_Click" Background="#FF2B78E4" Foreground="#FFFFFF" FontWeight="Bold"/>
+        <Button x:Name="btnListarClient" Content=" Listar&#xa;Cliente" HorizontalAlignment="Left" Margin="48,471,0,0" VerticalAlignment="Top" Width="235" FontSize="22" Click="btnRegistrar_Click" Background="#FF2B78E4" Foreground="#FFFFFF" FontWeight="Bold"/>
+        <Button x:Name="btnMenuPpal" Content="  Menú&#xa;Principal" HorizontalAlignment="Left" Margin="48,653,0,0" VerticalAlignment="Top" Width="235" FontSize="22" Click="btnRegistrar_Click" Background="#FF2B78E4" Foreground="#FFFFFF" FontWeight="Bold"/>
+        <Label x:Name="lblRut" Content="Rut" HorizontalAlignment="Left" Margin="394,109,0,0" VerticalAlignment="Top" FontSize="24"/>
+        <TextBox x:Name="txtRut" HorizontalAlignment="Left" Height="40" Margin="460,114,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="164" FontSize="24" TextChanged="TextBox_TextChanged"/>
+        <Label x:Name="lblRutobl" Content="*" HorizontalAlignment="Left" Margin="633,109,0,0" VerticalAlignment="Top" FontSize="28"/>
+        <Label x:Name="lblRazonSocial" Content="Razon Social" HorizontalAlignment="Left" Margin="745,109,0,0" VerticalAlignment="Top" FontSize="24"/>
+        <TextBox x:Name="txtRazonSocial" HorizontalAlignment="Left" Height="40" Margin="899,114,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="194" FontSize="24" TextChanged="TextBox_TextChanged"/>
+        <Label x:Name="lblRazSocobl" Content="*" HorizontalAlignment="Left" Margin="1095,109,0,0" VerticalAlignment="Top" FontSize="28"/>
+
+        <Label x:Name="lblNomContact" Content="Nombre&#xa;Contacto" HorizontalAlignment="Left" Margin="350,187,0,0" VerticalAlignment="Top" FontSize="22"/>
+        <TextBox x:Name="txtNombre" HorizontalAlignment="Left" Height="40" Margin="460,204,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="211" FontSize="24" TextChanged="TextBox_TextChanged"/>
+        <Label x:Name="lblNomobl" Content="*" HorizontalAlignment="Left" Margin="682,199,0,0" VerticalAlignment="Top" FontSize="28" Width="28"/>
+        <Label x:Name="lblMailContact" Content="Mail Contacto" HorizontalAlignment="Left" Margin="745,204,0,0" VerticalAlignment="Top" FontSize="22"/>
+        <TextBox x:Name="txtMailContact" HorizontalAlignment="Left" Height="40" Margin="899,204,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="194" FontSize="24" TextChanged="TextBox_TextChanged"/>
+        <Label x:Name="lblMailobl" Content="*" HorizontalAlignment="Left" Margin="1095,199,0,0" VerticalAlignment="Top" FontSize="28"/>
+        <Label x:Name="lblTIpo" Content="Tipo" HorizontalAlignment="Left" Margin="398,396,0,0" VerticalAlignment="Top" FontSize="22" RenderTransformOrigin="-5.691,0.181"/>
+        <Label x:Name="lblTelefon" Content="Telefono" HorizontalAlignment="Left" Margin="347,307,0,0" VerticalAlignment="Top" FontSize="22"/>
+        <Label x:Name="lblDireccion" Content="Direccion" HorizontalAlignment="Left" Margin="777,307,0,0" VerticalAlignment="Top" FontSize="22"/>
+        <TextBox x:Name="txtTelefono" HorizontalAlignment="Left" Height="40" Margin="462,310,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="138" FontSize="22"/>
+        <TextBox x:Name="txtDireccion" HorizontalAlignment="Left" Height="40" Margin="899,310,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" FontSize="24"/>
+        <Label x:Name="lblDirecobl" Content="*" HorizontalAlignment="Left" Margin="1027,307,0,0" VerticalAlignment="Top" FontSize="28"/>
+        <Label x:Name="lblTelobl" Content="*" HorizontalAlignment="Left" Margin="611,307,0,0" VerticalAlignment="Top" FontSize="28"/>
+        <ComboBox x:Name="cboTIpo" Margin="460,403,778,0" VerticalAlignment="Top" SelectionChanged="cboTIpo_SelectionChanged" FontSize="22" RenderTransformOrigin="0.471,-0.056"/>
+        <ComboBox x:Name="cboActividad" HorizontalAlignment="Left" Margin="899,403,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="cboActividad_SelectionChanged" FontSize="22" RenderTransformOrigin="1.225,0.471"/>
+        <Label x:Name="lblctividad" Content="Actividad" HorizontalAlignment="Left" Margin="767,396,0,0" VerticalAlignment="Top" FontSize="24" RenderTransformOrigin="0.762,0.088"/>
+        <Button x:Name="btnLimpiar" Content="Limpiar Controles" HorizontalAlignment="Left" Margin="1059,398,0,0" Width="159" FontSize="18" Height="42" VerticalAlignment="Top"/>
+        <Label x:Name="lblActivobl" Content="*" HorizontalAlignment="Left" Margin="1027,399,0,0" VerticalAlignment="Top" FontSize="28"/>
+        <Label x:Name="lblTipoobl" Content="*" HorizontalAlignment="Left" Margin="611,399,0,0" VerticalAlignment="Top" FontSize="28"/>
+        <Image Margin="1152,531,20,20" Source="logo_transparent_background.png" Stretch="Fill"/>
     </Grid>
 </Controls:MetroWindow>
