@@ -10,6 +10,12 @@
         mc:Ignorable="d"
         Title="AdminClientes" Height="768" Width="1366">
     <Grid>
-        
+        <Label x:Name="lblTitulo" Content="Administracion  de Clientes" HorizontalAlignment="Left" Margin="344,11,0,0" VerticalAlignment="Top" Height="168" Width="810" FontSize="48"/>
+        <Button x:Name="btnRegistrar" Content="Registrar&#xa; Cliente" HorizontalAlignment="Left" Margin="48,67,0,0" VerticalAlignment="Top" Width="235" FontSize="22" Click="btnRegistrar_Click"/>
+        <Button x:Name="btnBuscarClient" Content="Buscar&#xa;Cliente" HorizontalAlignment="Left" Margin="48,166,0,0" VerticalAlignment="Top" Width="235" FontSize="22" Click="btnRegistrar_Click"/>
+        <Button x:Name="btnActualizarClient" Content="Actualizar&#xa;  Cliente" HorizontalAlignment="Left" Margin="48,269,0,0" VerticalAlignment="Top" Width="235" FontSize="22" Click="btnRegistrar_Click"/>
+        <Button x:Name="btnEliminarClient" Content="Eliminar&#xa; Cliente" HorizontalAlignment="Left" Margin="48,369,0,0" VerticalAlignment="Top" Width="235" FontSize="22" Click="btnRegistrar_Click"/>
+        <Button x:Name="btnListarClient" Content=" Listar&#xa;Cliente" HorizontalAlignment="Left" Margin="48,471,0,0" VerticalAlignment="Top" Width="235" FontSize="22" Click="btnRegistrar_Click"/>
+        <Button x:Name="btnMenuPpal" Content="  Menú&#xa;Principal" HorizontalAlignment="Left" Margin="48,653,0,0" VerticalAlignment="Top" Width="235" FontSize="22" Click="btnRegistrar_Click"/>
     </Grid>
 </Controls:MetroWindow>
