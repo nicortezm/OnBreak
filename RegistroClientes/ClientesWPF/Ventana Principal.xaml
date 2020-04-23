@@ -11,6 +11,8 @@
               
         Title="Ventana_Principal" Height="768" Width="1366">
     <Grid>
-        
+        <Controls:Tile x:Name="btnAdminclientes" Margin="133,285,1066,403" Background="#FF2B78E4" Width="Auto" Height="Auto" Click="btnAdminclientes_Click" Content="Administracion de Clientes" ></Controls:Tile>
+        <Controls:Tile x:Name="btnListarclientes" Margin="134,370,1065,318" Background="#009e0f" Width="Auto" Height="Auto" Click="btnAdminclientes_Click" Content="Listado de Clientes" ></Controls:Tile>
+        <Controls:Tile x:Name="btnAdminContratos" Margin="318,285,881,403" Background="#009e0f" Width="Auto" Height="Auto" Click="btnAdminclientes_Click" Content="Administracion de Contratos&#xD;&#xA;" ></Controls:Tile>
     </Grid>
 </Controls:MetroWindow>

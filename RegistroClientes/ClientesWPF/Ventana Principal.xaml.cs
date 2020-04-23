@@ -24,5 +24,10 @@ namespace ClientesWPF
         {
             InitializeComponent();
         }
+
+        private void btnAdminclientes_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
