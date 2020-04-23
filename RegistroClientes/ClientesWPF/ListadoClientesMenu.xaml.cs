@@ -21,7 +21,7 @@ namespace ClientesWPF
     /// </summary>
     public partial class ListadoClientesMenu : MetroWindow
     {
-        private ClienteCollection clientes = new ClienteCollection();
+        
         public ListadoClientesMenu()
         {
 
@@ -40,8 +40,6 @@ namespace ClientesWPF
 
         private void btnBuscar_Click(object sender, RoutedEventArgs e)
         {
-            tblClientes.ItemsSource = clientes;
-            tblClientes.Items.Refresh();
         }
 
         private void txtRut_TextChanged(object sender, TextChangedEventArgs e)

@@ -27,6 +27,21 @@ namespace ClientesWPF
 
         private void btnAdminclientes_Click(object sender, RoutedEventArgs e)
         {
+            AdminClientes ac = new AdminClientes();
+        }
+
+        private void btnListarCLiente_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnListarContratos_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnAdminContratos_Click(object sender, RoutedEventArgs e)
+        {
 
         }
     }

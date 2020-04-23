@@ -13,7 +13,7 @@
     <Grid>
         <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="342" Margin="75,220,0,0" VerticalAlignment="Top" Width="1230"/>
         <Label x:Name="lblTitulo" Content="Listado de Clientes" HorizontalAlignment="Left" Margin="472,22,0,0" VerticalAlignment="Top" FontSize="36"/>
-        <DataGrid x:Name="tblClientes" HorizontalAlignment="Left" Height="274" Margin="129,237,0,0" VerticalAlignment="Top" Width="1119" SelectionChanged="tblClientes_SelectionChanged"/>
+        <DataGrid x:Name="tblClientes" HorizontalAlignment="Left" Height="274" Margin="135,237,0,0" VerticalAlignment="Top" Width="1119" SelectionChanged="tblClientes_SelectionChanged"/>
         <Label x:Name="lblTIpo" Content="Tipo" HorizontalAlignment="Left" Margin="542,110,0,0" VerticalAlignment="Top" FontSize="22" RenderTransformOrigin="-5.691,0.181"/>
         <ComboBox x:Name="cboTIpo" Margin="604,110,634,0" VerticalAlignment="Top" SelectionChanged="cboTIpo_SelectionChanged" FontSize="22" RenderTransformOrigin="0.471,-0.056"/>
         <!--<ComboBox x:Name="cboActividad" HorizontalAlignment="Left" Margin="907,110,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="cboActividad_SelectionChanged" FontSize="22" RenderTransformOrigin="1.225,0.471"/>-->
