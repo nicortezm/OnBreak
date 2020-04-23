@@ -139,5 +139,28 @@
   <ItemGroup>
     <Resource Include="Imagenes\Switch-OFF.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\Contrato.png" />
+    <Resource Include="Imagenes\Lista.png" />
+    <Resource Include="Imagenes\User-Profile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\dark_logo_transparent_background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\Save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\Buscar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\Actualizar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\Eliminar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\MenuPrincipal.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

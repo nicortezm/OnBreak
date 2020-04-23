@@ -79,5 +79,25 @@ namespace ClientesWPF
         {
 
         }
+
+        private void btnRegistrarCliente_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnAztualizClient_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnEliminarCliente_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnListar_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
