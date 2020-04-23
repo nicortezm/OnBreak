@@ -13,19 +13,19 @@
     <Grid>
         <Image Source="/Imagenes/dark_logo_transparent_background.png" Margin="364,10,460,437" />
 
-        <Controls:Tile x:Name="btnAdminclientes" Margin="302,362,742,279" Background="#FF2B78E4" Width="Auto" Height="Auto" Click="btnAdminclientes_Click" FontSize="24" Title="Administracion&#xa;de Clientes" TitleFontSize="18" HorizontalTitleAlignment="Right" VerticalTitleAlignment="Center" >
+        <Controls:Tile x:Name="btnAdminclientes" Margin="302,362,742,279" Background="#FF2B78E4" Width="Auto" Height="Auto" Click="btnAdminclientes_Click" FontSize="24" Title="Administracion&#xa;de Clientes" TitleFontSize="18" VerticalTitleAlignment="Center" HorizontalContentAlignment="Left" Padding="-1,0,0,0" ScrollViewer.HorizontalScrollBarVisibility="Auto" HorizontalTitleAlignment="Center" >
             <Image Source="Imagenes/User-Profile.png" RenderTransformOrigin="0.521,0.635"/>
         </Controls:Tile>
 
-        <Controls:Tile x:Name="btnListarclientes" Margin="306,528,742,113" Background="#009e0f" Width="Auto" Height="Auto" Click="btnAdminclientes_Click"  FontSize="24" TitleFontSize="18" Title="Listado&#xa;de Clientes" HorizontalTitleAlignment="Right" VerticalTitleAlignment="Center" >
+        <Controls:Tile x:Name="btnListarclientes" Margin="306,528,742,113" Background="#009e0f" Width="Auto" Height="Auto" Click="btnAdminclientes_Click"  FontSize="24" TitleFontSize="18" Title="Listado&#xa;de Clientes" HorizontalTitleAlignment="Center" VerticalTitleAlignment="Center" HorizontalContentAlignment="Left" >
             <Image Source="Imagenes/Lista.png"/>
         </Controls:Tile>
 
-        <Controls:Tile x:Name="btnAdminContratos" Margin="667,362,381,279" Background="#cc0000" Width="Auto" Height="Auto" Click="btnAdminclientes_Click"  FontSize="24" TitleFontSize="18" Title="Administracion&#xa;de Contratos" HorizontalTitleAlignment="Right" VerticalTitleAlignment="Center" >
+        <Controls:Tile x:Name="btnAdminContratos" Margin="667,362,381,279" Background="#cc0000" Width="Auto" Height="Auto" Click="btnAdminclientes_Click"  FontSize="24" TitleFontSize="18" Title="Administracion&#xa;de Contratos" HorizontalTitleAlignment="Center" VerticalTitleAlignment="Center" HorizontalContentAlignment="Left" >
             <Image Source="/Imagenes/Contrato.png" />
         </Controls:Tile>
 
-        <Controls:Tile x:Name="btnListarContratos" Margin="667,528,381,113" Background="#ff9900" Width="Auto" Height="Auto" Click="btnAdminclientes_Click"  FontSize="24" TitleFontSize="18" Title="Listado&#xa;de Contratos" HorizontalTitleAlignment="Right" VerticalTitleAlignment="Center" >
+        <Controls:Tile x:Name="btnListarContratos" Margin="667,528,381,113" Background="#ff9900" Width="Auto" Height="Auto" Click="btnAdminclientes_Click"  FontSize="24" TitleFontSize="18" Title="Listado&#xa;de Contratos" HorizontalTitleAlignment="Center" VerticalTitleAlignment="Center" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" >
             <Image Source="/Imagenes/Lista.png" />
         </Controls:Tile>
     </Grid>
