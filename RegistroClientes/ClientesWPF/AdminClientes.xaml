@@ -20,19 +20,19 @@
         </Controls:Tile>
        
         <!--boton Actualizar Cliente-->
-        <Controls:Tile x:Name="btnAztualizClient" Click="btnAztualizClient_Click" Margin="51,251,1097,420" Width="Auto" Height="Auto" Background="#FF2B78E4">
+        <Controls:Tile x:Name="btnAztualizClient" Click="btnAztualizClient_Click" Margin="51,251,1097,420" Width="Auto" Height="Auto" Background="#FF2B78E4" TitleFontSize="18" Title="Actualizar&#xa;Cliente" HorizontalTitleAlignment="Right" VerticalAlignment="Center">
             <Image Source="/Imagenes/Actualizar.png" />
         </Controls:Tile>
         <!--boton Eliminar Cliente-->
-        <Controls:Tile x:Name="btnEliminarCliente" Margin="51,338,1097,333" Width="Auto" Height="Auto" Background="#FF2B78E4" Click="btnEliminarCliente_Click">
+        <Controls:Tile x:Name="btnEliminarCliente" Margin="51,338,1097,333" Width="Auto" Height="Auto" Background="#FF2B78E4" Click="btnEliminarCliente_Click" HorizontalTitleAlignment="Right" VerticalAlignment="Center" TitleFontSize="18" Title="Eliminar&#xa;Cliente">
             <Image Source="/Imagenes/Eliminar.png" />
         </Controls:Tile>
         <!--boton Listar Cliente-->
-        <Controls:Tile x:Name="btnListar" Margin="51,427,1097,244" Width="Auto" Height="Auto" Background="#FF2B78E4" Click="btnListar_Click">
+        <Controls:Tile x:Name="btnListar" Margin="51,427,1097,244" Width="Auto" Height="Auto" Background="#FF2B78E4" Click="btnListar_Click" Title="Listar&#xa;Cliente" TitleFontSize="18" HorizontalTitleAlignment="Right" VerticalAlignment="Center">
             <Image Source="/Imagenes/Lista.png" />
         </Controls:Tile>
 
-        <Controls:Tile x:Name="btnVentanaPrincipal" Margin="51,644,1097,27" Width="Auto" Height="Auto" Background="#FF2B78E4">
+        <Controls:Tile x:Name="btnVentanaPrincipal" Margin="51,644,1097,27" Width="Auto" Height="Auto" Background="#FF2B78E4" HorizontalTitleAlignment="Right" VerticalAlignment="Center" TitleFontSize="18" Title="Menu&#xa;Principal" Click="btnVentanaPrincipal_Click">
             <Image Source="/Imagenes/MenuPrincipal.png" />
 
         </Controls:Tile>

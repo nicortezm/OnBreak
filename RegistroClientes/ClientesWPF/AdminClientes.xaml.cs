@@ -99,5 +99,10 @@ namespace ClientesWPF
         {
 
         }
+
+        private void btnVentanaPrincipal_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
     }
 }
