@@ -21,6 +21,7 @@ namespace ClientesWPF
     
     public partial class AdminClientes : MetroWindow
     {
+        Ventana_Principal vp = new Ventana_Principal();
         public AdminClientes()
         {
             
@@ -112,6 +113,16 @@ namespace ClientesWPF
         private void btnSwitch_Click(object sender, RoutedEventArgs e)
         {
             
+        }
+
+        private void switchCambioBack_Checked(object sender, RoutedEventArgs e)
+        {
+          
+        }
+
+        private void switchCambioBack_IsCheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

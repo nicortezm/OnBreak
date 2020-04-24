@@ -14,24 +14,51 @@
         Title="Ventana_Principal" Height="768" Width="1366">
 
     <Grid>
-        <Image Source="/Imagenes/dark_logo_transparent_background.png" Margin="364,10,460,437" />
-
+        <Image Source="/Imagenes/logo_transparent_background.png" Margin="376,10,448,437" />
+        <Controls:ToggleSwitch x:Name="switchCambioBack" Checked="switchCambioBack_Checked" IsCheckedChanged="switchCambioBack_IsCheckedChanged" OnLabel="" OffLabel="" Margin="1233,0,0,625" FontSize="24" Content="" VerticalContentAlignment="Stretch" Header="&#xD;&#xA;Dark Mode" Width="93" VerticalAlignment="Bottom" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Height="96" ContentDirection="RightToLeft" OnSwitchBrush="#FF085394"/>
         <!--btn admin clientes-->
-        <Controls:Tile x:Name="btnAdminclientes" Margin="302,362,742,279" Background="#FF2B78E4" Width="Auto" Height="Auto" Click="btnAdminclientes_Click" FontSize="24" Title="Administracion&#xA;de Clientes" TitleFontSize="18" VerticalTitleAlignment="Center" HorizontalContentAlignment="Left" Padding="-1,0,0,0" ScrollViewer.HorizontalScrollBarVisibility="Auto" HorizontalTitleAlignment="Center" >
+        <Controls:Tile x:Name="btnAdminclientes" Margin="334,362,710,279" Width="Auto" Height="Auto" Click="btnAdminclientes_Click" FontSize="24" Title="Administracion&#xA;de Clientes" TitleFontSize="18" VerticalTitleAlignment="Center" HorizontalContentAlignment="Left" Padding="-1,0,0,0" ScrollViewer.HorizontalScrollBarVisibility="Auto" HorizontalTitleAlignment="Center" >
+            <Controls:Tile.Background>
+                <SolidColorBrush Color="#FF2B78E4" Opacity="0.7"/>
+            </Controls:Tile.Background>
+            <Controls:Tile.Effect>
+                <DropShadowEffect BlurRadius="8" ShadowDepth="9"/>
+            </Controls:Tile.Effect>
             <Image Source="Imagenes/User-Profile.png" RenderTransformOrigin="0.521,0.635"/>
         </Controls:Tile>
         <!--btn Listar clientes-->
-        <Controls:Tile x:Name="btnListarClientes" Margin="306,528,742,113" Background="#009e0f" Width="Auto" Height="Auto" Click="btnListarCLiente_Click"  FontSize="24" TitleFontSize="18" Title="Listado&#xA;de Clientes" HorizontalTitleAlignment="Center" VerticalTitleAlignment="Center" HorizontalContentAlignment="Left">
+        <Controls:Tile x:Name="btnListarClientes" Margin="338,528,710,113" Width="Auto" Height="Auto" Click="btnListarCLiente_Click"  FontSize="24" TitleFontSize="18" Title="Listado&#xA;de Clientes" HorizontalTitleAlignment="Center" VerticalTitleAlignment="Center" HorizontalContentAlignment="Left">
+            <Controls:Tile.Background>
+                <SolidColorBrush Color="#FF009E0F" Opacity="0.7"/>
+            </Controls:Tile.Background>
+            <Controls:Tile.Effect>
+                <DropShadowEffect BlurRadius="8" ShadowDepth="9"/>
+            </Controls:Tile.Effect>
             <Image Source="Imagenes/Lista.png"/>
         </Controls:Tile>
         <!--btn Admin Contratos-->
-        <Controls:Tile x:Name="btnAdminContratos" Margin="667,362,381,279" Background="#cc0000" Width="Auto" Height="Auto" Click="btnAdminContratos_Click"  FontSize="24" TitleFontSize="18" Title="Administracion&#xA;de Contratos" HorizontalTitleAlignment="Center" VerticalTitleAlignment="Center" HorizontalContentAlignment="Left" >
+        <Controls:Tile x:Name="btnAdminContratos" Margin="699,362,349,279" Width="Auto" Height="Auto" Click="btnAdminContratos_Click"  FontSize="24" TitleFontSize="18" Title="Administracion&#xA;de Contratos" HorizontalTitleAlignment="Center" VerticalTitleAlignment="Center" HorizontalContentAlignment="Left" >
+            <Controls:Tile.Background>
+                <SolidColorBrush Color="#FFCC0000" Opacity="0.7"/>
+            </Controls:Tile.Background>
+            <Controls:Tile.Effect>
+                <DropShadowEffect BlurRadius="8" ShadowDepth="9"/>
+            </Controls:Tile.Effect>
             <Image Source="/Imagenes/Contrato.png" />
         </Controls:Tile>
         <!--btn Listar Contratos-->
-        <Controls:Tile x:Name="btnListarContratos" Margin="667,528,381,113" Background="#ff9900" Width="Auto" Height="Auto" Click="btnListarContratos_Click"  FontSize="24" TitleFontSize="18" Title="Listado&#xA;de Contratos" HorizontalTitleAlignment="Center" VerticalTitleAlignment="Center" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" >
+        <Controls:Tile x:Name="btnListarContratos" Margin="699,528,349,113" Width="Auto" Height="Auto" Click="btnListarContratos_Click"  FontSize="24" TitleFontSize="18" Title="Listado&#xA;de Contratos" HorizontalTitleAlignment="Center" VerticalTitleAlignment="Center" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" >
+            <Controls:Tile.Background>
+                <SolidColorBrush Color="#FFFF9900" Opacity="0.7"/>
+            </Controls:Tile.Background>
+            <Controls:Tile.Effect>
+                <DropShadowEffect BlurRadius="8" ShadowDepth="9"/>
+            </Controls:Tile.Effect>
             <Image Source="/Imagenes/Lista.png" RenderTransformOrigin="1.302,0.573" />
         </Controls:Tile>
+
+
+
     </Grid>
 
 

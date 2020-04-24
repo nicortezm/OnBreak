@@ -56,5 +56,15 @@ namespace ClientesWPF
         {
 
         }
+
+        private void switchCambioBack_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void switchCambioBack_IsCheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

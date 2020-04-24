@@ -24,12 +24,12 @@
         <Label x:Name="lblActivobl" Content="*" HorizontalAlignment="Left" Margin="1035,110,0,0" VerticalAlignment="Top" FontSize="28"/>
         <Button x:Name="btnBuscar" Content="Buscar" HorizontalAlignment="Left" Margin="607,168,0,0" VerticalAlignment="Top" Width="110" FontSize="24" Click="btnBuscar_Click"/>
         <Image x:Name="imgLogoTransparent" Margin="1168,555,4,-4" Source="Imagenes\logo_transparent_background.png" Stretch="Fill"/>
-        <Image x:Name="optionSWITCHOFF" Source="Imagenes/Switch-OFF.png" Margin="1151,17,128,676" />
         <!--<Button x:Name="btnMenuPpal" Content="  Menú Principal" HorizontalAlignment="Left" Margin="187,601,0,0" VerticalAlignment="Top" Width="189" FontSize="22" Click="btnRegistrar_Click" Background="#FF2B78E4" Foreground="#FFFFFF" FontWeight="Bold"/>-->
         <Button x:Name="btnLimpiar" Content="Limpiar Controles" HorizontalAlignment="Left" Margin="448,600,0,0" Width="159" FontSize="18" Height="40" VerticalAlignment="Top"/>
         <ComboBox x:Name="cboActividad" HorizontalAlignment="Left" Margin="911,110,0,0" VerticalAlignment="Top" Width="120" FontSize="22"/>
         <Label x:Name="lblActividad" Content="Actividad
                " HorizontalAlignment="Left" Margin="793,110,0,0" VerticalAlignment="Top" FontSize="24"/>
+        <Controls:ToggleSwitch x:Name="switchCambioBack" Checked="switchCambioBack_Checked" IsCheckedChanged="switchCambioBack_IsCheckedChanged" OnLabel="" OffLabel="" Margin="1233,0,0,625" FontSize="24" Content="" VerticalContentAlignment="Stretch" Header="&#xA;Dark Mode" Width="93" VerticalAlignment="Bottom" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Height="96" ContentDirection="RightToLeft" OnSwitchBrush="#FF085394"/>
 
     </Grid>
 </Controls:MetroWindow>

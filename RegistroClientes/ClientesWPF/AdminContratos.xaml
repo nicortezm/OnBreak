@@ -12,16 +12,16 @@
         Title="AdminContratos" Height="768" Width="1366">
     <Grid Margin="0,2,0,-2">
         <!--boton Registrar Contrato-->
-        <Controls:Tile x:Name="btnRegistrarContrato" Margin="50,44,1100,627" Height="Auto" Title="Registrar&#xa;Contrato" RenderTransformOrigin="0.5,0.5" Width="Auto" TitleFontSize="18" HorizontalTitleAlignment="Center"  Background="#FF2B78E4" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" Padding="0,3,0,0">
+        <Controls:Tile x:Name="btnRegistrarContrato" Margin="50,44,1100,627" Height="Auto" Title="Registrar&#xa;Contrato" RenderTransformOrigin="0.5,0.5" Width="Auto" TitleFontSize="18" HorizontalTitleAlignment="Center"  Background="#FF2B78E4" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" Padding="0,3,0,0" Click="btnRegistrarContrato_Click">
             <Image Source="/Imagenes/Save.png" RenderTransformOrigin="0.545,1.935" UseLayoutRounding="False" />
         </Controls:Tile>
         <!--boton Buscar Contrato-->
-        <Controls:Tile x:Name="btnBuscarContrato"  Margin="50,128,1098,543" Width="Auto" Height="Auto" TitleFontSize="18" Title="Buscar&#xa;Contrato" HorizontalTitleAlignment="Center" VerticalAlignment="Center" Background="#FF2B78E4" HorizontalContentAlignment="Stretch">
+        <Controls:Tile x:Name="btnBuscarContrato"  Margin="50,128,1098,543" Width="Auto" Height="Auto" TitleFontSize="18" Title="Buscar&#xa;Contrato" HorizontalTitleAlignment="Center" VerticalAlignment="Center" Background="#FF2B78E4" HorizontalContentAlignment="Stretch" Click="btnBuscarContrato_Click_1">
             <Image Source="/Imagenes/Buscar.png" />
         </Controls:Tile>
 
         <!--boton Actualizar Contrato-->
-        <Controls:Tile x:Name="btnAztualizContrat" Margin="50,214,1098,457" Width="Auto" Height="Auto" Background="#FF2B78E4" TitleFontSize="18" Title="Actualizar&#xa;Contrato" HorizontalTitleAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Stretch">
+        <Controls:Tile x:Name="btnAztualizContrat" Margin="50,214,1098,457" Width="Auto" Height="Auto" Background="#FF2B78E4" TitleFontSize="18" Title="Actualizar&#xa;Contrato" HorizontalTitleAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Stretch" Click="btnAztualizContrat_Click">
             <Image Source="/Imagenes/Actualizar.png" />
         </Controls:Tile>
 
@@ -31,11 +31,11 @@
 
         </Controls:Tile>
         <!--boton Listar Contrato-->
-        <Controls:Tile x:Name="btnListar" Margin="50,300,1098,371" Width="Auto" Height="Auto" Background="#FF2B78E4"  Title="Listar&#xa;Contratos" TitleFontSize="18" HorizontalTitleAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Left">
+        <Controls:Tile x:Name="btnListar" Margin="50,300,1098,371" Width="Auto" Height="Auto" Background="#FF2B78E4"  Title="Listar&#xa;Contratos" TitleFontSize="18" HorizontalTitleAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Left" Click="btnListar_Click">
             <Image Source="/Imagenes/Lista.png" />
         </Controls:Tile>
         <!--boton Buscar Cliente-->
-        <Controls:Tile x:Name="btnBuscarClientes"  Margin="51,517,1097,154" Width="Auto" Height="Auto" TitleFontSize="18" Title="Buscar&#xa;Clientes" HorizontalTitleAlignment="Center" VerticalAlignment="Center" Background="#6fa8dc" HorizontalContentAlignment="Stretch" FontFamily="Segoe UI" Foreground="Black">
+        <Controls:Tile x:Name="btnBuscarClientes"  Margin="51,517,1097,154" Width="Auto" Height="Auto" TitleFontSize="18" Title="Buscar&#xa;Clientes" HorizontalTitleAlignment="Center" VerticalAlignment="Center" Background="#6fa8dc" HorizontalContentAlignment="Stretch" FontFamily="Segoe UI" Foreground="Black" Click="btnBuscarClientes_Click">
             <Image Source="/Imagenes/Buscar-Dark.png" />
         </Controls:Tile>
 
@@ -49,36 +49,36 @@
         <TextBox x:Name="txtNumContrato" Controls:TextBoxHelper.Watermark="" HorizontalAlignment="Left" Height="36" Margin="479,82,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="149" FontSize="20" TextChanged="txtNumContrato_TextChanged"/>
         <!-- Fecha Inicio -->
         <Label x:Name="lblFechaInicio" Content="Fecha, Hora *&#xA;Inicio" HorizontalAlignment="Left" Margin="344,157,0,0" VerticalAlignment="Top" FontSize="20"/>
-        <TextBox x:Name="txtFechaInicio" Controls:TextBoxHelper.Watermark="" HorizontalAlignment="Left" Height="36" Margin="479,174,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="121" FontSize="20" />
+        <TextBox x:Name="txtFechaInicio" Controls:TextBoxHelper.Watermark="" HorizontalAlignment="Left" Height="36" Margin="479,174,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="121" FontSize="20" TextChanged="txtFechaInicio_TextChanged" />
         <!-- Fecha Termino -->
         <Label x:Name="lblFechaTermino" Content="Fecha, Hora *&#xA;Termino" HorizontalAlignment="Left" Margin="662,157,0,0" VerticalAlignment="Top" FontSize="20"/>
-        <TextBox x:Name="txtFechaTermino" Controls:TextBoxHelper.Watermark="" HorizontalAlignment="Left" Height="36" Margin="801,174,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="121" FontSize="20"/>
+        <TextBox x:Name="txtFechaTermino" Controls:TextBoxHelper.Watermark="" HorizontalAlignment="Left" Height="36" Margin="801,174,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="121" FontSize="20" TextChanged="txtFechaTermino_TextChanged"/>
         <!-- Vigencia -->
         <Label x:Name="lblVigencia" Content="Vigencia *" HorizontalAlignment="Left" Margin="366,258,0,0" VerticalAlignment="Top" FontSize="20"/>
-        <RadioButton x:Name="rdbActiva" Content="Activa" HorizontalAlignment="Left" Margin="497,258,0,0" VerticalAlignment="Top"  FontSize="20" Width="89" Height="37" Foreground="Black" OpacityMask="#FFF3E7E7" BorderBrush="Black"/>
-        <RadioButton x:Name="rdbInactiva" Content="Inactiva" HorizontalAlignment="Left" Margin="497,316,0,0" VerticalAlignment="Top"  FontSize="20" Width="99" Height="30" BorderBrush="Black"/>
+        <RadioButton x:Name="rdbActiva" Content="Activa" HorizontalAlignment="Left" Margin="497,258,0,0" VerticalAlignment="Top"  FontSize="20" Width="89" Height="37" Foreground="Black" OpacityMask="#FFF3E7E7" BorderBrush="Black" Checked="rdbActiva_Checked"/>
+        <RadioButton x:Name="rdbInactiva" Content="Inactiva" HorizontalAlignment="Left" Margin="497,316,0,0" VerticalAlignment="Top"  FontSize="20" Width="99" Height="30" BorderBrush="Black" Checked="rdbInactiva_Checked"/>
         <!-- Tipo -->
         <Label x:Name="lblTipo" Content="Tipo *" HorizontalAlignment="Left" Margin="727,258,0,0" VerticalAlignment="Top" FontSize="20"/>
-        <ComboBox x:Name="cboTIpo" HorizontalAlignment="Left" Margin="801,263,0,0" VerticalAlignment="Top" Width="120" FontSize="20"/>
+        <ComboBox x:Name="cboTIpo" HorizontalAlignment="Left" Margin="801,263,0,0" VerticalAlignment="Top" Width="120" FontSize="20" SelectionChanged="cboTIpo_SelectionChanged"/>
         <!-- Actividad -->
         <Label x:Name="lblActividad" Content="Actividad *" HorizontalAlignment="Left" Margin="985,258,0,0" VerticalAlignment="Top" FontSize="20"/>
-        <ComboBox x:Name="cboActividad" HorizontalAlignment="Left" Margin="1099,263,0,0" VerticalAlignment="Top" Width="120" FontSize="20"/>
+        <ComboBox x:Name="cboActividad" HorizontalAlignment="Left" Margin="1099,263,0,0" VerticalAlignment="Top" Width="120" FontSize="20" SelectionChanged="cboActividad_SelectionChanged"/>
         <!-- CReacion -->
         <Label x:Name="lblCreacion" Content="Creacion *" HorizontalAlignment="Left" Margin="688,81,0,0" VerticalAlignment="Top" FontSize="20"/>
-        <TextBox x:Name="txtCreacion" Controls:TextBoxHelper.Watermark="" HorizontalAlignment="Left" Height="36" Margin="801,82,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="121" FontSize="20"/>
+        <TextBox x:Name="txtCreacion" Controls:TextBoxHelper.Watermark="" HorizontalAlignment="Left" Height="36" Margin="801,82,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="121" FontSize="20" TextChanged="txtCreacion_TextChanged"/>
         <!-- Direccion -->
         <Label x:Name="lblDreccion" Content="Direccion *" HorizontalAlignment="Left" Margin="985,174,0,0" VerticalAlignment="Top" FontSize="20"/>
-        <TextBox x:Name="txtDireccion" Controls:TextBoxHelper.Watermark="" HorizontalAlignment="Left" Height="36" Margin="1098,174,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="121" FontSize="20"/>
+        <TextBox x:Name="txtDireccion" Controls:TextBoxHelper.Watermark="" HorizontalAlignment="Left" Height="36" Margin="1098,174,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="121" FontSize="20" TextChanged="txtDireccion_TextChanged"/>
         <!-- Termino -->
         <Label x:Name="lblTermino" Content="Termino *" HorizontalAlignment="Left" Margin="993,82,0,0" VerticalAlignment="Top" FontSize="20"/>
-        <TextBox x:Name="txtTermino" Controls:TextBoxHelper.Watermark="" HorizontalAlignment="Left" Height="36" Margin="1097,83,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="121" FontSize="20"/>
+        <TextBox x:Name="txtTermino" Controls:TextBoxHelper.Watermark="" HorizontalAlignment="Left" Height="36" Margin="1097,83,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="121" FontSize="20" TextChanged="txtTermino_TextChanged"/>
         <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="167" Margin="406,412,0,0" Stroke="Black" VerticalAlignment="Top" Width="674"/>
         <!-- Rut -->
         <Label x:Name="lblRut" Content="Rut *" HorizontalAlignment="Left" Margin="444,465,0,0" VerticalAlignment="Top" FontSize="20"/>
-        <TextBox x:Name="txtRut" Controls:TextBoxHelper.Watermark="" HorizontalAlignment="Left" Height="36" Margin="508,466,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="122" FontSize="20"/>
+        <TextBox x:Name="txtRut" Controls:TextBoxHelper.Watermark="" HorizontalAlignment="Left" Height="36" Margin="508,466,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="134" FontSize="20" TextChanged="txtRut_TextChanged"/>
         <!-- Nombre Completo -->
         <Label x:Name="lblNombre" Content="Nombre *" HorizontalAlignment="Left" Margin="694,465,0,0" VerticalAlignment="Top" FontSize="20"/>
-        <TextBox x:Name="txtNombre" Controls:TextBoxHelper.Watermark="" HorizontalAlignment="Left" Height="36" Margin="812,466,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="220" FontSize="20"/>
+        <TextBox x:Name="txtNombre" Controls:TextBoxHelper.Watermark="" HorizontalAlignment="Left" Height="36" Margin="812,466,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="220" FontSize="20" TextChanged="txtNombre_TextChanged"/>
         <Button x:Name="btnLimpiarControles" Content="Limpiar Controles" HorizontalAlignment="Left" Margin="647,359,0,0" VerticalAlignment="Top" Width="182" Click="btnLimpiarControles_Click" FontSize="20"/>
     </Grid>
 </Controls:MetroWindow>

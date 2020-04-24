@@ -42,33 +42,29 @@ namespace ClientesWPF
             adcon.Show();
         }
 
-
-        private void btnPrueba_Click(object sender, RoutedEventArgs e)
+        private void switchCambioBack_Checked(object sender, RoutedEventArgs e)
         {
-            //this.btnPrueba.IsMouseOver += new System.EventHandler();
-
+            if (switchCambioBack.IsChecked==true)
+            {
+                ListadoClientesMenu listm = new ListadoClientesMenu();
+                listm.switchCambioBack.IsChecked = true;
+                this.Background = Brushes.Black;
+                switchCambioBack.Foreground = Brushes.White;
+                switchCambioBack.ThumbIndicatorBrush = Brushes.White;
+            }
+            //else 
+            //{
+            //    this.Background = Brushes.Red;
+            //}
         }
+
+        private void switchCambioBack_IsCheckedChanged(object sender, EventArgs e)
+        {
+            this.Background = Brushes.White;
+            switchCambioBack.Foreground = Brushes.Black;
+            switchCambioBack.ThumbIndicatorBrush = Brushes.Black;
+        }
+
      
-
-        private void swModeFondo_Checked(object sender, RoutedEventArgs e)
-        {
-                    
-
-        }
-
-        private void swDarkMode_Checked(object sender, RoutedEventArgs e)
-        {
-
-       
-
-
-        }
-
-
-        private void CheckBox_Checked(object sender, RoutedEventArgs e)
-        {
-            
-        }
-
     }
 }
