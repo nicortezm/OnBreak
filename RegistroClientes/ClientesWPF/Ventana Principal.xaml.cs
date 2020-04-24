@@ -1,17 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using MahApps.Metro.Controls;
+using System;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
-using MahApps.Metro.Controls;
+using System.Windows.Resources;
 
 namespace ClientesWPF
 {
@@ -28,10 +21,13 @@ namespace ClientesWPF
         private void btnAdminclientes_Click(object sender, RoutedEventArgs e)
         {
             AdminClientes ac = new AdminClientes();
+            ac.Show();
         }
 
         private void btnListarCLiente_Click(object sender, RoutedEventArgs e)
         {
+            ListadoClientesMenu listm = new ListadoClientesMenu();
+            listm.Show();
 
         }
 
@@ -42,7 +38,37 @@ namespace ClientesWPF
 
         private void btnAdminContratos_Click(object sender, RoutedEventArgs e)
         {
+            AdminContratos adcon = new AdminContratos();
+            adcon.Show();
+        }
+
+
+        private void btnPrueba_Click(object sender, RoutedEventArgs e)
+        {
+            //this.btnPrueba.IsMouseOver += new System.EventHandler();
 
         }
+     
+
+        private void swModeFondo_Checked(object sender, RoutedEventArgs e)
+        {
+                    
+
+        }
+
+        private void swDarkMode_Checked(object sender, RoutedEventArgs e)
+        {
+
+       
+
+
+        }
+
+
+        private void CheckBox_Checked(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
     }
 }

@@ -73,7 +73,7 @@
         <Label x:Name="lblTipoobl" Content="*" HorizontalAlignment="Left" Margin="611,399,0,0" VerticalAlignment="Top" FontSize="28"/>
         <Image x:Name="imgLogoTransparent" Margin="1168,555,4,-4" Source="Imagenes\logo_transparent_background.png" Stretch="Fill"/>
         <TextBox x:Name="txtRazonSocial" HorizontalAlignment="Left" Height="40" Margin="904,114,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="188" TextChanged="txtRazonSocial_TextChanged_1" FontSize="24"/>
-        <TextBox x:Name="txtRut" HorizontalAlignment="Left" Height="40" Margin="462,109,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="168" FontSize="22" TextChanged="txtRut_TextChanged"/>
+        <TextBox Controls:TextBoxHelper.Watermark=""  x:Name="txtRut" HorizontalAlignment="Left" Height="40" Margin="462,109,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="168" FontSize="22" TextChanged="txtRut_TextChanged"/>
         <TextBox x:Name="txtMailContact" HorizontalAlignment="Left" Height="40" Margin="902,204,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="263" FontSize="24" TextChanged="txtMailContact_TextChanged_1"/>
         <TextBox x:Name="txtNomContacto" HorizontalAlignment="Left" Height="40" Margin="462,204,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="212"/>
         <ComboBox x:Name="cboActividad" HorizontalAlignment="Left" Margin="906,403,0,0" VerticalAlignment="Top" Width="120" FontSize="22"/>

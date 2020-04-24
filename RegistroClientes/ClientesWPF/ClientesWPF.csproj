@@ -67,6 +67,9 @@
     <Compile Include="AdminClientes.xaml.cs">
       <DependentUpon>AdminClientes.xaml</DependentUpon>
     </Compile>
+    <Compile Include="AdminContratos.xaml.cs">
+      <DependentUpon>AdminContratos.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ListadoClientesAuxiliar.xaml.cs">
       <DependentUpon>ListadoClientesAuxiliar.xaml</DependentUpon>
     </Compile>
@@ -77,6 +80,10 @@
       <DependentUpon>Ventana Principal.xaml</DependentUpon>
     </Compile>
     <Page Include="AdminClientes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AdminContratos.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -161,6 +168,10 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Imagenes\MenuPrincipal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\Buscar-Dark.png" />
+    <Resource Include="Imagenes\Lista-Dark.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
