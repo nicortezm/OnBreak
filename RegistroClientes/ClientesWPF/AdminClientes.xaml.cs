@@ -117,12 +117,46 @@ namespace ClientesWPF
 
         private void switchCambioBack_Checked(object sender, RoutedEventArgs e)
         {
-          
+            //variable que convierte que cambia los parametros de escojer color..
+            var bc = new BrushConverter();
+            if (switchCambioBack.IsChecked == true)
+            {
+                ListadoClientesMenu listm = new ListadoClientesMenu();
+                listm.switchCambioBack.IsChecked = true;
+                this.Background = Brushes.Black;
+                switchCambioBack.Foreground = Brushes.White;
+                switchCambioBack.ThumbIndicatorBrush = Brushes.White;
+                this.lblTitulo.Foreground = (Brush)bc.ConvertFrom("#2b78e4");
+                this.lblTIpo.Foreground = (Brush)bc.ConvertFrom("#2b78e4");
+                lblRazonSocial.Foreground = (Brush)bc.ConvertFrom("#2b78e4");
+                this.lblMailContact.Foreground = (Brush)bc.ConvertFrom("#2b78e4");
+                this.lblRut.Foreground = (Brush)bc.ConvertFrom("#2b78e4");
+                this.lblNomContact.Foreground = (Brush)bc.ConvertFrom("#2b78e4");
+                this.lblctividad.Foreground=(Brush)bc.ConvertFrom("#2b78e4");
+                this.lblTelefon.Foreground = (Brush)bc.ConvertFrom("#2b78e4");
+                this.lblDireccion.Foreground = (Brush)bc.ConvertFrom("#2b78e4");
+                this.brSeparador.BorderBrush = (Brush)bc.ConvertFrom("#2b78e4");
+                this.brSeparador.Background = (Brush)bc.ConvertFrom("#2b78e4");
+            }
+
         }
 
         private void switchCambioBack_IsCheckedChanged(object sender, EventArgs e)
         {
-
+            this.Background = Brushes.White;
+            switchCambioBack.Foreground = Brushes.Black;
+            switchCambioBack.ThumbIndicatorBrush = Brushes.Black;
+            this.lblTitulo.Foreground = Brushes.Black;
+            this.lblTIpo.Foreground = Brushes.Black;
+            lblRazonSocial.Foreground = Brushes.Black;
+            this.lblMailContact.Foreground = Brushes.Black;
+            this.lblRut.Foreground = Brushes.Black;
+            this.lblNomContact.Foreground = Brushes.Black;
+            this.lblctividad.Foreground = Brushes.Black;
+            this.lblTelefon.Foreground = Brushes.Black;
+            this.lblDireccion.Foreground = Brushes.Black;
+            this.brSeparador.BorderBrush = Brushes.Black;
+            this.brSeparador.Background = Brushes.Black;
         }
     }
 }

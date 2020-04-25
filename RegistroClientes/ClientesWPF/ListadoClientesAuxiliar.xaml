@@ -10,7 +10,7 @@
         xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"              
         Title="ListadoClientesAuxiliar" Height="768" Width="1366">
     <Grid>
-        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="342" Margin="75,220,0,0" VerticalAlignment="Top" Width="1230"/>
+        <Border x:Name="brCuadroDataGrid" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="342" Margin="75,220,0,0" VerticalAlignment="Top" Width="1230"/>
         <Label x:Name="lblTitulo" Content="Listado de Clientes" HorizontalAlignment="Left" Margin="472,22,0,0" VerticalAlignment="Top" FontSize="36"/>
         <Label x:Name="lblTIpo" Content="Tipo" HorizontalAlignment="Left" Margin="542,110,0,0" VerticalAlignment="Top" FontSize="22" RenderTransformOrigin="-5.691,0.181"/>
         <ComboBox x:Name="cboActividad" HorizontalAlignment="Left" Margin="907,110,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="cboActividad_SelectionChanged" FontSize="22" RenderTransformOrigin="1.225,0.471"/>
@@ -23,7 +23,9 @@
         <Image x:Name="imgLogoTransparent" Margin="1168,555,4,-4" Source="Imagenes/logo_transparent_background.png" Stretch="Fill"/>
         <Button x:Name="btnLimpiar" Content="Limpiar Controles" HorizontalAlignment="Left" Margin="448,600,0,0" Width="199" FontSize="22" Height="40" VerticalAlignment="Top"/>
         <!--<Button x:Name="btnMenuPpal" Content="  Menú Principal" HorizontalAlignment="Left" Margin="187,601,0,0" VerticalAlignment="Top" Width="189" FontSize="22" Click="btnRegistrar_Click" Background="#FF2B78E4" Foreground="#FFFFFF" FontWeight="Bold"/>-->
-        <Button x:Name="btnSelectCliente" Content="Seleccionar Cliente" HorizontalAlignment="Left" Margin="928,521,0,0" VerticalAlignment="Top" Width="178" FontSize="18" Background="#FF2B78E4"/>
+        <Button x:Name="btnSelectCliente" Content="Seleccionar Cliente" HorizontalAlignment="Left" Margin="928,521,0,0" VerticalAlignment="Top" Width="178" FontSize="18" Background="#FF124A99" BorderBrush="Black" Click="btnSelectCliente_Click" Foreground="Black"/>
+        
         <DataGrid x:Name="tblClientes" HorizontalAlignment="Left" Height="274" Margin="135,237,0,0" VerticalAlignment="Top" Width="1119" SelectionChanged="tblClientes_SelectionChanged"/>
+        <Controls:ToggleSwitch x:Name="switchCambioBack" Checked="switchCambioBack_Checked" IsCheckedChanged="switchCambioBack_IsCheckedChanged" OnLabel="" OffLabel="" Margin="1233,0,0,625" FontSize="24" Content="" VerticalContentAlignment="Stretch" Header="&#xA;Dark Mode" Width="93" VerticalAlignment="Bottom" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Height="96" ContentDirection="RightToLeft" OnSwitchBrush="#FF085394"/>
     </Grid>
 </Controls:MetroWindow>

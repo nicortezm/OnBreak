@@ -86,7 +86,7 @@
         <Label x:Name="lblDireccion" Content="Direccion" HorizontalAlignment="Left" Margin="729,307,0,0" VerticalAlignment="Top" FontSize="20" Grid.Column="1"/>
         <TextBox x:Name="txtDireccion" HorizontalAlignment="Left" Height="36" Margin="848,310,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" FontSize="20" TextChanged="txtDireccion_TextChanged" Grid.Column="1"/>
         <Label x:Name="lblDirecobl" Content="*" HorizontalAlignment="Left" Margin="976,307,0,0" VerticalAlignment="Top" FontSize="20" Grid.Column="1"/>
-        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="737" Margin="253,0,0,0" VerticalAlignment="Top" Width="4" Background="Black" Grid.Column="1"/>
+        <Border x:Name="brSeparador" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="737" Margin="253,0,0,0" VerticalAlignment="Top" Width="4" Background="Black" Grid.Column="1"/>
         <Controls:ToggleSwitch x:Name="switchCambioBack" Checked="switchCambioBack_Checked" IsCheckedChanged="switchCambioBack_IsCheckedChanged" OnLabel="" OffLabel="" Margin="1182,0,0,625" FontSize="24" Content="" VerticalContentAlignment="Stretch" Header="&#xA;Dark Mode" Width="93" VerticalAlignment="Bottom" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Height="96" ContentDirection="RightToLeft" OnSwitchBrush="#FF085394" Grid.Column="1"/>
     </Grid>
 </Controls:MetroWindow>
