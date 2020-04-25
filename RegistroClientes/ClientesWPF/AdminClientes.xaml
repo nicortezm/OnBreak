@@ -55,7 +55,7 @@
         <Label x:Name="lblTitulo" Content="Administracion  de Clientes" HorizontalAlignment="Left" Margin="353,-3,0,0" VerticalAlignment="Top" Height="77" Width="810" FontSize="48" Grid.Column="1"/>
         <Image x:Name="imgLogoTransparent" Margin="1117,555,4,-4" Source="Imagenes\logo_transparent_background.png" Stretch="Fill" Grid.Column="1"/>
         <!--Rut-->
-        <TextBox Controls:TextBoxHelper.Watermark=""  x:Name="txtRut" HorizontalAlignment="Left" Height="32" Margin="411,112,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="122" FontSize="18" TextChanged="txtRut_TextChanged" Grid.Column="1"/>
+        <TextBox Controls:TextBoxHelper.Watermark=""  x:Name="txtRut" HorizontalAlignment="Left" Height="32" Margin="411,112,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="122" FontSize="18" TextChanged="txtRut_TextChanged" Grid.Column="1" Text="20.012.053-1"/>
         <Label x:Name="lblRut" Content="Rut*" HorizontalAlignment="Left" Margin="365,111,0,0" VerticalAlignment="Top" FontSize="18" Grid.Column="1"/>
         <!--Razon Social-->
         <Label x:Name="lblRazonSocial" Content="Razón Social*" HorizontalAlignment="Left" Margin="694,109,0,0" VerticalAlignment="Top" FontSize="18" Grid.Column="1"/>
