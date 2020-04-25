@@ -138,5 +138,54 @@ namespace ClientesWPF
         {
 
         }
+
+        private void switchCambioBack_Checked(object sender, RoutedEventArgs e)
+        {
+            var bc = new BrushConverter();
+            this.Background = Brushes.Black;
+            switchCambioBack.Foreground = Brushes.White;
+            switchCambioBack.ThumbIndicatorBrush = Brushes.White;
+            this.lblActividad.Foreground = (Brush)bc.ConvertFrom("#2b78e4");
+            this.lblCreacion.Foreground = (Brush)bc.ConvertFrom("#2b78e4");
+            this.lblDreccion.Foreground = (Brush)bc.ConvertFrom("#2b78e4");
+            this.lblFechaInicio.Foreground = (Brush)bc.ConvertFrom("#2b78e4");
+            this.lblFechaTermino.Foreground = (Brush)bc.ConvertFrom("#2b78e4");
+            this.lblNombre.Foreground = (Brush)bc.ConvertFrom("#2b78e4");
+            this.lblNumContrato.Foreground = (Brush)bc.ConvertFrom("#2b78e4");
+            this.lblRut.Foreground = (Brush)bc.ConvertFrom("#2b78e4");
+            this.lblTermino.Foreground = (Brush)bc.ConvertFrom("#2b78e4");
+            this.lblTipo.Foreground = (Brush)bc.ConvertFrom("#2b78e4");
+            this.lblVigencia.Foreground = (Brush)bc.ConvertFrom("#2b78e4");
+            this.rdbActiva.Foreground = (Brush)bc.ConvertFrom("#2b78e4");
+            this.rdbInactiva.Foreground = (Brush)bc.ConvertFrom("#2b78e4");
+            this.rdbActiva.BorderBrush = (Brush)bc.ConvertFrom("#2b78e4");
+            this.rdbInactiva.BorderBrush = (Brush)bc.ConvertFrom("#2b78e4");
+            this.btnLimpiarControles.BorderBrush= (Brush)bc.ConvertFrom("#2b78e4");
+
+        }
+
+        private void switchCambioBack_IsCheckedChanged(object sender, EventArgs e)
+        {
+            var bc = new BrushConverter();
+            this.Background = Brushes.White;
+            switchCambioBack.Foreground = Brushes.Black;
+            switchCambioBack.ThumbIndicatorBrush = Brushes.Black;
+            this.lblActividad.Foreground = Brushes.Black;
+            this.lblCreacion.Foreground = Brushes.Black;
+            this.lblDreccion.Foreground = Brushes.Black;
+            this.lblFechaInicio.Foreground = Brushes.Black;
+            this.lblFechaTermino.Foreground = Brushes.Black;
+            this.lblNombre.Foreground = Brushes.Black;
+            this.lblNumContrato.Foreground = Brushes.Black;
+            this.lblRut.Foreground = Brushes.Black;
+            this.lblTermino.Foreground = Brushes.Black;
+            this.lblTipo.Foreground = Brushes.Black;
+            this.lblVigencia.Foreground = Brushes.Black;
+            this.rdbActiva.Foreground = Brushes.Black;
+            this.rdbInactiva.Foreground = Brushes.Black;
+            this.rdbActiva.BorderBrush = Brushes.Black;
+            this.rdbInactiva.BorderBrush = Brushes.Black;
+            this.btnLimpiarControles.BorderBrush = Brushes.Black;
+        }
     }
 }

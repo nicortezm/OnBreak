@@ -63,7 +63,7 @@ namespace ClientesWPF
 
         private void txtMailContact_TextChanged_1(object sender, TextChangedEventArgs e)
         {
-
+            
         }
 
         private void txtDireccion_TextChanged(object sender, TextChangedEventArgs e)
@@ -126,6 +126,8 @@ namespace ClientesWPF
                 this.Background = Brushes.Black;
                 switchCambioBack.Foreground = Brushes.White;
                 switchCambioBack.ThumbIndicatorBrush = Brushes.White;
+                this.btnLimpiar.BorderBrush = (Brush)bc.ConvertFrom("#2b78e4");
+                //this.btnLimpiar.Foreground = Brushes.Black;
                 this.lblTitulo.Foreground = (Brush)bc.ConvertFrom("#2b78e4");
                 this.lblTIpo.Foreground = (Brush)bc.ConvertFrom("#2b78e4");
                 lblRazonSocial.Foreground = (Brush)bc.ConvertFrom("#2b78e4");
@@ -146,6 +148,7 @@ namespace ClientesWPF
             this.Background = Brushes.White;
             switchCambioBack.Foreground = Brushes.Black;
             switchCambioBack.ThumbIndicatorBrush = Brushes.Black;
+            this.btnLimpiar.BorderBrush = Brushes.Black;
             this.lblTitulo.Foreground = Brushes.Black;
             this.lblTIpo.Foreground = Brushes.Black;
             lblRazonSocial.Foreground = Brushes.Black;
@@ -157,6 +160,16 @@ namespace ClientesWPF
             this.lblDireccion.Foreground = Brushes.Black;
             this.brSeparador.BorderBrush = Brushes.Black;
             this.brSeparador.Background = Brushes.Black;
+        }
+
+        private void btnLimpiar_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void txtNomContacto_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
         }
     }
 }

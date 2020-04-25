@@ -11,25 +11,24 @@
         mc:Ignorable="d"
         Title="ListadoClientesMenu" Height="768" Width="1366">
     <Grid>
-        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="342" Margin="75,220,0,0" VerticalAlignment="Top" Width="1230"/>
+        <Border x:Name="brCuadroDataGrid" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="342" Margin="75,220,0,0" VerticalAlignment="Top" Width="1230"/>
         <Label x:Name="lblTitulo" Content="Listado de Clientes" HorizontalAlignment="Left" Margin="472,22,0,0" VerticalAlignment="Top" FontSize="36"/>
-        <DataGrid x:Name="tblClientes" HorizontalAlignment="Left" Height="274" Margin="135,237,0,0" VerticalAlignment="Top" Width="1119" SelectionChanged="tblClientes_SelectionChanged"/>
-        <Label x:Name="lblTIpo" Content="Tipo" HorizontalAlignment="Left" Margin="542,110,0,0" VerticalAlignment="Top" FontSize="22" RenderTransformOrigin="-5.691,0.181"/>
-        <ComboBox x:Name="cboTIpo" Margin="604,110,634,0" VerticalAlignment="Top" SelectionChanged="cboTIpo_SelectionChanged" FontSize="22" RenderTransformOrigin="0.471,-0.056"/>
+        <DataGrid x:Name="tblClientes" HorizontalAlignment="Left" Height="274" Margin="135,237,0,0" VerticalAlignment="Top" Width="1119" SelectionChanged="tblClientes_SelectionChanged"  />
+        <Label x:Name="lblTIpo" Content="Tipo*" HorizontalAlignment="Left" Margin="556,110,0,0" VerticalAlignment="Top" FontSize="18" RenderTransformOrigin="-5.691,0.181" Height="34" Width="52"/>
+        <ComboBox x:Name="cboTIpo" Margin="610,114,628,0" VerticalAlignment="Top" SelectionChanged="cboTIpo_SelectionChanged" FontSize="18" RenderTransformOrigin="0.471,-0.056" Height="18"/>
         <!--<ComboBox x:Name="cboActividad" HorizontalAlignment="Left" Margin="907,110,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="cboActividad_SelectionChanged" FontSize="22" RenderTransformOrigin="1.225,0.471"/>-->
-        <Label x:Name="lblTipoobl" Content="*" HorizontalAlignment="Left" Margin="741,110,0,0" VerticalAlignment="Top" FontSize="28"/>
-        <Label x:Name="lblRut" Content="Rut" HorizontalAlignment="Left" Margin="247,110,0,0" VerticalAlignment="Top" FontSize="24"/>
-        <Label x:Name="lblRutobl" Content="*" HorizontalAlignment="Left" Margin="486,110,0,0" VerticalAlignment="Top" FontSize="28"/>
-        <TextBox x:Name="txtRut" HorizontalAlignment="Left" Height="40" Margin="315,110,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="168" FontSize="22" TextChanged="txtRut_TextChanged"/>
-        <Label x:Name="lblActivobl" Content="*" HorizontalAlignment="Left" Margin="1035,110,0,0" VerticalAlignment="Top" FontSize="28"/>
-        <Button x:Name="btnBuscar" Content="Buscar" HorizontalAlignment="Left" Margin="607,168,0,0" VerticalAlignment="Top" Width="110" FontSize="24" Click="btnBuscar_Click"/>
+        <Label x:Name="lblRut" Content="Rut*" HorizontalAlignment="Left" Margin="341,110,0,0" VerticalAlignment="Top" FontSize="18" Width="45"/>
+        <TextBox x:Name="txtRut" HorizontalAlignment="Left" Height="32" Margin="387,111,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="121" FontSize="18" TextChanged="txtRut_TextChanged" VerticalScrollBarVisibility="Disabled" ScrollViewer.CanContentScroll="True"/>
+        <Button Style="{DynamicResource SquareButtonStyle}" x:Name="btnBuscar" Content="Buscar" HorizontalAlignment="Left" Margin="627,168,0,0" VerticalAlignment="Top" Width="85" FontSize="18" Click="btnBuscar_Click"/>
         <Image x:Name="imgLogoTransparent" Margin="1168,555,4,-4" Source="Imagenes\logo_transparent_background.png" Stretch="Fill"/>
-        <!--<Button x:Name="btnMenuPpal" Content="  Menú Principal" HorizontalAlignment="Left" Margin="187,601,0,0" VerticalAlignment="Top" Width="189" FontSize="22" Click="btnRegistrar_Click" Background="#FF2B78E4" Foreground="#FFFFFF" FontWeight="Bold"/>-->
-        <Button x:Name="btnLimpiar" Content="Limpiar Controles" HorizontalAlignment="Left" Margin="448,600,0,0" Width="159" FontSize="18" Height="40" VerticalAlignment="Top"/>
-        <ComboBox x:Name="cboActividad" HorizontalAlignment="Left" Margin="911,110,0,0" VerticalAlignment="Top" Width="120" FontSize="22"/>
-        <Label x:Name="lblActividad" Content="Actividad
-               " HorizontalAlignment="Left" Margin="793,110,0,0" VerticalAlignment="Top" FontSize="24"/>
+        <Button Style="{DynamicResource SquareButtonStyle}" x:Name="btnLimpiar" Content="Limpiar Controles" HorizontalAlignment="Left" Margin="448,600,0,0" Width="159" FontSize="18" Height="40" VerticalAlignment="Top" Click="btnLimpiar_Click"/>
+        <ComboBox x:Name="cboActividad" HorizontalAlignment="Left" Margin="880,114,0,0" VerticalAlignment="Top" Width="120" FontSize="18" SelectionChanged="cboActividad_SelectionChanged_1" Height="21"/>
+        <Label x:Name="lblActividad" Content="Actividad*" HorizontalAlignment="Left" Margin="788,110,0,0" VerticalAlignment="Top" FontSize="18" Height="38" Width="92"/>
         <Controls:ToggleSwitch x:Name="switchCambioBack" Checked="switchCambioBack_Checked" IsCheckedChanged="switchCambioBack_IsCheckedChanged" OnLabel="" OffLabel="" Margin="1233,0,0,625" FontSize="24" Content="" VerticalContentAlignment="Stretch" Header="&#xA;Dark Mode" Width="93" VerticalAlignment="Bottom" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Height="96" ContentDirection="RightToLeft" OnSwitchBrush="#FF085394"/>
+        <Controls:Tile x:Name="btnVentanaPrincipal" Margin="198,588,950,83" Width="Auto" Height="Auto" Background="#085394" HorizontalTitleAlignment="Center" VerticalAlignment="Center" TitleFontSize="18" Title="Menu&#xA;Principal"  HorizontalContentAlignment="Left">
+            <Image Source="Imagenes/MenuPrincipal.png" />
+
+        </Controls:Tile>
 
     </Grid>
 </Controls:MetroWindow>

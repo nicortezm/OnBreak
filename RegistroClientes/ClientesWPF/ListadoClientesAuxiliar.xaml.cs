@@ -46,12 +46,12 @@ namespace ClientesWPF
             this.Background = Brushes.Black;
             switchCambioBack.Foreground = Brushes.White;
             switchCambioBack.ThumbIndicatorBrush = Brushes.White;
-            this.brCuadroDataGrid.BorderBrush = (Brush)bc.ConvertFrom("#2b78e4");
+            this.btnLimpiar.BorderBrush = (Brush)bc.ConvertFrom("#2b78e4");
+            this.brCuadroDataGrid.BorderBrush = Brushes.White;
             this.brCuadroDataGrid.Background = (Brush)bc.ConvertFrom("#2b78e4");
-    
             this.lblRut.Foreground = (Brush)bc.ConvertFrom("#2b78e4");
             lblTIpo.Foreground = (Brush)bc.ConvertFrom("#2b78e4");
-            lblctividad.Foreground = (Brush)bc.ConvertFrom("#2b78e4");
+            lblActividad.Foreground = (Brush)bc.ConvertFrom("#2b78e4");
             lblTitulo.Foreground = (Brush)bc.ConvertFrom("#2b78e4");
 
 
@@ -64,16 +64,22 @@ namespace ClientesWPF
             this.Background = Brushes.White;
             switchCambioBack.Foreground = Brushes.Black;
             switchCambioBack.ThumbIndicatorBrush = Brushes.Black;
+            this.btnLimpiar.BorderBrush = Brushes.Black;
             this.brCuadroDataGrid.Background = Brushes.White;
             this.brCuadroDataGrid.BorderBrush = Brushes.Black;
             lblTIpo.Foreground = Brushes.Black;
-            lblctividad.Foreground = Brushes.Black;
+            lblActividad.Foreground = Brushes.Black;
             lblTitulo.Foreground = Brushes.Black;
 
 
         }
 
         private void btnSelectCliente_Click(object sender, RoutedEventArgs e)
+        {
+       
+        }
+
+        private void btnVentanaPrincipal_Click(object sender, RoutedEventArgs e)
         {
 
         }
