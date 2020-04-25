@@ -83,6 +83,11 @@ namespace ClientesWPF
         {
 
         }
+
+        private void btnLimpiar_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 
 }
