@@ -15,7 +15,7 @@
             <ColumnDefinition Width="1307*"/>
         </Grid.ColumnDefinitions>
         <!--boton Registrar Cliente-->
-        <Controls:Tile x:Name="btnRegistrarCliente" Margin="50,68,1097,603" Height="Auto" Title="Registrar&#xa;Cliente" RenderTransformOrigin="0.5,0.5" Width="Auto" TitleFontSize="18" HorizontalTitleAlignment="Center" Background="#085394" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" Padding="0,3,0,0" Grid.ColumnSpan="2">
+        <Controls:Tile x:Name="btnRegistrarCliente" Margin="50,68,1097,603" Height="Auto" Title="Registrar&#xa;Cliente" RenderTransformOrigin="0.5,0.5" Width="Auto" TitleFontSize="18" HorizontalTitleAlignment="Center" Background="#085394" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" Padding="0,3,0,0" Grid.ColumnSpan="2" Click="btnRegistrarCliente_Click">
             <Image Source="/Imagenes/Save.png" RenderTransformOrigin="0.545,1.935" UseLayoutRounding="False" />
         </Controls:Tile>
         <!--boton Buscar Cliente-->

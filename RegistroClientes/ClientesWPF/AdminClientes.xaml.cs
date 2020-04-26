@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using BibliotecaClientes;
 using MahApps.Metro.Controls;
+using MahApps.Metro.Controls.Dialogs;
 
 namespace ClientesWPF
 {
@@ -39,20 +40,43 @@ namespace ClientesWPF
         }
 
 
-        private void btnRegistrarCliente_Click(object sender, RoutedEventArgs e)
+        private async void btnRegistrarCliente_Click(object sender, RoutedEventArgs e)
         {
             //agregar if pa confirmar q todos los campos esten completos
-            Cliente cliente = new Cliente
+
+            if (!string.IsNullOrWhiteSpace(txtRut.Text))
             {
-                Rut = int.Parse(txtRut.Text),
-                RazonSocial = txtRazonSocial.Text,
-                NombreContacto = txtNomContacto.Text,
-                MailContacto = txtMailContact.Text,
-                Telefono = int.Parse(txtTelefono.Text),
-                TipoEmpresa = (TipoEmpresa)cboTIpo.SelectedValue,
-                ActividadEmpresa = (ActividadEmpresa)cboActividad.SelectedValue
-            };
-            Ventana_Principal.listaClientes.Add(cliente);
+                //if para la alerta si es que el cliente esta registrado
+                if (Ventana_Principal.listaClientes.Existe(int.Parse(txtRut.Text)))
+                {
+                    await this.ShowMessageAsync("Mensaje:",
+                        string.Format("El Cliente con Rut: {0}, ya existe!!", txtRut.Text));
+                }
+                else
+                {
+                    Cliente cliente = new Cliente
+                    {
+                        Rut = int.Parse(txtRut.Text),
+                        RazonSocial = txtRazonSocial.Text,
+                        NombreContacto = txtNomContacto.Text,
+                        MailContacto = txtMailContact.Text,
+                        Telefono = int.Parse(txtTelefono.Text),
+                        TipoEmpresa = (TipoEmpresa)cboTIpo.SelectedValue,
+                        ActividadEmpresa = (ActividadEmpresa)cboActividad.SelectedValue
+                    };
+                    Ventana_Principal.listaClientes.Add(cliente);
+                    await this.ShowMessageAsync("Mensaje:",
+                        string.Format("El Cliente con Rut: {0}, fue agregado con exito!!", txtRut.Text));
+
+                }
+            }
+
+
+
+            
+            
+
+
 
         }
 
