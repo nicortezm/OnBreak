@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.ComponentModel;
+
 
 namespace BibliotecaClientes
 {
@@ -13,7 +13,6 @@ namespace BibliotecaClientes
         SPA,
         EIRL,
         Limitada,
-        [Description("Sociedad Anonima")]
         SociedadAnonima
     }
 

@@ -15,7 +15,7 @@
             <ColumnDefinition Width="1307*"/>
         </Grid.ColumnDefinitions>
         <!--boton Registrar Cliente-->
-        <Controls:Tile x:Name="btnRegistrarCliente" Margin="50,68,1097,603" Height="Auto" Title="Registrar&#xa;Cliente" RenderTransformOrigin="0.5,0.5" Width="Auto" TitleFontSize="18" HorizontalTitleAlignment="Center" Click="btnRegistrarCliente_Click" Background="#085394" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" Padding="0,3,0,0" Grid.ColumnSpan="2">
+        <Controls:Tile x:Name="btnRegistrarCliente" Margin="50,68,1097,603" Height="Auto" Title="Registrar&#xa;Cliente" RenderTransformOrigin="0.5,0.5" Width="Auto" TitleFontSize="18" HorizontalTitleAlignment="Center" Background="#085394" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" Padding="0,3,0,0" Grid.ColumnSpan="2">
             <Image Source="/Imagenes/Save.png" RenderTransformOrigin="0.545,1.935" UseLayoutRounding="False" />
         </Controls:Tile>
         <!--boton Buscar Cliente-->
@@ -40,7 +40,7 @@
             <Image Source="/Imagenes/MenuPrincipal.png" />
 
         </Controls:Tile>
-        <Controls:Tile x:Name="btnSwitch" Margin="1133,8,68,687" Width="Auto" Height="Auto" RenderTransformOrigin="0.5,0.5" Background="#006459DF" Click="btnSwitch_Click" Grid.Column="1">
+        <Controls:Tile x:Name="btnSwitch" Margin="1133,8,68,687" Width="Auto" Height="Auto" RenderTransformOrigin="0.5,0.5" Background="#006459DF"  Grid.Column="1">
             <Controls:Tile.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform ScaleY="-1"/>
@@ -55,29 +55,29 @@
         <Label x:Name="lblTitulo" Content="Administracion  de Clientes" HorizontalAlignment="Left" Margin="353,-3,0,0" VerticalAlignment="Top" Height="77" Width="810" FontSize="48" Grid.Column="1"/>
         <Image x:Name="imgLogoTransparent" Margin="1117,555,4,-4" Source="Imagenes\logo_transparent_background.png" Stretch="Fill" Grid.Column="1"/>
         <!--Rut-->
-        <TextBox Controls:TextBoxHelper.Watermark=""  x:Name="txtRut" HorizontalAlignment="Left" Height="32" Margin="411,112,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="122" FontSize="18" TextChanged="txtRut_TextChanged" Grid.Column="1" Text="20.012.053-1"/>
+        <TextBox Controls:TextBoxHelper.ClearTextButton="True" Controls:TextBoxHelper.Watermark="ej: 12582430"  x:Name="txtRut" HorizontalAlignment="Left" Height="32" Margin="411,112,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="151" FontSize="18"  Grid.Column="1" />
         <Label x:Name="lblRut" Content="Rut*" HorizontalAlignment="Left" Margin="365,111,0,0" VerticalAlignment="Top" FontSize="18" Grid.Column="1"/>
         <!--Razon Social-->
         <Label x:Name="lblRazonSocial" Content="Razón Social*" HorizontalAlignment="Left" Margin="694,109,0,0" VerticalAlignment="Top" FontSize="18" Grid.Column="1"/>
-        <TextBox x:Name="txtRazonSocial" HorizontalAlignment="Left" Height="32" Margin="813,110,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="188" TextChanged="txtRazonSocial_TextChanged_1" FontSize="18" Grid.Column="1"/>
+        <TextBox Controls:TextBoxHelper.ClearTextButton="True" x:Name="txtRazonSocial" HorizontalAlignment="Left" Height="32" Margin="813,110,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="188"  FontSize="18" Grid.Column="1"/>
         <!---Mail Contacto.-->
         <Label x:Name="lblMailContact" Content="Mail Contacto*" HorizontalAlignment="Left" Margin="694,204,0,0" VerticalAlignment="Top" FontSize="18" Grid.Column="1"/>
-        <TextBox x:Name="txtMailContact" HorizontalAlignment="Left" Height="32" Margin="824,205,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="309" FontSize="18" TextChanged="txtMailContact_TextChanged_1" Grid.Column="1"/>
+        <TextBox Controls:TextBoxHelper.ClearTextButton="True" x:Name="txtMailContact" HorizontalAlignment="Left" Height="32" Margin="824,205,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="309" FontSize="18"  Grid.Column="1"/>
         <!--Nom Contacto-->
         <Label x:Name="lblNomContact" Content="Nombre*&#xA;Contacto" HorizontalAlignment="Left" Margin="327,191,0,0" VerticalAlignment="Top" FontSize="18" Grid.Column="1"/>
-        <TextBox Controls:TextBoxHelper.Watermark="ej: Nombre Apellido" x:Name="txtNomContacto" HorizontalAlignment="Left" Height="32" Margin="411,205,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="181" Grid.Column="1" FontSize="18" TextChanged="txtNomContacto_TextChanged"/>
+        <TextBox Controls:TextBoxHelper.ClearTextButton="True" Controls:TextBoxHelper.Watermark="ej: Nombre Apellido" x:Name="txtNomContacto" HorizontalAlignment="Left" Height="32" Margin="411,205,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="209" Grid.Column="1" FontSize="18" />
         <!-- Tipo -->
         <Label x:Name="lblTIpo" Content="Tipo*" HorizontalAlignment="Left" Margin="358,402,0,0" VerticalAlignment="Top" FontSize="18" RenderTransformOrigin="-5.691,0.181" Grid.Column="1"/>
-        <ComboBox x:Name="cboTIpo" Margin="411,404,776,0" VerticalAlignment="Top" SelectionChanged="cboTIpo_SelectionChanged" FontSize="18" RenderTransformOrigin="0.471,-0.056" Grid.Column="1"/>
+        <ComboBox x:Name="cboTIpo" Margin="411,404,687,0" VerticalAlignment="Top"  FontSize="18" RenderTransformOrigin="0.471,-0.056" Grid.Column="1" Text="Seleccione"/>
         <!-- Actividad -->
         <Label x:Name="lblctividad" Content="Actividad*" HorizontalAlignment="Left" Margin="733,402,0,0" VerticalAlignment="Top" FontSize="18" RenderTransformOrigin="0.762,0.088" Grid.Column="1"/>
-        <ComboBox x:Name="cboActividad" HorizontalAlignment="Left" Margin="824,404,0,0" VerticalAlignment="Top" Width="120" FontSize="18" Grid.Column="1"/>
+        <ComboBox x:Name="cboActividad" HorizontalAlignment="Left" Margin="824,404,0,0" VerticalAlignment="Top" Width="156" FontSize="18" Grid.Column="1" Text="Seleccione"/>
         <!--Telefono-->
         <Label x:Name="lblTelefon" Content="Teléfono*" HorizontalAlignment="Left" Margin="325,309,0,0" VerticalAlignment="Top" FontSize="18" Grid.Column="1"/>
-        <TextBox Controls:TextBoxHelper.Watermark="ej: 911223344 " x:Name="txtTelefono" HorizontalAlignment="Left" Height="32" Margin="411,310,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="127" FontSize="18" TextChanged="txtTelefono_TextChanged" Grid.Column="1"/>
+        <TextBox Controls:TextBoxHelper.ClearTextButton="True" Controls:TextBoxHelper.Watermark="ej: 911223344 " x:Name="txtTelefono" HorizontalAlignment="Left" Height="32" Margin="411,310,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="151" FontSize="18" Grid.Column="1"/>
         <!--Direccion -->
         <Label x:Name="lblDireccion" Content="Dirección*" HorizontalAlignment="Left" Margin="731,309,0,0" VerticalAlignment="Top" FontSize="18" Grid.Column="1"/>
-        <TextBox x:Name="txtDireccion" HorizontalAlignment="Left" Height="32" Margin="824,310,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="228" FontSize="18" TextChanged="txtDireccion_TextChanged" Grid.Column="1"/>
+        <TextBox Controls:TextBoxHelper.ClearTextButton="True" x:Name="txtDireccion" HorizontalAlignment="Left" Height="32" Margin="824,310,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="228" FontSize="18"  Grid.Column="1"/>
         <Border x:Name="brSeparador" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="737" Margin="253,0,0,0" VerticalAlignment="Top" Width="4" Background="Black" Grid.Column="1"/>
         <Controls:ToggleSwitch x:Name="switchCambioBack" Checked="switchCambioBack_Checked" IsCheckedChanged="switchCambioBack_IsCheckedChanged" OnLabel="" OffLabel="" Margin="1182,0,0,625" FontSize="24" Content="" VerticalContentAlignment="Stretch" Header="&#xA;Dark Mode" Width="93" VerticalAlignment="Bottom" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Height="96" ContentDirection="RightToLeft" OnSwitchBrush="#FF085394" Grid.Column="1"/>
     </Grid>
