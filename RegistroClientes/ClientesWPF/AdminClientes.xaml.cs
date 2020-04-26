@@ -11,7 +11,9 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using BibliotecaClientes;
 using MahApps.Metro.Controls;
+using MahApps.Metro.Controls.Dialogs;
 
 namespace ClientesWPF
 {
@@ -26,63 +28,55 @@ namespace ClientesWPF
         {
             
             InitializeComponent();
+            CargaCombo();
         }
 
-      
-
-        private void btnRegistrar_Click(object sender, RoutedEventArgs e)
+        private void CargaCombo()
         {
+            cboActividad.ItemsSource = Enum.GetValues(typeof(ActividadEmpresa));
+            cboActividad.SelectedIndex = 0;
+            cboTIpo.ItemsSource = Enum.GetValues(typeof(TipoEmpresa));
+            cboTIpo.SelectedIndex = 0;
+        }
+
+
+        private async void btnRegistrarCliente_Click(object sender, RoutedEventArgs e)
+        {
+            //agregar if pa confirmar q todos los campos esten completos
+
+            if (!string.IsNullOrWhiteSpace(txtRut.Text))
+            {
+                //if para la alerta si es que el cliente esta registrado
+                if (Ventana_Principal.listaClientes.Existe(int.Parse(txtRut.Text)))
+                {
+                    await this.ShowMessageAsync("Mensaje:",
+                        string.Format("El Cliente con Rut: {0}, ya existe!!", txtRut.Text));
+                }
+                else
+                {
+                    Cliente cliente = new Cliente
+                    {
+                        Rut = int.Parse(txtRut.Text),
+                        RazonSocial = txtRazonSocial.Text,
+                        NombreContacto = txtNomContacto.Text,
+                        MailContacto = txtMailContact.Text,
+                        Telefono = int.Parse(txtTelefono.Text),
+                        TipoEmpresa = (TipoEmpresa)cboTIpo.SelectedValue,
+                        ActividadEmpresa = (ActividadEmpresa)cboActividad.SelectedValue
+                    };
+                    Ventana_Principal.listaClientes.Add(cliente);
+                    await this.ShowMessageAsync("Mensaje:",
+                        string.Format("El Cliente con Rut: {0}, fue agregado con exito!!", txtRut.Text));
+
+                }
+            }
+
+
+
             
-        }
-
-        private void txtMailContact_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void cboActividad_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
-
-
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void txtRazonSocial_TextChanged_1(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void txtRut_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void txtMailContact_TextChanged_1(object sender, TextChangedEventArgs e)
-        {
             
-        }
 
-        private void txtDireccion_TextChanged(object sender, TextChangedEventArgs e)
-        {
 
-        }
-
-        private void txtTelefono_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            
-        }
-
-        private void cboTIpo_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
-
-        private void btnRegistrarCliente_Click(object sender, RoutedEventArgs e)
-        {
 
         }
 
@@ -106,11 +100,6 @@ namespace ClientesWPF
         {
             this.Close();
 
-        }
-
-        private void btnSwitch_Click(object sender, RoutedEventArgs e)
-        {
-            
         }
 
         private void switchCambioBack_Checked(object sender, RoutedEventArgs e)
@@ -162,12 +151,15 @@ namespace ClientesWPF
 
         private void btnLimpiar_Click(object sender, RoutedEventArgs e)
         {
+            txtRut.Text = string.Empty;
+            txtRazonSocial.Text = string.Empty;
+            txtNomContacto.Text = string.Empty;
+            txtMailContact.Text = string.Empty;
+            txtTelefono.Text = string.Empty;
+            cboActividad.SelectedIndex = 0;
+            cboTIpo.SelectedIndex = 0;
 
         }
 
-        private void txtNomContacto_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
     }
 }

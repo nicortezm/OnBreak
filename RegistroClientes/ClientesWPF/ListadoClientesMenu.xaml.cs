@@ -26,17 +26,11 @@ namespace ClientesWPF
         {
 
             InitializeComponent();
+            tblClientes.ItemsSource = Ventana_Principal.listaClientes;
         }
 
-        private void cboTIpo_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
 
-        }
 
-        private void tblClientes_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
 
         private void btnBuscar_Click(object sender, RoutedEventArgs e)
         {
@@ -47,15 +41,7 @@ namespace ClientesWPF
 
         }
 
-        private void cboActividad_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
 
-        }
-
-        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
 
         private void switchCambioBack_Checked(object sender, RoutedEventArgs e)
         {

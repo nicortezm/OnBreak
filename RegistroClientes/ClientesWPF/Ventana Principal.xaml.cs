@@ -1,4 +1,5 @@
-﻿using MahApps.Metro.Controls;
+﻿using BibliotecaClientes;
+using MahApps.Metro.Controls;
 using System;
 using System.Windows;
 using System.Windows.Controls;
@@ -13,9 +14,13 @@ namespace ClientesWPF
     /// </summary>
     public partial class Ventana_Principal : MetroWindow
     {
+        public static ClienteCollection listaClientes = new ClienteCollection();
+        public static ContratoCollection listaContratos = new ContratoCollection();
+        public static TipoEventoCollection listaTipoEvento = new TipoEventoCollection();
         public Ventana_Principal()
         {
             InitializeComponent();
+            //llenarClientes();
         }
 
         private void btnAdminclientes_Click(object sender, RoutedEventArgs e)
@@ -30,6 +35,19 @@ namespace ClientesWPF
             listm.Show();
 
         }
+        /*
+        private void llenarClientes()
+        {
+            Cliente cliente = new Cliente()
+            {
+                Rut = 123,
+                RazonSocial = "xd",
+                NombreContacto = "xd",
+                MailContacto = "xd",
+                Telefono = 123
+            };
+            listaClientes.Add(cliente);
+        }*/
 
         private void btnListarContratos_Click(object sender, RoutedEventArgs e)
         {
