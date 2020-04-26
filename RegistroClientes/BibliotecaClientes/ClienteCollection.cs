@@ -44,7 +44,33 @@ namespace BibliotecaClientes
             }
 
         }
-        //List<Cliente> ListClients = new List<Cliente>();   
+        public bool TieneContrato(int rut) //terminar
+        {
+            try
+            {
+                if (Existe(rut))
+                {
+                    Cliente cliente = this.First(c => c.Rut == rut);
+                    return cliente.Contrato.EstaVigente;
+                }
+                else
+                {
+                    return false;
+                }
+
+
+
+
+            }
+            catch (Exception)
+            {
+
+                return false;
+            }
+
+        }
+
+
     }
     
 }

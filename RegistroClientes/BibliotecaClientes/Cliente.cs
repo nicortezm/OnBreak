@@ -5,51 +5,33 @@ using System.Text;
 using System.Threading.Tasks;
 namespace BibliotecaClientes
 {
-    public class Cliente
-    {
-          //holanda mundeli
-        //private List<Cliente> clientList = new List<Cliente>();
-        //ClienteCollection clic = new ClienteCollection();
+    public class Cliente{
+
         public int Rut { get; set; }
         public string RazonSocial { get; set; }
-        public string Direccion { get; set; }
-        public ActividadEmpresa Actividad { get; set; }
-        public TipoEmpresa Tipo { get; set; }
+        public string NombreContacto { get; set; }
+        public string MailContacto { get; set; }
         public int Telefono { get; set; }
-      
+        public TipoEmpresa TipoEmpresa { get; set; }
+        public ActividadEmpresa ActividadEmpresa { get; set; }
+        public Contrato Contrato { get; set; }
 
         public Cliente()
         {
             this.Init();
-
         }
+
         private void Init()
         {
             Rut = 0;
-            RazonSocial = String.Empty;
-            Direccion = String.Empty;
+            RazonSocial = string.Empty;
+            NombreContacto = string.Empty;
+            MailContacto = string.Empty;
             Telefono = 0;
-            Actividad = ActividadEmpresa.seleccione;
-            Tipo = TipoEmpresa.seleccione;
+            TipoEmpresa = TipoEmpresa.Seleccione;
+            ActividadEmpresa = ActividadEmpresa.Seleccione;
+            Contrato = new Contrato();
         }
 
-        //public void BuscarCLient(String rut)
-        //{
-        //    foreach (var cl in clientList)
-        //    {
-        //        if (cl.Rut==rut)
-        //        {
-
-        //        }
-        //    }
-
-        //}
-        //public void AgregarClient(Cliente cli)
-        //{
-        //    clientList.Add(cli);
-
-        //}
-        //hola mundo
-       
     }
 }
