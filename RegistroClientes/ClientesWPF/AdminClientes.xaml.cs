@@ -93,12 +93,15 @@ namespace ClientesWPF
         private void btnListar_Click(object sender, RoutedEventArgs e)
         {
             ListadoClientesAuxiliar listar = new ListadoClientesAuxiliar();
+            this.Close();
             listar.Show();
         }
 
         private void btnVentanaPrincipal_Click(object sender, RoutedEventArgs e)
         {
+            Ventana_Principal vp = new Ventana_Principal();
             this.Close();
+            vp.Show();
 
         }
 

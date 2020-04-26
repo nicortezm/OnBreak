@@ -27,12 +27,14 @@ namespace ClientesWPF
         {
             AdminClientes ac = new AdminClientes();
             ac.Show();
+            this.Close();
         }
 
         private void btnListarCLiente_Click(object sender, RoutedEventArgs e)
         {
             ListadoClientesMenu listm = new ListadoClientesMenu();
             listm.Show();
+            this.Close();
 
         }
         /*
@@ -51,29 +53,27 @@ namespace ClientesWPF
 
         private void btnListarContratos_Click(object sender, RoutedEventArgs e)
         {
-
+            ListadoContratosMenu listco = new ListadoContratosMenu();
+            listco.Show();
+            this.Close();
         }
 
         private void btnAdminContratos_Click(object sender, RoutedEventArgs e)
         {
             AdminContratos adcon = new AdminContratos();
             adcon.Show();
+            this.Close();
         }
 
         private void switchCambioBack_Checked(object sender, RoutedEventArgs e)
         {
-            if (switchCambioBack.IsChecked==true)
-            {
-                ListadoClientesMenu listm = new ListadoClientesMenu();
-                listm.switchCambioBack.IsChecked = true;
-                this.Background = Brushes.Black;
-                switchCambioBack.Foreground = Brushes.White;
-                switchCambioBack.ThumbIndicatorBrush = Brushes.White;
-            }
-            //else 
-            //{
-            //    this.Background = Brushes.Red;
-            //}
+           
+            ListadoClientesMenu listm = new ListadoClientesMenu();
+            listm.switchCambioBack.IsChecked = true;
+            this.Background = Brushes.Black;
+            switchCambioBack.Foreground = Brushes.White;
+            switchCambioBack.ThumbIndicatorBrush = Brushes.White;
+          
         }
 
         private void switchCambioBack_IsCheckedChanged(object sender, EventArgs e)

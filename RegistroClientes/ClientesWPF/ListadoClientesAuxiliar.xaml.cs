@@ -96,15 +96,17 @@ namespace ClientesWPF
             AdminContratos adcont = new AdminContratos();
             if (adcli != null)
             {
-                
+
+                this.Close();
                 adcli.Close();
                 vp.Show();
 
             }
             else if (adcont != null)
             {
-               
 
+
+                this.Close();
                 adcont.Close();
                 vp.Show();
             }

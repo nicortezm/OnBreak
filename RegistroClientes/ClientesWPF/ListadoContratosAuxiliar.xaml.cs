@@ -62,11 +62,10 @@ namespace ClientesWPF
         private void btnVentanaPrincipal_Click(object sender, RoutedEventArgs e)
         {
             Ventana_Principal vp = new Ventana_Principal();
-            AdminContratos adc = new AdminContratos();
-
+            AdminContratos adcont = new AdminContratos();
             this.Close();
             vp.Show();
-            
+
         }
     }
 }

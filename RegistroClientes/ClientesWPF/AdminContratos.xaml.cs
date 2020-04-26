@@ -32,6 +32,7 @@ namespace ClientesWPF
         private void btnListarClientes_Click(object sender, RoutedEventArgs e)
         {
             ListadoClientesAuxiliar listaux = new ListadoClientesAuxiliar();
+            this.Close();
             listaux.Show();
         }
 
@@ -52,7 +53,9 @@ namespace ClientesWPF
 
         private void btnVentanaPrincipal_Click(object sender, RoutedEventArgs e)
         {
+            this.Close(); Ventana_Principal vp = new Ventana_Principal();
             this.Close();
+            vp.Show();
         }
 
         private void btnLimpiarControles_Click(object sender, RoutedEventArgs e)
@@ -84,6 +87,7 @@ namespace ClientesWPF
         {
             ListadoContratosAuxiliar listco = new ListadoContratosAuxiliar();
             listco.Show();
+            this.Close();
 
         }
 
