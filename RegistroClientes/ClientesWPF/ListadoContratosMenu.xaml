@@ -9,7 +9,8 @@
         xmlns:behaviours="clr-namespace:MahApps.Metro.Behaviours;assembly=MahApps.Metro"
         xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
 
-        Title="ListadoContratosMenu" Height="768" Width="1156">
+        Title="ListadoContratosMenu" Height="768" Width="1156"
+        WindowStartupLocation ="CenterScreen">
     <Grid>
         <Border x:Name="brCuadroDataGrid" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="342" Margin="36,220,0,0" VerticalAlignment="Top" Width="1077"/>
         <Button Style="{DynamicResource SquareButtonStyle}" x:Name="btnBuscar" Content="Buscar" HorizontalAlignment="Left" Margin="487,168,0,0" VerticalAlignment="Top" Width="85" FontSize="18" />

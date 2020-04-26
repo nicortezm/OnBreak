@@ -8,7 +8,8 @@
         xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"    
         xmlns:local="clr-namespace:ClientesWPF"
         mc:Ignorable="d"
-        Title="AdminClientes" Height="763" Width="1366">
+        Title="AdminClientes" Height="763" Width="1366"
+        WindowStartupLocation ="CenterScreen">
     <Grid Margin="2,0,-2,0">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="51*"/>
