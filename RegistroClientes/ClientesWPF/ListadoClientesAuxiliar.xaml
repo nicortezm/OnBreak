@@ -25,7 +25,7 @@
         <DataGrid x:Name="tblClientes" HorizontalAlignment="Left" Height="274" Margin="135,237,0,0" VerticalAlignment="Top" Width="1119" SelectionChanged="tblClientes_SelectionChanged"/>
         <Controls:ToggleSwitch x:Name="switchCambioBack" Checked="switchCambioBack_Checked" IsCheckedChanged="switchCambioBack_IsCheckedChanged" OnLabel="" OffLabel="" Margin="1233,0,0,625" FontSize="24" Content="" VerticalContentAlignment="Stretch" Header="&#xA;Dark Mode" Width="93" VerticalAlignment="Bottom" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Height="96" ContentDirection="RightToLeft" OnSwitchBrush="#FF085394"/>
         <Button Style="{DynamicResource SquareButtonStyle}" x:Name="btnLimpiar" Content="Limpiar Controles" HorizontalAlignment="Left" Margin="448,600,0,0" Width="159" FontSize="18" Height="40" VerticalAlignment="Top" />
-        <Controls:Tile x:Name="btnVentanaPrincipal" Margin="198,588,950,83" Width="Auto" Height="Auto" Background="#085394" HorizontalTitleAlignment="Center" VerticalAlignment="Center" TitleFontSize="18" Title="Menu&#xA;Principal" HorizontalContentAlignment="Left">
+        <Controls:Tile x:Name="btnVentanaPrincipal" Margin="198,588,950,83" Width="Auto" Height="Auto" Background="#085394" HorizontalTitleAlignment="Center" VerticalAlignment="Center" TitleFontSize="18" Title="Menu&#xA;Principal" HorizontalContentAlignment="Left" Click="btnVentanaPrincipal_Click_1">
             <Image Source="Imagenes/MenuPrincipal.png" />
 
         </Controls:Tile>

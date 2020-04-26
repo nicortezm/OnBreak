@@ -47,15 +47,14 @@ namespace ClientesWPF
             switchCambioBack.Foreground = Brushes.White;
             switchCambioBack.ThumbIndicatorBrush = Brushes.White;
             this.btnLimpiar.BorderBrush = (Brush)bc.ConvertFrom("#2b78e4");
+            this.btnBuscar.BorderBrush = (Brush)bc.ConvertFrom("#2b78e4");
+        
             this.brCuadroDataGrid.BorderBrush = Brushes.White;
             this.brCuadroDataGrid.Background = (Brush)bc.ConvertFrom("#2b78e4");
             this.lblRut.Foreground = (Brush)bc.ConvertFrom("#2b78e4");
             lblTIpo.Foreground = (Brush)bc.ConvertFrom("#2b78e4");
             lblActividad.Foreground = (Brush)bc.ConvertFrom("#2b78e4");
             lblTitulo.Foreground = (Brush)bc.ConvertFrom("#2b78e4");
-
-
-
         }
 
         private void switchCambioBack_IsCheckedChanged(object sender, EventArgs e)
@@ -65,6 +64,7 @@ namespace ClientesWPF
             switchCambioBack.Foreground = Brushes.Black;
             switchCambioBack.ThumbIndicatorBrush = Brushes.Black;
             this.btnLimpiar.BorderBrush = Brushes.Black;
+            this.btnBuscar.BorderBrush = Brushes.Black;
             this.brCuadroDataGrid.Background = Brushes.White;
             this.brCuadroDataGrid.BorderBrush = Brushes.Black;
             lblTIpo.Foreground = Brushes.Black;
@@ -87,6 +87,27 @@ namespace ClientesWPF
         private void btnLimpiar_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void btnVentanaPrincipal_Click_1(object sender, RoutedEventArgs e)
+        {
+            Ventana_Principal vp = new Ventana_Principal();
+            AdminClientes adcli = new AdminClientes();
+            AdminContratos adcont = new AdminContratos();
+            if (adcli != null)
+            {
+                
+                adcli.Close();
+                vp.Show();
+
+            }
+            else if (adcont != null)
+            {
+               
+
+                adcont.Close();
+                vp.Show();
+            }
         }
     }
 

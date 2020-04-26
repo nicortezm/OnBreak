@@ -31,7 +31,8 @@ namespace ClientesWPF
 
         private void btnListarClientes_Click(object sender, RoutedEventArgs e)
         {
-
+            ListadoClientesAuxiliar listaux = new ListadoClientesAuxiliar();
+            listaux.Show();
         }
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
@@ -66,7 +67,7 @@ namespace ClientesWPF
 
         private void btnRegistrarContrato_Click(object sender, RoutedEventArgs e)
         {
-
+           
         }
 
         private void btnBuscarContrato_Click_1(object sender, RoutedEventArgs e)
@@ -81,6 +82,8 @@ namespace ClientesWPF
 
         private void btnListar_Click(object sender, RoutedEventArgs e)
         {
+            ListadoContratosAuxiliar listco = new ListadoContratosAuxiliar();
+            listco.Show();
 
         }
 
