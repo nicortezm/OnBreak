@@ -28,7 +28,7 @@
         <ComboBox x:Name="cboTIpo" Margin="610,114,628,0" VerticalAlignment="Top" FontSize="18" RenderTransformOrigin="0.471,-0.056" Height="18"/>
         <!--<ComboBox x:Name="cboActividad" HorizontalAlignment="Left" Margin="907,110,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="cboActividad_SelectionChanged" FontSize="22" RenderTransformOrigin="1.225,0.471"/>-->
         <Label x:Name="lblRut" Content="Rut*" HorizontalAlignment="Left" Margin="341,110,0,0" VerticalAlignment="Top" FontSize="18" Width="45"/>
-        <TextBox x:Name="txtRut" HorizontalAlignment="Left" Height="32" Margin="387,111,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="121" FontSize="18" VerticalScrollBarVisibility="Disabled" ScrollViewer.CanContentScroll="True"/>
+        <TextBox Controls:TextBoxHelper.ClearTextButton="True" Controls:TextBoxHelper.Watermark="ej: 12582430" x:Name="txtRut" HorizontalAlignment="Left" Height="32" Margin="387,111,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="142" FontSize="18" VerticalScrollBarVisibility="Disabled" ScrollViewer.CanContentScroll="True"/>
         <Button Style="{DynamicResource SquareButtonStyle}" x:Name="btnBuscar" Content="Buscar" HorizontalAlignment="Left" Margin="627,168,0,0" VerticalAlignment="Top" Width="85" FontSize="18" Click="btnBuscar_Click"/>
         <Image x:Name="imgLogoTransparent" Margin="1168,555,4,-4" Source="Imagenes\logo_transparent_background.png" Stretch="Fill"/>
         <Button Style="{DynamicResource SquareButtonStyle}" x:Name="btnLimpiar" Content="Limpiar Controles" HorizontalAlignment="Left" Margin="448,600,0,0" Width="159" FontSize="18" Height="40" VerticalAlignment="Top" Click="btnLimpiar_Click"/>

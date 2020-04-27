@@ -27,9 +27,17 @@ namespace ClientesWPF
 
             InitializeComponent();
             tblClientes.ItemsSource = Ventana_Principal.listaClientes;
+            CargaCombo();
+            
         }
 
-
+        private void CargaCombo()
+        {
+            cboActividad.ItemsSource = Enum.GetValues(typeof(ActividadEmpresa));
+            cboActividad.SelectedIndex = 0;
+            cboTIpo.ItemsSource = Enum.GetValues(typeof(TipoEmpresa));
+            cboTIpo.SelectedIndex = 0;
+        }
 
 
         private void btnBuscar_Click(object sender, RoutedEventArgs e)
