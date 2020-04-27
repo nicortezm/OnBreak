@@ -11,7 +11,8 @@
         xmlns:controlzex="urn:controlzex" x:Class="ClientesWPF.Ventana_Principal"
         mc:Ignorable="d"
               
-        Title="Ventana_Principal" Height="768" Width="1366">
+        Title="Ventana_Principal" Height="768" Width="1366"
+        WindowStartupLocation ="CenterScreen">
 
     <Grid>
         <Image Source="/Imagenes/logo_transparent_background.png" Margin="376,10,448,437" />

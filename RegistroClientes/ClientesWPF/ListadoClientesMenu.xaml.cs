@@ -95,6 +95,8 @@ namespace ClientesWPF
 
         private void btnVentanaPrincipal_Click(object sender, RoutedEventArgs e)
         {
+            Ventana_Principal vp = new Ventana_Principal();
+            vp.Show();
             this.Close();
         }
     }

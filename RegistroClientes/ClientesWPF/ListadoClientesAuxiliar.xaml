@@ -8,7 +8,8 @@
         xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
         xmlns:behaviours="clr-namespace:MahApps.Metro.Behaviours;assembly=MahApps.Metro"
         xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"              
-        Title="ListadoClientesAuxiliar" Height="768" Width="1366">
+        Title="ListadoClientesAuxiliar" Height="768" Width="1366"
+        WindowStartupLocation ="CenterScreen">
     <Grid>
         <Border x:Name="brCuadroDataGrid" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="342" Margin="75,220,0,0" VerticalAlignment="Top" Width="1230"/>
         <Label x:Name="lblTitulo" Content="Listado de Clientes" HorizontalAlignment="Left" Margin="472,22,0,0" VerticalAlignment="Top" FontSize="36"/>
