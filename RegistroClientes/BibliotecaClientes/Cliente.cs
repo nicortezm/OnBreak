@@ -11,6 +11,7 @@ namespace BibliotecaClientes
         public string RazonSocial { get; set; }
         public string NombreContacto { get; set; }
         public string MailContacto { get; set; }
+        public string Direccion { get; set; }
         public int Telefono { get; set; }
         public TipoEmpresa TipoEmpresa { get; set; }
         public ActividadEmpresa ActividadEmpresa { get; set; }
@@ -27,6 +28,7 @@ namespace BibliotecaClientes
             RazonSocial = string.Empty;
             NombreContacto = string.Empty;
             MailContacto = string.Empty;
+            Direccion = string.Empty;
             Telefono = 0;
             TipoEmpresa = TipoEmpresa.Seleccione;
             ActividadEmpresa = ActividadEmpresa.Seleccione;

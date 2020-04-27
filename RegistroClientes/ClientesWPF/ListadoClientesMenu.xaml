@@ -20,6 +20,7 @@
                 <DataGridTextColumn Header="Razon Social" Binding="{Binding Path=RazonSocial}"/>
                 <DataGridTextColumn Header="Nombre Contacto" Binding="{Binding Path=NombreContacto}"/>
                 <DataGridTextColumn Header="Mail Contacto" Binding="{Binding Path=MailContacto}"/>
+                <DataGridTextColumn Header="Direccion" Binding="{Binding Path=Direccion}"/>
                 <DataGridTextColumn Header="Telefono" Binding="{Binding Path=Telefono}"/>
                 <DataGridTextColumn Header="Tipo Empresa" Binding="{Binding Path=TipoEmpresa}"/>
                 <DataGridTextColumn Header="Actividad Empresa" Binding="{Binding Path=ActividadEmpresa}"/>

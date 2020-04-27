@@ -61,6 +61,7 @@ namespace ClientesWPF
                         RazonSocial = txtRazonSocial.Text,
                         NombreContacto = txtNomContacto.Text,
                         MailContacto = txtMailContact.Text,
+                        Direccion = txtDireccion.Text,
                         Telefono = int.Parse(txtTelefono.Text),
                         TipoEmpresa = (TipoEmpresa)cboTIpo.SelectedValue,
                         ActividadEmpresa = (ActividadEmpresa)cboActividad.SelectedValue
@@ -170,5 +171,28 @@ namespace ClientesWPF
 
         }
 
+        private async void btnBuscarCliente_Click(object sender, RoutedEventArgs e)
+        {
+            Cliente cliente = new Cliente();
+            cliente = Ventana_Principal.listaClientes.BuscarCliente(int.Parse(txtRut.Text));
+            if (cliente!=null)
+            {
+                txtRut.Text = cliente.Rut.ToString();
+                txtRazonSocial.Text = cliente.RazonSocial;
+                txtNomContacto.Text = cliente.NombreContacto;
+                txtMailContact.Text = cliente.MailContacto;
+                txtDireccion.Text = cliente.Direccion;
+                txtTelefono.Text = cliente.Telefono.ToString();
+                cboActividad.SelectedItem = cliente.ActividadEmpresa;
+                cboTIpo.SelectedItem = cliente.TipoEmpresa;
+
+            }
+            else
+            {
+                await this.ShowMessageAsync("Alerta:",
+                        string.Format("El Cliente con Rut: {0}, NO existe!!", txtRut.Text));
+            }
+
+        }
     }
 }

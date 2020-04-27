@@ -20,7 +20,7 @@
             <Image Source="/Imagenes/Save.png" RenderTransformOrigin="0.545,1.935" UseLayoutRounding="False" />
         </Controls:Tile>
         <!--boton Buscar Cliente-->
-        <Controls:Tile x:Name="btnBuscarCliente" Margin="0,159,1097,512" Width="Auto" Height="Auto" TitleFontSize="18" Title="Buscar&#xa;Cliente" HorizontalTitleAlignment="Center" VerticalAlignment="Center" Background="#085394" HorizontalContentAlignment="Stretch" Grid.Column="1">
+        <Controls:Tile x:Name="btnBuscarCliente" Margin="0,159,1097,512" Width="Auto" Height="Auto" TitleFontSize="18" Title="Buscar&#xa;Cliente" HorizontalTitleAlignment="Center" VerticalAlignment="Center" Background="#085394" HorizontalContentAlignment="Stretch" Grid.Column="1" Click="btnBuscarCliente_Click">
             <Image Source="/Imagenes/Buscar.png" />
         </Controls:Tile>
 
