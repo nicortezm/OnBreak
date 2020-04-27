@@ -86,8 +86,38 @@ namespace ClientesWPF
 
         }
 
-        private void btnAztualizClient_Click(object sender, RoutedEventArgs e)
+        private async void btnAztualizClient_Click(object sender, RoutedEventArgs e)
         {
+            if (!string.IsNullOrWhiteSpace(txtRut.Text) && !string.IsNullOrWhiteSpace(txtNomContacto.Text) && !string.IsNullOrWhiteSpace(txtRazonSocial.Text) && !string.IsNullOrWhiteSpace(txtMailContact.Text)
+                && !string.IsNullOrWhiteSpace(txtTelefono.Text) && cboActividad.SelectedIndex != 0 && cboTIpo.SelectedIndex != 0)
+            {
+                Cliente cliente = new Cliente
+                {
+                    Rut = int.Parse(txtRut.Text),
+                    RazonSocial = txtRazonSocial.Text,
+                    NombreContacto = txtNomContacto.Text,
+                    MailContacto = txtMailContact.Text,
+                    Direccion = txtDireccion.Text,
+                    Telefono = int.Parse(txtTelefono.Text),
+                    TipoEmpresa = (TipoEmpresa)cboTIpo.SelectedValue,
+                    ActividadEmpresa = (ActividadEmpresa)cboActividad.SelectedValue
+                };
+
+                if (Ventana_Principal.listaClientes.ModificarCliente(cliente))
+                {
+                    await this.ShowMessageAsync("Confirmacion:",
+                        string.Format("El Cliente con Rut: {0}, fue modificado con exito!!", txtRut.Text));
+                }
+                else
+                {
+                    await this.ShowMessageAsync("Alerta:",
+                        string.Format("El Cliente con Rut: {0}, No existe!!", txtRut.Text));
+                }
+            }
+            else
+            {
+                await this.ShowMessageAsync("Alerta:", "Debe Completar todos los datos");
+            }
 
         }
 
@@ -95,7 +125,7 @@ namespace ClientesWPF
         {
             if (!string.IsNullOrWhiteSpace(txtRut.Text))
             {
-                if (Ventana_Principal.listaClientes.EliminarCliente(int.Parse(txtRut.Text), Ventana_Principal.listaClientes))
+                if (Ventana_Principal.listaClientes.EliminarCliente(int.Parse(txtRut.Text)))
                 {
                     await this.ShowMessageAsync("Confirmacion:",
                         string.Format("El Cliente con Rut: {0}, fue eliminado con exito!!", txtRut.Text));

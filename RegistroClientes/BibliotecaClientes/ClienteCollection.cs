@@ -44,14 +44,18 @@ namespace BibliotecaClientes
             }
 
         }
-        public bool EliminarCliente(int rut, List<Cliente> lista)
+        public bool EliminarCliente(int rut)
         {
             try
             {
                 Cliente cliente = new Cliente();
                 cliente = BuscarCliente(rut);
 
-                foreach(Cliente cli in lista)
+                var itemToRemove = this.Single(r => r.Rut == rut);
+                this.Remove(itemToRemove);
+
+                /*
+                foreach (Cliente cli in lista)
                 {
                     if (cli.Rut == rut)
                     {
@@ -59,6 +63,34 @@ namespace BibliotecaClientes
                         return true;
                     }
                 }
+                */
+                return true;
+            }
+            catch (Exception)
+            {
+
+                return false;
+            }
+
+
+        }
+        public bool ModificarCliente(Cliente cliente)
+        {
+            try
+            {
+
+                int loop = 0;
+                
+                foreach (Cliente cli in this)
+                {
+                    if (cli.Rut == cliente.Rut)
+                    {
+                        this[loop] = cliente;
+                        return true;
+                    }
+                    loop++;
+                }
+                
                 return false;
             }
             catch (Exception)
