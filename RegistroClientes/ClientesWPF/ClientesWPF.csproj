@@ -180,5 +180,8 @@
     <Resource Include="Imagenes\Buscar-Dark.png" />
     <Resource Include="Imagenes\Lista-Dark.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\Previous.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
