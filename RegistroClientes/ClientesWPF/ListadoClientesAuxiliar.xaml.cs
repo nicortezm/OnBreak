@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BibliotecaClientes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,15 @@ namespace ClientesWPF
         public ListadoClientesAuxiliar()
         {
             InitializeComponent();
+            tblClientes.ItemsSource = Ventana_Principal.listaClientes;
+            CargaCombo();
+        }
+        private void CargaCombo()
+        {
+            cboActividad.ItemsSource = Enum.GetValues(typeof(ActividadEmpresa));
+            cboActividad.SelectedIndex = 0;
+            cboTIpo.ItemsSource = Enum.GetValues(typeof(TipoEmpresa));
+            cboTIpo.SelectedIndex = 0;
         }
 
         private void txtRut_TextChanged(object sender, TextChangedEventArgs e)
@@ -37,7 +47,7 @@ namespace ClientesWPF
 
         private void tblClientes_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
+            
         }
 
         private void switchCambioBack_Checked(object sender, RoutedEventArgs e)
@@ -76,7 +86,11 @@ namespace ClientesWPF
 
         private void btnSelectCliente_Click(object sender, RoutedEventArgs e)
         {
-       
+
+            
+            AdminClientes admi = new AdminClientes();
+            this.Close();
+            admi.Show();
         }
 
         private void btnVentanaPrincipal_Click(object sender, RoutedEventArgs e)
@@ -111,6 +125,7 @@ namespace ClientesWPF
                 vp.Show();
             }
         }
+
     }
 
 }
