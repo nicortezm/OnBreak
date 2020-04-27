@@ -44,12 +44,13 @@ namespace ClientesWPF
         {
             //agregar if pa confirmar q todos los campos esten completos
 
-            if (!string.IsNullOrWhiteSpace(txtRut.Text))
+            if (!string.IsNullOrWhiteSpace(txtRut.Text) && !string.IsNullOrWhiteSpace(txtNomContacto.Text) && !string.IsNullOrWhiteSpace(txtRazonSocial.Text) && !string.IsNullOrWhiteSpace(txtMailContact.Text)
+                && !string.IsNullOrWhiteSpace(txtTelefono.Text) && cboActividad.SelectedIndex!=0 && cboTIpo.SelectedIndex!=0 )
             {
                 //if para la alerta si es que el cliente esta registrado
                 if (Ventana_Principal.listaClientes.Existe(int.Parse(txtRut.Text)))
                 {
-                    await this.ShowMessageAsync("Mensaje:",
+                    await this.ShowMessageAsync("Alerta:",
                         string.Format("El Cliente con Rut: {0}, ya existe!!", txtRut.Text));
                 }
                 else
@@ -65,10 +66,14 @@ namespace ClientesWPF
                         ActividadEmpresa = (ActividadEmpresa)cboActividad.SelectedValue
                     };
                     Ventana_Principal.listaClientes.Add(cliente);
-                    await this.ShowMessageAsync("Mensaje:",
+                    await this.ShowMessageAsync("Confirmacion:",
                         string.Format("El Cliente con Rut: {0}, fue agregado con exito!!", txtRut.Text));
 
                 }
+            }
+            else
+            {
+                await this.ShowMessageAsync("Alerta:", "Debe Completar todos los datos");
             }
 
 
@@ -158,6 +163,7 @@ namespace ClientesWPF
             txtRazonSocial.Text = string.Empty;
             txtNomContacto.Text = string.Empty;
             txtMailContact.Text = string.Empty;
+            txtDireccion.Text = string.Empty;
             txtTelefono.Text = string.Empty;
             cboActividad.SelectedIndex = 0;
             cboTIpo.SelectedIndex = 0;

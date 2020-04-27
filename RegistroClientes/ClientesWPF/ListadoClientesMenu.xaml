@@ -26,14 +26,14 @@
             </DataGrid.Columns>
         </DataGrid>
         <Label x:Name="lblTIpo" Content="Tipo*" HorizontalAlignment="Left" Margin="556,110,0,0" VerticalAlignment="Top" FontSize="18" RenderTransformOrigin="-5.691,0.181" Height="34" Width="52"/>
-        <ComboBox x:Name="cboTIpo" Margin="610,114,628,0" VerticalAlignment="Top" FontSize="18" RenderTransformOrigin="0.471,-0.056" Height="18"/>
+        <ComboBox x:Name="cboTIpo" Margin="610,114,598,0" VerticalAlignment="Top" FontSize="18" RenderTransformOrigin="0.471,-0.056" Height="30"/>
         <!--<ComboBox x:Name="cboActividad" HorizontalAlignment="Left" Margin="907,110,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="cboActividad_SelectionChanged" FontSize="22" RenderTransformOrigin="1.225,0.471"/>-->
         <Label x:Name="lblRut" Content="Rut*" HorizontalAlignment="Left" Margin="341,110,0,0" VerticalAlignment="Top" FontSize="18" Width="45"/>
         <TextBox Controls:TextBoxHelper.ClearTextButton="True" Controls:TextBoxHelper.Watermark="ej: 12582430" x:Name="txtRut" HorizontalAlignment="Left" Height="32" Margin="387,111,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="142" FontSize="18" VerticalScrollBarVisibility="Disabled" ScrollViewer.CanContentScroll="True"/>
         <Button Style="{DynamicResource SquareButtonStyle}" x:Name="btnBuscar" Content="Buscar" HorizontalAlignment="Left" Margin="627,168,0,0" VerticalAlignment="Top" Width="85" FontSize="18" Click="btnBuscar_Click"/>
         <Image x:Name="imgLogoTransparent" Margin="1168,555,4,-4" Source="Imagenes\logo_transparent_background.png" Stretch="Fill"/>
         <Button Style="{DynamicResource SquareButtonStyle}" x:Name="btnLimpiar" Content="Limpiar Controles" HorizontalAlignment="Left" Margin="448,600,0,0" Width="159" FontSize="18" Height="40" VerticalAlignment="Top" Click="btnLimpiar_Click"/>
-        <ComboBox x:Name="cboActividad" HorizontalAlignment="Left" Margin="880,114,0,0" VerticalAlignment="Top" Width="120" FontSize="18"  Height="21"/>
+        <ComboBox x:Name="cboActividad" HorizontalAlignment="Left" Margin="880,114,0,0" VerticalAlignment="Top" Width="150" FontSize="18"  Height="29"/>
         <Label x:Name="lblActividad" Content="Actividad*" HorizontalAlignment="Left" Margin="788,110,0,0" VerticalAlignment="Top" FontSize="18" Height="38" Width="92"/>
         <Controls:ToggleSwitch x:Name="switchCambioBack" Checked="switchCambioBack_Checked" IsCheckedChanged="switchCambioBack_IsCheckedChanged" OnLabel="" OffLabel="" Margin="1233,0,0,625" FontSize="24" Content="" VerticalContentAlignment="Stretch" Header="&#xA;Dark Mode" Width="93" VerticalAlignment="Bottom" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Height="96" ContentDirection="RightToLeft" OnSwitchBrush="#FF085394"/>
         <Controls:Tile x:Name="btnVentanaPrincipal" Margin="198,588,950,83" Width="Auto" Height="Auto" Background="#085394" HorizontalTitleAlignment="Center" VerticalAlignment="Center" TitleFontSize="18" Title="Menu&#xA;Principal"  HorizontalContentAlignment="Left" Click="btnVentanaPrincipal_Click">
