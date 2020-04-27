@@ -17,16 +17,20 @@ using MahApps.Metro.Controls;
 namespace ClientesWPF
 {
     /// <summary>
-    /// Lógica de interacción para ListadoClientesAuxiliar.xaml
+    /// Lógica de interacción para ListadoClientes.xaml
     /// </summary>
-    public partial class ListadoClientesAuxiliar : MetroWindow
+    public partial class ListadoClientes : MetroWindow
     {
-        public ListadoClientesAuxiliar()
+
+        public ListadoClientes()
         {
+
             InitializeComponent();
             tblClientes.ItemsSource = Ventana_Principal.listaClientes;
             CargaCombo();
+            btnSelectCliente.Visibility = Visibility.Hidden;
         }
+
         private void CargaCombo()
         {
             cboActividad.ItemsSource = Enum.GetValues(typeof(ActividadEmpresa));
@@ -35,20 +39,17 @@ namespace ClientesWPF
             cboTIpo.SelectedIndex = 0;
         }
 
+
+        private void btnBuscar_Click(object sender, RoutedEventArgs e)
+        {
+        }
+
         private void txtRut_TextChanged(object sender, TextChangedEventArgs e)
         {
 
         }
 
-        private void cboActividad_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
 
-        }
-
-        private void tblClientes_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            
-        }
 
         private void switchCambioBack_Checked(object sender, RoutedEventArgs e)
         {
@@ -58,18 +59,18 @@ namespace ClientesWPF
             switchCambioBack.ThumbIndicatorBrush = Brushes.White;
             this.btnLimpiar.BorderBrush = (Brush)bc.ConvertFrom("#2b78e4");
             this.btnBuscar.BorderBrush = (Brush)bc.ConvertFrom("#2b78e4");
-        
             this.brCuadroDataGrid.BorderBrush = Brushes.White;
             this.brCuadroDataGrid.Background = (Brush)bc.ConvertFrom("#2b78e4");
             this.lblRut.Foreground = (Brush)bc.ConvertFrom("#2b78e4");
             lblTIpo.Foreground = (Brush)bc.ConvertFrom("#2b78e4");
             lblActividad.Foreground = (Brush)bc.ConvertFrom("#2b78e4");
             lblTitulo.Foreground = (Brush)bc.ConvertFrom("#2b78e4");
+
         }
 
         private void switchCambioBack_IsCheckedChanged(object sender, EventArgs e)
         {
-            var bc =new  BrushConverter();
+            var bc = new BrushConverter();
             this.Background = Brushes.White;
             switchCambioBack.Foreground = Brushes.Black;
             switchCambioBack.ThumbIndicatorBrush = Brushes.Black;
@@ -80,22 +81,6 @@ namespace ClientesWPF
             lblTIpo.Foreground = Brushes.Black;
             lblActividad.Foreground = Brushes.Black;
             lblTitulo.Foreground = Brushes.Black;
-
-
-        }
-
-        private void btnSelectCliente_Click(object sender, RoutedEventArgs e)
-        {
-
-            
-            AdminClientes admi = new AdminClientes();
-            this.Close();
-            admi.Show();
-        }
-
-        private void btnVentanaPrincipal_Click(object sender, RoutedEventArgs e)
-        {
-
         }
 
         private void btnLimpiar_Click(object sender, RoutedEventArgs e)
@@ -103,29 +88,16 @@ namespace ClientesWPF
 
         }
 
-        private void btnVentanaPrincipal_Click_1(object sender, RoutedEventArgs e)
+        private void cboActividad_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
         {
-            Ventana_Principal vp = new Ventana_Principal();
-            AdminClientes adcli = new AdminClientes();
-            AdminContratos adcont = new AdminContratos();
-            if (adcli != null)
-            {
 
-                this.Close();
-                adcli.Close();
-                vp.Show();
-
-            }
-            else if (adcont != null)
-            {
-
-
-                this.Close();
-                adcont.Close();
-                vp.Show();
-            }
         }
 
+        private void btnVentanaPrincipal_Click(object sender, RoutedEventArgs e)
+        {
+            Ventana_Principal vp = new Ventana_Principal();
+            vp.Show();
+            this.Close();
+        }
     }
-
 }

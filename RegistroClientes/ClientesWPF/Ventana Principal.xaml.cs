@@ -32,7 +32,7 @@ namespace ClientesWPF
 
         private void btnListarCLiente_Click(object sender, RoutedEventArgs e)
         {
-            ListadoClientesMenu listm = new ListadoClientesMenu();
+            ListadoClientes listm = new ListadoClientes();
             listm.Show();
             this.Close();
 
@@ -68,7 +68,7 @@ namespace ClientesWPF
         private void switchCambioBack_Checked(object sender, RoutedEventArgs e)
         {
            
-            ListadoClientesMenu listm = new ListadoClientesMenu();
+            ListadoClientes listm = new ListadoClientes();
             listm.switchCambioBack.IsChecked = true;
             this.Background = Brushes.Black;
             switchCambioBack.Foreground = Brushes.White;

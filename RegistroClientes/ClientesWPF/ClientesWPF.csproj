@@ -70,11 +70,8 @@
     <Compile Include="AdminContratos.xaml.cs">
       <DependentUpon>AdminContratos.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ListadoClientesAuxiliar.xaml.cs">
-      <DependentUpon>ListadoClientesAuxiliar.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="ListadoClientesMenu.xaml.cs">
-      <DependentUpon>ListadoClientesMenu.xaml</DependentUpon>
+    <Compile Include="ListadoClientes.xaml.cs">
+      <DependentUpon>ListadoClientes.xaml</DependentUpon>
     </Compile>
     <Compile Include="ListadoContratosAuxiliar.xaml.cs">
       <DependentUpon>ListadoContratosAuxiliar.xaml</DependentUpon>
@@ -93,11 +90,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ListadoClientesAuxiliar.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="ListadoClientesMenu.xaml">
+    <Page Include="ListadoClientes.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

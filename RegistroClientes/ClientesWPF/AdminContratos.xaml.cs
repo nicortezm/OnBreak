@@ -31,7 +31,7 @@ namespace ClientesWPF
 
         private void btnListarClientes_Click(object sender, RoutedEventArgs e)
         {
-            ListadoClientesAuxiliar listaux = new ListadoClientesAuxiliar();
+            ListadoClientes listaux = new ListadoClientes();
             this.Close();
             listaux.Show();
         }
