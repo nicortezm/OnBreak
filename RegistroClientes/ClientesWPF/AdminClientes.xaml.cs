@@ -164,8 +164,8 @@ namespace ClientesWPF
 
         private void btnListar_Click(object sender, RoutedEventArgs e)
         {
-            ListadoClientes listar = new ListadoClientes();
-            this.Close();
+            ListadoClientes listar = new ListadoClientes(1);
+            
             listar.Show();
         }
 

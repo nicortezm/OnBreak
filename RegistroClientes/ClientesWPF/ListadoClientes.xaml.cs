@@ -29,8 +29,18 @@ namespace ClientesWPF
             tblClientes.ItemsSource = Ventana_Principal.listaClientes;
             CargaCombo();
             btnSelectCliente.Visibility = Visibility.Hidden;
+            //btnSelectCliente.TextInput.Title = "...button clicked...";
         }
+        public ListadoClientes(int number)
 
+        {
+            InitializeComponent();
+            tblClientes.ItemsSource = Ventana_Principal.listaClientes;
+            CargaCombo();
+            btnSelectCliente.Visibility = Visibility.Visible;
+            btnVentanaPrincipal.Visibility = Visibility.Hidden;
+
+        }
         private void CargaCombo()
         {
             cboActividad.ItemsSource = Enum.GetValues(typeof(ActividadEmpresa));
