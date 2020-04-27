@@ -91,9 +91,26 @@ namespace ClientesWPF
 
         }
 
-        private void btnEliminarCliente_Click(object sender, RoutedEventArgs e)
+        private async void btnEliminarCliente_Click(object sender, RoutedEventArgs e)
         {
-
+            if (!string.IsNullOrWhiteSpace(txtRut.Text))
+            {
+                if (Ventana_Principal.listaClientes.EliminarCliente(int.Parse(txtRut.Text), Ventana_Principal.listaClientes))
+                {
+                    await this.ShowMessageAsync("Confirmacion:",
+                        string.Format("El Cliente con Rut: {0}, fue eliminado con exito!!", txtRut.Text));
+                }
+                else
+                {
+                    await this.ShowMessageAsync("Alerta:",
+                        string.Format("El Cliente con Rut: {0}, no existe o no se pudo eliminar!!", txtRut.Text));
+                }
+                
+            }
+            else
+            {
+                await this.ShowMessageAsync("Alerta:", "Debe ingresar rut valido para eliminar");
+            }
         }
 
         private void btnListar_Click(object sender, RoutedEventArgs e)
@@ -173,25 +190,34 @@ namespace ClientesWPF
 
         private async void btnBuscarCliente_Click(object sender, RoutedEventArgs e)
         {
-            Cliente cliente = new Cliente();
-            cliente = Ventana_Principal.listaClientes.BuscarCliente(int.Parse(txtRut.Text));
-            if (cliente!=null)
+            if (!string.IsNullOrWhiteSpace(txtRut.Text))
             {
-                txtRut.Text = cliente.Rut.ToString();
-                txtRazonSocial.Text = cliente.RazonSocial;
-                txtNomContacto.Text = cliente.NombreContacto;
-                txtMailContact.Text = cliente.MailContacto;
-                txtDireccion.Text = cliente.Direccion;
-                txtTelefono.Text = cliente.Telefono.ToString();
-                cboActividad.SelectedItem = cliente.ActividadEmpresa;
-                cboTIpo.SelectedItem = cliente.TipoEmpresa;
+                Cliente cliente = new Cliente();
+                cliente = Ventana_Principal.listaClientes.BuscarCliente(int.Parse(txtRut.Text));
+                if (cliente != null)
+                {
+                    txtRut.Text = cliente.Rut.ToString();
+                    txtRazonSocial.Text = cliente.RazonSocial;
+                    txtNomContacto.Text = cliente.NombreContacto;
+                    txtMailContact.Text = cliente.MailContacto;
+                    txtDireccion.Text = cliente.Direccion;
+                    txtTelefono.Text = cliente.Telefono.ToString();
+                    cboActividad.SelectedItem = cliente.ActividadEmpresa;
+                    cboTIpo.SelectedItem = cliente.TipoEmpresa;
 
+                }
+                else
+                {
+                    await this.ShowMessageAsync("Alerta:",
+                            string.Format("El Cliente con Rut: {0}, NO existe!!", txtRut.Text));
+                }
             }
             else
             {
-                await this.ShowMessageAsync("Alerta:",
-                        string.Format("El Cliente con Rut: {0}, NO existe!!", txtRut.Text));
+                await this.ShowMessageAsync("Alerta:", "Debe ingresar rut para poder buscar");
             }
+            
+
 
         }
     }

@@ -44,6 +44,31 @@ namespace BibliotecaClientes
             }
 
         }
+        public bool EliminarCliente(int rut, List<Cliente> lista)
+        {
+            try
+            {
+                Cliente cliente = new Cliente();
+                cliente = BuscarCliente(rut);
+
+                foreach(Cliente cli in lista)
+                {
+                    if (cli.Rut == rut)
+                    {
+                        lista.Remove(cli);
+                        return true;
+                    }
+                }
+                return false;
+            }
+            catch (Exception)
+            {
+
+                return false;
+            }
+
+
+        }
         public bool TieneContrato(int rut) //terminar
         {
             try
