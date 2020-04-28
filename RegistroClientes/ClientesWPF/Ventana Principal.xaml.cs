@@ -21,7 +21,7 @@ namespace ClientesWPF
         public static TipoEventoCollection listaTipoEvento = new TipoEventoCollection();
         public Ventana_Principal()
         {
-            //ThemeManager.AddAppTheme("CustomLight", new Uri("pack://application:,,,/CustomLight.xaml"));
+           
            
 
             InitializeComponent();
