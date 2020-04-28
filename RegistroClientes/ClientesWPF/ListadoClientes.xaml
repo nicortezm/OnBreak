@@ -9,21 +9,21 @@
 
         xmlns:local="clr-namespace:ClientesWPF"
         mc:Ignorable="d"
-        Title="ListadoClientesMenu" Height="768" Width="1366"
+        Title="ListadoClientes" Height="768" Width="1366"
         WindowStartupLocation ="CenterScreen">
     <Grid>
         <Border x:Name="brCuadroDataGrid" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="342" Margin="75,220,0,0" VerticalAlignment="Top" Width="1230"/>
         <Label x:Name="lblTitulo" Content="Listado de Clientes" HorizontalAlignment="Left" Margin="472,22,0,0" VerticalAlignment="Top" FontSize="36"/>
-        <DataGrid x:Name="tblClientes" HorizontalAlignment="Left" Height="274" Margin="135,237,0,0" VerticalAlignment="Top" Width="1120" AutoGenerateColumns="False" CanUserReorderColumns="False" CanUserResizeColumns="False" IsReadOnly="True" MinColumnWidth="160" MaxColumnWidth="160" CanUserSortColumns="False" >
+        <DataGrid x:Name="dgClientes" HorizontalAlignment="Left" Height="274" Margin="135,237,0,0" VerticalAlignment="Top" Width="1120" AutoGenerateColumns="False"  IsReadOnly="True" SelectionChanged="dgClientes_SelectionChanged">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Rut" Binding="{Binding Path=Rut}"/>
-                <DataGridTextColumn Header="Razon Social" Binding="{Binding Path=RazonSocial}"/>
-                <DataGridTextColumn Header="Nombre Contacto" Binding="{Binding Path=NombreContacto}"/>
-                <DataGridTextColumn Header="Mail Contacto" Binding="{Binding Path=MailContacto}"/>
-                <DataGridTextColumn Header="Direccion" Binding="{Binding Path=Direccion}"/>
-                <DataGridTextColumn Header="Telefono" Binding="{Binding Path=Telefono}"/>
-                <DataGridTextColumn Header="Tipo Empresa" Binding="{Binding Path=TipoEmpresa}"/>
-                <DataGridTextColumn Header="Actividad Empresa" Binding="{Binding Path=ActividadEmpresa}"/>
+                <DataGridTextColumn Header="Rut" Width="80" Binding="{Binding Path=Rut}"/>
+                <DataGridTextColumn Header="Razon Social" Width="140" Binding="{Binding Path=RazonSocial}"/>
+                <DataGridTextColumn Header="Nombre Contacto" Width="140" Binding="{Binding Path=NombreContacto}"/>
+                <DataGridTextColumn Header="Mail Contacto" Width="160"  Binding="{Binding Path=MailContacto}"/>
+                <DataGridTextColumn Header="Direccion" Width="200" Binding="{Binding Path=Direccion}"/>
+                <DataGridTextColumn Header="Telefono" Width="80" Binding="{Binding Path=Telefono}"/>
+                <DataGridTextColumn Header="Tipo Empresa" Width="160" Binding="{Binding Path=TipoEmpresa}"/>
+                <DataGridTextColumn Header="Actividad Empresa" Width="160" Binding="{Binding Path=ActividadEmpresa}"/>
             </DataGrid.Columns>
         </DataGrid>
         <Label x:Name="lblTIpo" Content="Tipo*" HorizontalAlignment="Left" Margin="556,110,0,0" VerticalAlignment="Top" FontSize="18" RenderTransformOrigin="-5.691,0.181" Height="34" Width="52"/>
@@ -31,17 +31,23 @@
         <!--<ComboBox x:Name="cboActividad" HorizontalAlignment="Left" Margin="907,110,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="cboActividad_SelectionChanged" FontSize="22" RenderTransformOrigin="1.225,0.471"/>-->
         <Label x:Name="lblRut" Content="Rut*" HorizontalAlignment="Left" Margin="341,110,0,0" VerticalAlignment="Top" FontSize="18" Width="45"/>
         <TextBox Controls:TextBoxHelper.ClearTextButton="True" Controls:TextBoxHelper.Watermark="ej: 12582430" x:Name="txtRut" HorizontalAlignment="Left" Height="32" Margin="387,111,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="142" FontSize="18" VerticalScrollBarVisibility="Disabled" ScrollViewer.CanContentScroll="True"/>
+        
         <Button Style="{DynamicResource SquareButtonStyle}" x:Name="btnBuscar" Content="Buscar" HorizontalAlignment="Left" Margin="627,168,0,0" VerticalAlignment="Top" Width="85" FontSize="18" Click="btnBuscar_Click"/>
         <Image x:Name="imgLogoTransparent" Margin="1168,555,4,-4" Source="Imagenes\logo_transparent_background.png" Stretch="Fill"/>
         <Button Style="{DynamicResource SquareButtonStyle}" x:Name="btnLimpiar" Content="Limpiar Controles" HorizontalAlignment="Left" Margin="448,600,0,0" Width="159" FontSize="18" Height="40" VerticalAlignment="Top" Click="btnLimpiar_Click"/>
         <ComboBox x:Name="cboActividad" HorizontalAlignment="Left" Margin="880,114,0,0" VerticalAlignment="Top" Width="150" FontSize="18"  Height="29"/>
-        <Button Style="{DynamicResource SquareButtonStyle}" x:Name="btnSelectCliente" Content="Seleccionar Cliente" HorizontalAlignment="Left" Margin="928,521,0,0" VerticalAlignment="Top" Width="178" FontSize="18"  />
+        <Button Style="{DynamicResource SquareButtonStyle}" x:Name="btnSelectCliente" Content="Seleccionar Cliente" HorizontalAlignment="Left" Margin="928,521,0,0" VerticalAlignment="Top" Width="178" FontSize="18" Click="btnSelectCliente_Click"  />
         <Label x:Name="lblActividad" Content="Actividad*" HorizontalAlignment="Left" Margin="788,110,0,0" VerticalAlignment="Top" FontSize="18" Height="38" Width="92"/>
         <Controls:ToggleSwitch x:Name="switchCambioBack" Checked="switchCambioBack_Checked" IsCheckedChanged="switchCambioBack_IsCheckedChanged" OnLabel="" OffLabel="" Margin="1233,0,0,625" FontSize="24" Content="" VerticalContentAlignment="Stretch" Header="&#xA;Dark Mode" Width="93" VerticalAlignment="Bottom" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Height="96" ContentDirection="RightToLeft" OnSwitchBrush="#FF085394"/>
         <Controls:Tile x:Name="btnVentanaPrincipal" Margin="198,588,950,83" Width="Auto" Height="Auto" Background="#085394" HorizontalTitleAlignment="Center" VerticalAlignment="Center" TitleFontSize="18" Title="Menu&#xA;Principal"  HorizontalContentAlignment="Left" Click="btnVentanaPrincipal_Click">
             <Image Source="Imagenes/MenuPrincipal.png" />
 
         </Controls:Tile>
+        <Controls:Tile x:Name="btnAtras" Margin="198,588,950,83" Width="Auto" Height="Auto" Background="#085394" HorizontalTitleAlignment="Center" VerticalAlignment="Center" TitleFontSize="18" Title="Volver&#xA;Atras"  HorizontalContentAlignment="Left" Click="btnAtras_Click">
+            <Image Source="Imagenes/Previous.png" />
+
+        </Controls:Tile>
+        <TextBox x:Name="txtAux" HorizontalAlignment="Left" Height="23" Margin="101,80,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Visibility="Hidden"/>
 
     </Grid>
 </Controls:MetroWindow>

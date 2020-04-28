@@ -30,6 +30,7 @@ namespace ClientesWPF
             InitializeComponent();
             CargaCombo();
         }
+        
         public AdminClientes(int rut)
         {
             InitializeComponent();
@@ -165,8 +166,12 @@ namespace ClientesWPF
         private void btnListar_Click(object sender, RoutedEventArgs e)
         {
             ListadoClientes listar = new ListadoClientes(1);
-            
             listar.Show();
+            this.Close();
+
+
+
+
         }
 
         private void btnVentanaPrincipal_Click(object sender, RoutedEventArgs e)

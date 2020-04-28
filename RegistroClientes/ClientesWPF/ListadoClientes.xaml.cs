@@ -13,6 +13,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using MahApps.Metro.Controls;
+using MahApps.Metro.Controls.Dialogs;
+using System.Data;
 
 namespace ClientesWPF
 {
@@ -26,19 +28,20 @@ namespace ClientesWPF
         {
 
             InitializeComponent();
-            tblClientes.ItemsSource = Ventana_Principal.listaClientes;
+            dgClientes.ItemsSource = Ventana_Principal.listaClientes;
             CargaCombo();
-            btnSelectCliente.Visibility = Visibility.Hidden;
-            //btnSelectCliente.TextInput.Title = "...button clicked...";
+            btnSelectCliente.Visibility = Visibility.Collapsed;
+            btnAtras.Visibility = Visibility.Collapsed;
         }
         public ListadoClientes(int number)
 
         {
             InitializeComponent();
-            tblClientes.ItemsSource = Ventana_Principal.listaClientes;
+            dgClientes.ItemsSource = Ventana_Principal.listaClientes;
             CargaCombo();
             btnSelectCliente.Visibility = Visibility.Visible;
-            btnVentanaPrincipal.Visibility = Visibility.Hidden;
+            btnVentanaPrincipal.Visibility = Visibility.Collapsed;
+            btnAtras.Visibility = Visibility.Visible;
 
         }
         private void CargaCombo()
@@ -108,6 +111,35 @@ namespace ClientesWPF
             Ventana_Principal vp = new Ventana_Principal();
             vp.Show();
             this.Close();
+        }
+
+        private void btnAtras_Click(object sender, RoutedEventArgs e)
+        {
+            AdminClientes admi = new AdminClientes();
+            admi.Show();
+            this.Close();
+            
+        }
+
+        private void dgClientes_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            DataGrid gd = (DataGrid)sender;
+            dynamic rowSelected = gd.SelectedItem;
+            txtAux.Text = rowSelected.Rut + string.Empty;
+        }
+
+        private async void btnSelectCliente_Click(object sender, RoutedEventArgs e)
+        {
+            if (!string.IsNullOrWhiteSpace(txtAux.Text))
+            {
+                AdminClientes admi = new AdminClientes(int.Parse(txtAux.Text));
+                admi.Show();
+                this.Close();
+            }
+            else
+            {
+                await this.ShowMessageAsync("Alerta:", "Debe Seleccion un Cliente");
+            }
         }
     }
 }
