@@ -30,26 +30,26 @@ namespace ClientesWPF
             InitializeComponent();
             CargaCombo();
         }
-        
-        public AdminClientes(int rut)
-        {
-            InitializeComponent();
-            CargaCombo();
-            Cliente cliente = new Cliente();
-            cliente = Ventana_Principal.listaClientes.BuscarCliente(rut);
-            if (cliente != null)
-            {
-                txtRut.Text = cliente.Rut.ToString();
-                txtRazonSocial.Text = cliente.RazonSocial;
-                txtNomContacto.Text = cliente.NombreContacto;
-                txtMailContact.Text = cliente.MailContacto;
-                txtDireccion.Text = cliente.Direccion;
-                txtTelefono.Text = cliente.Telefono.ToString();
-                cboActividad.SelectedItem = cliente.ActividadEmpresa;
-                cboTIpo.SelectedItem = cliente.TipoEmpresa;
-            }
 
-        }
+        //public AdminClientes(int rut)
+        //{
+        //    InitializeComponent();
+        //    CargaCombo();
+        //    Cliente cliente = new Cliente();
+        //    cliente = Ventana_Principal.listaClientes.BuscarCliente(rut);
+        //    if (cliente != null)
+        //    {
+        //        txtRut.Text = cliente.Rut.ToString();
+        //        txtRazonSocial.Text = cliente.RazonSocial;
+        //        txtNomContacto.Text = cliente.NombreContacto;
+        //        txtMailContact.Text = cliente.MailContacto;
+        //        txtDireccion.Text = cliente.Direccion;
+        //        txtTelefono.Text = cliente.Telefono.ToString();
+        //        cboActividad.SelectedItem = cliente.ActividadEmpresa;
+        //        cboTIpo.SelectedItem = cliente.TipoEmpresa;
+        //    }
+
+        //}
 
         private void CargaCombo()
         {
@@ -166,12 +166,30 @@ namespace ClientesWPF
         private void btnListar_Click(object sender, RoutedEventArgs e)
         {
             ListadoClientes listar = new ListadoClientes(1);
+            listar.pasado += new ListadoClientes.pasar(ejecutar);
             listar.Show();
-            this.Close();
+        }
+        public void ejecutar(Cliente cliente)
+        {
+            txtRut.Text = cliente.Rut.ToString();
+            txtRazonSocial.Text = cliente.RazonSocial;
+            txtNomContacto.Text = cliente.NombreContacto;
+            txtMailContact.Text = cliente.MailContacto;
+            txtDireccion.Text = cliente.Direccion;
+            txtTelefono.Text = cliente.Telefono.ToString();
+            cboActividad.SelectedItem = cliente.ActividadEmpresa;
+            cboTIpo.SelectedItem = cliente.TipoEmpresa;
+        }
 
+        private void Listar_pasado(int dato)
+        {
+            throw new NotImplementedException();
+        }
 
-
-
+        //metodo para la recepcion de parametros
+        private void recepcionParametros(string param)
+        {
+            txtRut.Text = param;
         }
 
         private void btnVentanaPrincipal_Click(object sender, RoutedEventArgs e)
@@ -270,8 +288,6 @@ namespace ClientesWPF
             {
                 await this.ShowMessageAsync("Alerta:", "Debe ingresar rut para poder buscar");
             }
-            
-
 
         }
     }

@@ -23,7 +23,9 @@ namespace ClientesWPF
     /// </summary>
     public partial class ListadoClientes : MetroWindow
     {
-
+        //creo delegado pa enviar datos
+        public delegate void pasar(Cliente dato);
+        public event pasar pasado;
         public ListadoClientes()
         {
 
@@ -115,8 +117,6 @@ namespace ClientesWPF
 
         private void btnAtras_Click(object sender, RoutedEventArgs e)
         {
-            AdminClientes admi = new AdminClientes();
-            admi.Show();
             this.Close();
             
         }
@@ -128,18 +128,22 @@ namespace ClientesWPF
             txtAux.Text = rowSelected.Rut + string.Empty;
         }
 
-        private async void btnSelectCliente_Click(object sender, RoutedEventArgs e)
+        private  void btnSelectCliente_Click(object sender, RoutedEventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(txtAux.Text))
-            {
-                AdminClientes admi = new AdminClientes(int.Parse(txtAux.Text));
-                admi.Show();
-                this.Close();
-            }
-            else
-            {
-                await this.ShowMessageAsync("Alerta:", "Debe Seleccion un Cliente");
-            }
+            //if (!string.IsNullOrWhiteSpace(txtAux.Text))
+            //{
+            //    AdminClientes admi = new AdminClientes(int.Parse(txtAux.Text));
+            //    admi.Show();
+            //    this.Close();
+            //}
+            //else
+            //{
+            //    await this.ShowMessageAsync("Alerta:", "Debe Seleccion un Cliente");
+            //}
+
+            pasado(Ventana_Principal.listaClientes.BuscarCliente(int.Parse(txtAux.Text)));
+            this.Close();
         }
+        
     }
 }
