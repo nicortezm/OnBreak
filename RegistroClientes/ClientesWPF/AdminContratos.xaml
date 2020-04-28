@@ -78,8 +78,11 @@
         <Label x:Name="lblRut" Content="Rut*" HorizontalAlignment="Left" Margin="457,465,0,0" VerticalAlignment="Top" FontSize="18"/>
         <TextBox x:Name="txtRut" Controls:TextBoxHelper.Watermark="" HorizontalAlignment="Left" Height="32" Margin="505,466,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="134" FontSize="18" TextChanged="txtRut_TextChanged"/>
         <!-- Nombre Completo -->
-        <Label x:Name="lblNombre" Content="Nombre*" HorizontalAlignment="Left" Margin="659,465,0,0" VerticalAlignment="Top" FontSize="18"/>
-        <TextBox x:Name="txtNombre" Controls:TextBoxHelper.Watermark="" HorizontalAlignment="Left" Height="32" Margin="745,466,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="108" FontSize="18" TextChanged="txtNombre_TextChanged"/>
+        <Label x:Name="lblNombre" Content="Nombre*" HorizontalAlignment="Left" Margin="419,518,0,0" VerticalAlignment="Top" FontSize="18"/>
+        <TextBox x:Name="txtNombre" Controls:TextBoxHelper.Watermark="" HorizontalAlignment="Left" Height="32" Margin="505,519,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="108" FontSize="18" TextChanged="txtNombre_TextChanged" IsEnabled="False" Background="#FFE4DFDF"/>
+        <!-- Nombre Completo -->
+        <Label x:Name="lblApel" Content="Apellidos*" HorizontalAlignment="Left" Margin="642,518,0,0" VerticalAlignment="Top" FontSize="18"/>
+        <TextBox x:Name="txtApel" Controls:TextBoxHelper.Watermark="" HorizontalAlignment="Left" Height="32" Margin="735,519,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="174" FontSize="18" IsEnabled="False" Background="#FFE4DFDF" />
         <Button Style= "{StaticResource SquareButtonStyle}" x:Name="btnLimpiarControles"   Content="Limpiar Controles" HorizontalAlignment="Left" Margin="647,359,0,0" VerticalAlignment="Top" Width="182" Click="btnLimpiarControles_Click" FontSize="18"/>
         <Controls:ToggleSwitch x:Name="switchCambioBack" Checked="switchCambioBack_Checked" IsCheckedChanged="switchCambioBack_IsCheckedChanged" OnLabel="" OffLabel="" Margin="1233,0,0,625" FontSize="24" Content="" VerticalContentAlignment="Stretch" Header="&#xA;Dark Mode" Width="93" VerticalAlignment="Bottom" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Height="96" ContentDirection="RightToLeft" OnSwitchBrush="#FF085394"/>
     </Grid>

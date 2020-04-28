@@ -1,4 +1,5 @@
 ﻿using BibliotecaClientes;
+using MahApps.Metro;
 using MahApps.Metro.Controls;
 using System;
 using System.Windows;
@@ -14,11 +15,15 @@ namespace ClientesWPF
     /// </summary>
     public partial class Ventana_Principal : MetroWindow
     {
+
         public static ClienteCollection listaClientes = new ClienteCollection();
         public static ContratoCollection listaContratos = new ContratoCollection();
         public static TipoEventoCollection listaTipoEvento = new TipoEventoCollection();
         public Ventana_Principal()
         {
+            //ThemeManager.AddAppTheme("CustomLight", new Uri("pack://application:,,,/CustomLight.xaml"));
+           
+
             InitializeComponent();
             //llenarClientes();
         }
@@ -67,13 +72,14 @@ namespace ClientesWPF
 
         private void switchCambioBack_Checked(object sender, RoutedEventArgs e)
         {
-           
+            //ThemeManager.AddAppTheme("CustomDark", new Uri("pack://application:,,,/CustomDark.xaml"));
+
             ListadoClientes listm = new ListadoClientes();
             listm.switchCambioBack.IsChecked = true;
             this.Background = Brushes.Black;
             switchCambioBack.Foreground = Brushes.White;
             switchCambioBack.ThumbIndicatorBrush = Brushes.White;
-          
+
         }
 
         private void switchCambioBack_IsCheckedChanged(object sender, EventArgs e)

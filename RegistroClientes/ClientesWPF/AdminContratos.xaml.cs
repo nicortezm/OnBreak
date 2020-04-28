@@ -158,6 +158,7 @@ namespace ClientesWPF
             this.lblFechaInicio.Foreground = (Brush)bc.ConvertFrom("#2b78e4");
             this.lblFechaTermino.Foreground = (Brush)bc.ConvertFrom("#2b78e4");
             this.lblNombre.Foreground = (Brush)bc.ConvertFrom("#2b78e4");
+            this.lblApel.Foreground = (Brush)bc.ConvertFrom("#2b78e4");
             this.lblNumContrato.Foreground = (Brush)bc.ConvertFrom("#2b78e4");
             this.lblRut.Foreground = (Brush)bc.ConvertFrom("#2b78e4");
             this.lblTermino.Foreground = (Brush)bc.ConvertFrom("#2b78e4");
@@ -183,6 +184,7 @@ namespace ClientesWPF
             this.lblFechaInicio.Foreground = Brushes.Black;
             this.lblFechaTermino.Foreground = Brushes.Black;
             this.lblNombre.Foreground = Brushes.Black;
+            this.lblApel.Foreground = Brushes.Black;
             this.lblNumContrato.Foreground = Brushes.Black;
             this.lblRut.Foreground = Brushes.Black;
             this.lblTermino.Foreground = Brushes.Black;
