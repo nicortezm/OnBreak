@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using BibliotecaClientes;
 using MahApps.Metro.Controls;
 namespace ClientesWPF
 {
@@ -32,9 +33,9 @@ namespace ClientesWPF
 
         private void btnListarClientes_Click(object sender, RoutedEventArgs e)
         {
-            ListadoClientes listaux = new ListadoClientes();
-            this.Close();
-            listaux.Show();
+            ListadoClientes listar = new ListadoClientes(1);
+            listar.pasado += new ListadoClientes.pasar(ejecutar);
+            listar.Show();
         }
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
@@ -106,7 +107,7 @@ namespace ClientesWPF
 
         private void btnListar_Click(object sender, RoutedEventArgs e)
         {
-            ListadoContratosAuxiliar listco = new ListadoContratosAuxiliar();
+            ListadoContratos listco = new ListadoContratos();
             listco.Show();
             this.Close();
 
@@ -221,6 +222,15 @@ namespace ClientesWPF
         private void TextBox_TextChanged_1(object sender, TextChangedEventArgs e)
         {
 
+        }
+
+        public void ejecutar(Cliente cliente)
+        {
+            txtRut.Text = cliente.Rut.ToString();
+            string nombrecontacto = cliente.NombreContacto;
+            string[] listnombre = nombrecontacto.Split(' ');
+            txtNombre.Text = listnombre[0];
+            txtApel.Text = listnombre[1];
         }
 
     }
