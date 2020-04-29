@@ -47,7 +47,7 @@
         <Image x:Name="imgLogoTransparent" Margin="1168,555,4,-4" Source="Imagenes/logo_transparent_background.png" Stretch="Fill"/>
         <!-- Numero Contrato-->
         <Label x:Name="lblNumContrato" Content="Numero*&#xA;Contrato" HorizontalAlignment="Left" Margin="395,65,0,0" VerticalAlignment="Top" FontSize="18" Width="82"/>
-        <TextBox x:Name="txtNumContrato" Controls:TextBoxHelper.Watermark="" HorizontalAlignment="Left" Height="32" Margin="479,78,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="149" FontSize="18" TextChanged="txtNumContrato_TextChanged"/>
+        <TextBox x:Name="txtNumContrato" Controls:TextBoxHelper.Watermark="" HorizontalAlignment="Left" Height="32" Margin="479,78,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="149" FontSize="18" TextChanged="txtNumContrato_TextChanged" Background="#FFF4F4F5" IsEnabled="False"/>
         <!-- Fecha Inicio -->
         <Label x:Name="lblFechaInicio" Content="Fecha, Hora *&#xA;Inicio" HorizontalAlignment="Left" Margin="361,157,0,0" VerticalAlignment="Top" FontSize="18"/>
         <TextBox x:Name="txtFechaInicio" Controls:TextBoxHelper.Watermark="" HorizontalAlignment="Left" Height="32" Margin="479,170,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="121" FontSize="18" TextChanged="txtFechaInicio_TextChanged" />
@@ -66,24 +66,27 @@
         <ComboBox x:Name="cboActividad" HorizontalAlignment="Left" Margin="1076,260,0,0" VerticalAlignment="Top" Width="120" FontSize="18" SelectionChanged="cboActividad_SelectionChanged"/>
         <!-- CReacion -->
         <Label x:Name="lblCreacion" Content="Creacion*" HorizontalAlignment="Left" Margin="688,77,0,0" VerticalAlignment="Top" FontSize="18"/>
-        <TextBox x:Name="txtCreacion" Controls:TextBoxHelper.Watermark="" HorizontalAlignment="Left" Height="32" Margin="777,78,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="121" FontSize="18" TextChanged="txtCreacion_TextChanged"/>
+        <TextBox x:Name="txtCreacion" Controls:TextBoxHelper.Watermark="" HorizontalAlignment="Left" Height="32" Margin="777,78,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="121" FontSize="18" TextChanged="txtCreacion_TextChanged" Background="#FFF4F4F5" IsEnabled="False"/>
         <!-- Direccion -->
         <Label x:Name="lblDreccion" Content="Dirección*" HorizontalAlignment="Left" Margin="985,169,0,0" VerticalAlignment="Top" FontSize="18"/>
         <TextBox x:Name="txtDireccion" Controls:TextBoxHelper.Watermark="" HorizontalAlignment="Left" Height="32" Margin="1076,170,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="121" FontSize="18" TextChanged="txtDireccion_TextChanged"/>
         <!-- Termino -->
         <Label x:Name="lblTermino" Content="Termino*" HorizontalAlignment="Left" Margin="993,77,0,0" VerticalAlignment="Top" FontSize="18"/>
-        <TextBox x:Name="txtTermino" Controls:TextBoxHelper.Watermark="" HorizontalAlignment="Left" Height="32" Margin="1076,78,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="121" FontSize="18" TextChanged="txtTermino_TextChanged"/>
-        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="211" Margin="406,412,0,0" Stroke="Black" VerticalAlignment="Top" Width="674"/>
+        <TextBox x:Name="txtTermino" Controls:TextBoxHelper.Watermark="" HorizontalAlignment="Left" Height="32" Margin="1076,78,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="121" FontSize="18" TextChanged="txtTermino_TextChanged" Background="#FFF4F4F5"/>
+        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="211" Margin="406,512,0,0" Stroke="Black" VerticalAlignment="Top" Width="674"/>
         <!-- Rut -->
-        <Label x:Name="lblRut" Content="Rut*" HorizontalAlignment="Left" Margin="457,465,0,0" VerticalAlignment="Top" FontSize="18"/>
-        <TextBox x:Name="txtRut" Controls:TextBoxHelper.Watermark="" HorizontalAlignment="Left" Height="32" Margin="505,466,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="134" FontSize="18" TextChanged="txtRut_TextChanged"/>
+        <Label x:Name="lblRut" Content="Rut*" HorizontalAlignment="Left" Margin="457,565,0,0" VerticalAlignment="Top" FontSize="18"/>
+        <TextBox x:Name="txtRut" Controls:TextBoxHelper.ClearTextButton="True" Controls:TextBoxHelper.Watermark="ej: 12582430" HorizontalAlignment="Left" Height="32" Margin="505,566,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="151" FontSize="18" TextChanged="txtRut_TextChanged"/>
         <!-- Nombre Completo -->
-        <Label x:Name="lblNombre" Content="Nombre*" HorizontalAlignment="Left" Margin="419,518,0,0" VerticalAlignment="Top" FontSize="18"/>
-        <TextBox x:Name="txtNombre" Controls:TextBoxHelper.Watermark="" HorizontalAlignment="Left" Height="32" Margin="505,519,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="108" FontSize="18" TextChanged="txtNombre_TextChanged" IsEnabled="False" Background="#FFE4DFDF"/>
+        <Label x:Name="lblNombre" Content="Nombre*" HorizontalAlignment="Left" Margin="419,618,0,0" VerticalAlignment="Top" FontSize="18"/>
+        <TextBox x:Name="txtNombre" Controls:TextBoxHelper.Watermark="" HorizontalAlignment="Left" Height="32" Margin="505,619,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="108" FontSize="18" TextChanged="txtNombre_TextChanged" IsEnabled="False" Background="#FFE4DFDF"/>
         <!-- Nombre Completo -->
-        <Label x:Name="lblApel" Content="Apellidos*" HorizontalAlignment="Left" Margin="642,518,0,0" VerticalAlignment="Top" FontSize="18"/>
-        <TextBox x:Name="txtApel" Controls:TextBoxHelper.Watermark="" HorizontalAlignment="Left" Height="32" Margin="735,519,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="174" FontSize="18" IsEnabled="False" Background="#FFE4DFDF" />
-        <Button Style= "{StaticResource SquareButtonStyle}" x:Name="btnLimpiarControles"   Content="Limpiar Controles" HorizontalAlignment="Left" Margin="647,359,0,0" VerticalAlignment="Top" Width="182" Click="btnLimpiarControles_Click" FontSize="18"/>
+        <Label x:Name="lblApel" Content="Apellidos*" HorizontalAlignment="Left" Margin="642,618,0,0" VerticalAlignment="Top" FontSize="18"/>
+        <TextBox x:Name="txtApel" Controls:TextBoxHelper.Watermark="" HorizontalAlignment="Left" Height="32" Margin="735,619,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="174" FontSize="18" IsEnabled="False" Background="#FFE4DFDF" />
+        <Button Style= "{StaticResource SquareButtonStyle}" x:Name="btnLimpiarControles"   Content="Limpiar Controles" HorizontalAlignment="Left" Margin="647,459,0,0" VerticalAlignment="Top" Width="182" Click="btnLimpiarControles_Click" FontSize="18"/>
         <Controls:ToggleSwitch x:Name="switchCambioBack" Checked="switchCambioBack_Checked" IsCheckedChanged="switchCambioBack_IsCheckedChanged" OnLabel="" OffLabel="" Margin="1233,0,0,625" FontSize="24" Content="" VerticalContentAlignment="Stretch" Header="&#xA;Dark Mode" Width="93" VerticalAlignment="Bottom" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Height="96" ContentDirection="RightToLeft" OnSwitchBrush="#FF085394"/>
+        <Label x:Name="lblObservacion" Content="Observacion*" HorizontalAlignment="Left" Margin="659,333,0,0" VerticalAlignment="Top" FontSize="18"/>
+        <TextBox x:Name="txtObservacion" HorizontalAlignment="Left" Height="32" Margin="776,334,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="301"  Controls:TextBoxHelper.ClearTextButton="True" Controls:TextBoxHelper.Watermark="ej:" FontSize="18"/>
+
     </Grid>
 </Controls:MetroWindow>

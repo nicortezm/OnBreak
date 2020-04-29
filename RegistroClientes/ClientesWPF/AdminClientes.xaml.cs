@@ -23,6 +23,7 @@ namespace ClientesWPF
     
     public partial class AdminClientes : MetroWindow
     {
+        
         Ventana_Principal vp = new Ventana_Principal();
         public AdminClientes()
         {
@@ -204,10 +205,14 @@ namespace ClientesWPF
         {
             //variable que convierte que cambia los parametros de escojer color..
             var bc = new BrushConverter();
+            
+           
             if (switchCambioBack.IsChecked == true)
             {
                 ListadoClientes listm = new ListadoClientes();
-                listm.switchCambioBack.IsChecked = true;
+                Ventana_Principal ven = new Ventana_Principal();
+            
+                //listm.switchCambioBack.IsChecked = true;
                 this.Background = Brushes.Black;
                 switchCambioBack.Foreground = Brushes.White;
                 switchCambioBack.ThumbIndicatorBrush = Brushes.White;
@@ -226,6 +231,21 @@ namespace ClientesWPF
                 this.brSeparador.Background = (Brush)bc.ConvertFrom("#2b78e4");
             }
 
+        }
+
+        private void Ventana(bool estado)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void Vent_enviado1(bool estado)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void Vent_enviado(bool estado)
+        {
+            throw new NotImplementedException();
         }
 
         private void switchCambioBack_IsCheckedChanged(object sender, EventArgs e)

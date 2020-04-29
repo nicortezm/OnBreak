@@ -19,6 +19,8 @@ namespace ClientesWPF
         public static ClienteCollection listaClientes = new ClienteCollection();
         public static ContratoCollection listaContratos = new ContratoCollection();
         public static TipoEventoCollection listaTipoEvento = new TipoEventoCollection();
+        //public delegate void pasarEstado(bool estado); 
+        //public event pasarEstado enviado;
         public Ventana_Principal()
         {
            
@@ -30,6 +32,7 @@ namespace ClientesWPF
 
         private void btnAdminclientes_Click(object sender, RoutedEventArgs e)
         {
+            
             AdminClientes ac = new AdminClientes();
             ac.Show();
             this.Close();
@@ -37,6 +40,7 @@ namespace ClientesWPF
 
         private void btnListarCLiente_Click(object sender, RoutedEventArgs e)
         {
+
             ListadoClientes listm = new ListadoClientes();
             listm.Show();
             this.Close();
@@ -73,22 +77,25 @@ namespace ClientesWPF
         private void switchCambioBack_Checked(object sender, RoutedEventArgs e)
         {
             //ThemeManager.AddAppTheme("CustomDark", new Uri("pack://application:,,,/CustomDark.xaml"));
-
-            ListadoClientes listm = new ListadoClientes();
-            listm.switchCambioBack.IsChecked = true;
+            //enviado(true);
+            AdminClientes ad = new AdminClientes();
+        
             this.Background = Brushes.Black;
-            switchCambioBack.Foreground = Brushes.White;
-            switchCambioBack.ThumbIndicatorBrush = Brushes.White;
+            //switchCambioBack.Foreground = Brushes.White;
+            //switchCambioBack.ThumbIndicatorBrush = Brushes.White;
 
         }
 
         private void switchCambioBack_IsCheckedChanged(object sender, EventArgs e)
         {
-            this.Background = Brushes.White;
-            switchCambioBack.Foreground = Brushes.Black;
-            switchCambioBack.ThumbIndicatorBrush = Brushes.Black;
-        }
+            
+            AdminClientes adm = new AdminClientes();
 
-     
+           
+            this.Background = Brushes.White;
+            //switchCambioBack.Foreground = Brushes.Black;
+            //switchCambioBack.ThumbIndicatorBrush = Brushes.Black;
+        }
+       
     }
 }

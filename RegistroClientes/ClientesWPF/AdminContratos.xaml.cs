@@ -21,6 +21,7 @@ namespace ClientesWPF
     {
         public AdminContratos()
         {
+           
             InitializeComponent();
         }
 
@@ -43,7 +44,9 @@ namespace ClientesWPF
 
         private void txtNumContrato_TextChanged(object sender, TextChangedEventArgs e)
         {
-
+            //String fechaContrato = DateTime.Today.ToString("dd/MM/yyyy");
+           
+            
         }
 
         private void RadioButton_Checked(object sender, RoutedEventArgs e)
@@ -62,6 +65,23 @@ namespace ClientesWPF
         {
 
         }
+        public void LimpiaControles()
+        {
+            this.txtNumContrato.Text= string.Empty;
+            this.txtFechaInicio.Text = string.Empty;
+            this.txtFechaTermino.Text = string.Empty;
+            this.txtCreacion.Text = string.Empty;
+            this.txtTermino.Text = string.Empty;
+            this.txtDireccion.Text = string.Empty;
+            this.txtObservacion.Text = string.Empty;
+            this.txtRut.Text = string.Empty;
+            this.cboActividad.SelectedIndex = 0;
+            this.cboTIpo.SelectedIndex = 0;
+            this.txtNombre.Text = string.Empty;
+            this.txtApel.Text = string.Empty;
+            this.rdbActiva.IsChecked = false;
+            this.rdbInactiva.IsChecked = false;
+        }
 
         private void btnBuscarClientes_Click(object sender, RoutedEventArgs e)
         {
@@ -70,7 +90,8 @@ namespace ClientesWPF
 
         private void btnRegistrarContrato_Click(object sender, RoutedEventArgs e)
         {
-           
+            String fechaContrato = DateTime.Now.ToString("yyyyMMddHHmm");
+            this.txtNumContrato.Text = fechaContrato;
         }
 
         private void btnBuscarContrato_Click_1(object sender, RoutedEventArgs e)
@@ -196,5 +217,11 @@ namespace ClientesWPF
             this.rdbInactiva.BorderBrush = Brushes.Black;
             this.btnLimpiarControles.BorderBrush = Brushes.Black;
         }
+
+        private void TextBox_TextChanged_1(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
     }
 }
