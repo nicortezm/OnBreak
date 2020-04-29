@@ -69,7 +69,7 @@
         <TextBox x:Name="txtCreacion" Controls:TextBoxHelper.Watermark="" HorizontalAlignment="Left" Height="32" Margin="777,78,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="121" FontSize="18" TextChanged="txtCreacion_TextChanged" Background="#FFF4F4F5" IsEnabled="False"/>
         <!-- Direccion -->
         <Label x:Name="lblDreccion" Content="Dirección*" HorizontalAlignment="Left" Margin="985,169,0,0" VerticalAlignment="Top" FontSize="18"/>
-        <TextBox x:Name="txtDireccion" Controls:TextBoxHelper.Watermark="" HorizontalAlignment="Left" Height="32" Margin="1076,170,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="121" FontSize="18" TextChanged="txtDireccion_TextChanged"/>
+        <TextBox x:Name="txtDireccion" Controls:TextBoxHelper.Watermark="" HorizontalAlignment="Left" Height="32" Margin="1076,170,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="236" FontSize="18" TextChanged="txtDireccion_TextChanged"/>
         <!-- Termino -->
         <Label x:Name="lblTermino" Content="Termino*" HorizontalAlignment="Left" Margin="993,77,0,0" VerticalAlignment="Top" FontSize="18"/>
         <TextBox x:Name="txtTermino" Controls:TextBoxHelper.Watermark="" HorizontalAlignment="Left" Height="32" Margin="1076,78,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="121" FontSize="18" TextChanged="txtTermino_TextChanged" Background="#FFF4F4F5"/>
