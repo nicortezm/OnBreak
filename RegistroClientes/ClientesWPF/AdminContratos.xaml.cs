@@ -63,7 +63,7 @@ namespace ClientesWPF
 
         private void btnLimpiarControles_Click(object sender, RoutedEventArgs e)
         {
-
+            LimpiaControles();
         }
         public void LimpiaControles()
         {

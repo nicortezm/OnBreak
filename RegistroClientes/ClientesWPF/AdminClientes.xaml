@@ -71,7 +71,7 @@
         <Label x:Name="lblTIpo" Content="Tipo*" HorizontalAlignment="Left" Margin="358,402,0,0" VerticalAlignment="Top" FontSize="18" RenderTransformOrigin="-5.691,0.181" Grid.Column="1"/>
         <ComboBox x:Name="cboTIpo" Margin="411,404,687,0" VerticalAlignment="Top"  FontSize="18" RenderTransformOrigin="0.471,-0.056" Grid.Column="1" Text="Seleccione"/>
         <!-- Actividad -->
-        <Label x:Name="lblctividad" Content="Actividad*" HorizontalAlignment="Left" Margin="733,402,0,0" VerticalAlignment="Top" FontSize="18" RenderTransformOrigin="0.762,0.088" Grid.Column="1"/>
+        <Label x:Name="lblctividad" Content="Actividad*" HorizontalAlignment="Left" Margin="733,402,0,0" VerticalAlignment="Top" FontSize="18" RenderTransformOrigin="0.762,0.088" Grid.Column="1" />
         <ComboBox x:Name="cboActividad" HorizontalAlignment="Left" Margin="824,404,0,0" VerticalAlignment="Top" Width="156" FontSize="18" Grid.Column="1" Text="Seleccione"/>
         <!--Telefono-->
         <Label x:Name="lblTelefon" Content="Teléfono*" HorizontalAlignment="Left" Margin="325,309,0,0" VerticalAlignment="Top" FontSize="18" Grid.Column="1"/>
@@ -80,6 +80,6 @@
         <Label x:Name="lblDireccion" Content="Dirección*" HorizontalAlignment="Left" Margin="731,309,0,0" VerticalAlignment="Top" FontSize="18" Grid.Column="1"/>
         <TextBox Controls:TextBoxHelper.ClearTextButton="True" x:Name="txtDireccion" HorizontalAlignment="Left" Height="32" Margin="824,310,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="228" FontSize="18"  Grid.Column="1"/>
         <Border x:Name="brSeparador" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="737" Margin="253,0,0,0" VerticalAlignment="Top" Width="4" Background="Black" Grid.Column="1"/>
-        <Controls:ToggleSwitch x:Name="switchCambioBack" Checked="switchCambioBack_Checked" IsCheckedChanged="switchCambioBack_IsCheckedChanged" OnLabel="" OffLabel="" Margin="1182,0,0,625" FontSize="24" Content="" VerticalContentAlignment="Stretch" Header="&#xA;Dark Mode" Width="93" VerticalAlignment="Bottom" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Height="96" ContentDirection="RightToLeft" OnSwitchBrush="#FF085394" Grid.Column="1"/>
+        <Controls:ToggleSwitch x:Name="switchCambioBack" Checked="switchCambioBack_Checked" IsCheckedChanged="switchCambioBack_IsCheckedChanged" OnLabel="" OffLabel="" Margin="1182,0,0,625" FontSize="24" Content="" VerticalContentAlignment="Stretch" Header="&#xA;Dark Mode" Width="93" VerticalAlignment="Bottom" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Height="96" ContentDirection="RightToLeft" OnSwitchBrush="#FF085394" Grid.Column="1" />
     </Grid>
 </Controls:MetroWindow>

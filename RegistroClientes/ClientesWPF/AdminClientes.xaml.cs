@@ -14,6 +14,9 @@ using System.Windows.Shapes;
 using BibliotecaClientes;
 using MahApps.Metro.Controls;
 using MahApps.Metro.Controls.Dialogs;
+using MahApps.Metro.Behaviours;
+using ClientesWPF;
+using MahApps.Metro;
 
 namespace ClientesWPF
 {
@@ -29,8 +32,11 @@ namespace ClientesWPF
         {
             
             InitializeComponent();
+      
             CargaCombo();
         }
+
+     
 
         //public AdminClientes(int rut)
         //{
@@ -97,13 +103,6 @@ namespace ClientesWPF
             {
                 await this.ShowMessageAsync("Alerta:", "Debe Completar todos los datos");
             }
-
-
-
-            
-            
-
-
 
         }
 
@@ -207,31 +206,43 @@ namespace ClientesWPF
             var bc = new BrushConverter();
             
            
-            if (switchCambioBack.IsChecked == true)
-            {
-                ListadoClientes listm = new ListadoClientes();
-                Ventana_Principal ven = new Ventana_Principal();
+            ListadoClientes listm = new ListadoClientes();
+            Ventana_Principal ven = new Ventana_Principal();
             
-                //listm.switchCambioBack.IsChecked = true;
-                this.Background = Brushes.Black;
-                switchCambioBack.Foreground = Brushes.White;
-                switchCambioBack.ThumbIndicatorBrush = Brushes.White;
-                this.btnLimpiar.BorderBrush = (Brush)bc.ConvertFrom("#2b78e4");
-                //this.btnLimpiar.Foreground = Brushes.Black;
-                this.lblTitulo.Foreground = (Brush)bc.ConvertFrom("#2b78e4");
-                this.lblTIpo.Foreground = (Brush)bc.ConvertFrom("#2b78e4");
-                lblRazonSocial.Foreground = (Brush)bc.ConvertFrom("#2b78e4");
-                this.lblMailContact.Foreground = (Brush)bc.ConvertFrom("#2b78e4");
-                this.lblRut.Foreground = (Brush)bc.ConvertFrom("#2b78e4");
-                this.lblNomContact.Foreground = (Brush)bc.ConvertFrom("#2b78e4");
-                this.lblctividad.Foreground=(Brush)bc.ConvertFrom("#2b78e4");
-                this.lblTelefon.Foreground = (Brush)bc.ConvertFrom("#2b78e4");
-                this.lblDireccion.Foreground = (Brush)bc.ConvertFrom("#2b78e4");
-                this.brSeparador.BorderBrush = (Brush)bc.ConvertFrom("#2b78e4");
-                this.brSeparador.Background = (Brush)bc.ConvertFrom("#2b78e4");
-            }
+          
+            //this.Background = Brushes.Black;
+            switchCambioBack.Foreground = Brushes.White;
+            switchCambioBack.ThumbIndicatorBrush = Brushes.White;
+            //this.btnLimpiar.BorderBrush = (Brush)bc.ConvertFrom("#2b78e4");
+            ThemeManager.ChangeAppStyle(Application.Current,
+                                    ThemeManager.GetAccent("Blue"),
+                                    ThemeManager.GetAppTheme("BaseDark"));
+
+            this.btnLimpiar.Foreground = Brushes.Black;
+            this.lblTitulo.Foreground = (Brush)bc.ConvertFrom("#2b78e4");
+            this.lblTIpo.Foreground = (Brush)bc.ConvertFrom("#2b78e4");
+            lblRazonSocial.Foreground = (Brush)bc.ConvertFrom("#2b78e4");
+            this.lblMailContact.Foreground = (Brush)bc.ConvertFrom("#2b78e4");
+            this.lblRut.Foreground = (Brush)bc.ConvertFrom("#2b78e4");
+            this.lblNomContact.Foreground = (Brush)bc.ConvertFrom("#2b78e4");
+            this.lblctividad.Foreground = (Brush)bc.ConvertFrom("#2b78e4");
+            this.lblTelefon.Foreground = (Brush)bc.ConvertFrom("#2b78e4");
+            this.lblDireccion.Foreground = (Brush)bc.ConvertFrom("#2b78e4");
+            this.brSeparador.BorderBrush = (Brush)bc.ConvertFrom("#2b78e4");
+            this.brSeparador.Background = (Brush)bc.ConvertFrom("#2b78e4");
+            
 
         }
+        public void EstadoBool(bool estado)
+        {
+            if (estado==true)
+            {
+                this.switchCambioBack.IsChecked = true;
+            }
+           
+        }
+
+    
 
         private void Ventana(bool estado)
         {
@@ -250,6 +261,10 @@ namespace ClientesWPF
 
         private void switchCambioBack_IsCheckedChanged(object sender, EventArgs e)
         {
+            ThemeManager.ChangeAppStyle(Application.Current,
+                                       ThemeManager.GetAccent("blue"),
+                                       ThemeManager.GetAppTheme("BaseLight"));
+
             this.Background = Brushes.White;
             switchCambioBack.Foreground = Brushes.Black;
             switchCambioBack.ThumbIndicatorBrush = Brushes.Black;

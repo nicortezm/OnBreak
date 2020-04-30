@@ -1,13 +1,15 @@
 ﻿using BibliotecaClientes;
 using MahApps.Metro;
 using MahApps.Metro.Controls;
+using MahApps.Metro.Controls.Dialogs;
+using MahApps.Metro.Behaviours;
 using System;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Resources;
-
+using  ClientesWPF;
 namespace ClientesWPF
 {
     /// <summary>
@@ -24,15 +26,13 @@ namespace ClientesWPF
         public Ventana_Principal()
         {
            
-           
-
             InitializeComponent();
             //llenarClientes();
         }
 
         private void btnAdminclientes_Click(object sender, RoutedEventArgs e)
         {
-            
+
             AdminClientes ac = new AdminClientes();
             ac.Show();
             this.Close();
@@ -76,26 +76,38 @@ namespace ClientesWPF
 
         private void switchCambioBack_Checked(object sender, RoutedEventArgs e)
         {
+            AdminClientes adcli = new AdminClientes();
             //ThemeManager.AddAppTheme("CustomDark", new Uri("pack://application:,,,/CustomDark.xaml"));
             //enviado(true);
-            AdminClientes ad = new AdminClientes();
-        
-            this.Background = Brushes.Black;
-            //switchCambioBack.Foreground = Brushes.White;
-            //switchCambioBack.ThumbIndicatorBrush = Brushes.White;
+            //this.Background = Brushes.Black;
+            switchCambioBack.Foreground = Brushes.White;
+            switchCambioBack.ThumbIndicatorBrush = Brushes.White;
+            ThemeManager.ChangeAppStyle(Application.Current,
+                                        ThemeManager.GetAccent("Blue"),
+                                        ThemeManager.GetAppTheme("BaseDark"));
+            adcli.EstadoBool(true);
 
+  
         }
 
         private void switchCambioBack_IsCheckedChanged(object sender, EventArgs e)
         {
-            
+
             AdminClientes adm = new AdminClientes();
 
+
+            //this.Background = Brushes.White;
            
-            this.Background = Brushes.White;
-            //switchCambioBack.Foreground = Brushes.Black;
-            //switchCambioBack.ThumbIndicatorBrush = Brushes.Black;
+            switchCambioBack.Foreground = Brushes.Black;
+            switchCambioBack.ThumbIndicatorBrush = Brushes.Black;
+            ThemeManager.ChangeAppStyle(Application.Current,
+                                        ThemeManager.GetAccent("blue"),
+                                        ThemeManager.GetAppTheme("BaseLight"));
+            
+        
+
         }
-       
+        //ThemeManager.ChangeAppTheme(ThemeManager.AddAppTheme.Ba )
+    
     }
 }
