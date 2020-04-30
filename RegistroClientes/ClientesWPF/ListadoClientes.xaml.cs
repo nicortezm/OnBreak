@@ -100,7 +100,9 @@ namespace ClientesWPF
 
         private void btnLimpiar_Click(object sender, RoutedEventArgs e)
         {
-
+            txtRut.Text = string.Empty;
+            cboActividad.SelectedIndex = 0;
+            cboTIpo.SelectedIndex = 0;
         }
 
         private void cboActividad_SelectionChanged_1(object sender, SelectionChangedEventArgs e)

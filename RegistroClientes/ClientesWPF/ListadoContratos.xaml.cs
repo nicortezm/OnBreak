@@ -18,9 +18,9 @@ namespace ClientesWPF
     /// <summary>
     /// Lógica de interacción para ListadoContratosMenu.xaml
     /// </summary>
-    public partial class ListadoContratosMenu : MetroWindow
+    public partial class ListadoContratos : MetroWindow
     {
-        public ListadoContratosMenu()
+        public ListadoContratos()
         {
             InitializeComponent();
         }

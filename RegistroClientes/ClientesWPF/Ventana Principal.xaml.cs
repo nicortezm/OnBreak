@@ -62,7 +62,7 @@ namespace ClientesWPF
 
         private void btnListarContratos_Click(object sender, RoutedEventArgs e)
         {
-            ListadoContratosMenu listco = new ListadoContratosMenu();
+            ListadoContratos listco = new ListadoContratos();
             listco.Show();
             this.Close();
         }
