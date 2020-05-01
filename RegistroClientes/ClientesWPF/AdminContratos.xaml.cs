@@ -68,7 +68,7 @@ namespace ClientesWPF
         }
         public void LimpiaControles()
         {
-            this.txtNumContrato.Text= string.Empty;
+            //this.txtNumContrato.Text= string.Empty;
             this.txtFechaInicio.Text = string.Empty;
             this.txtFechaTermino.Text = string.Empty;
             this.txtDireccion.Text = string.Empty;
@@ -90,7 +90,7 @@ namespace ClientesWPF
         private void btnRegistrarContrato_Click(object sender, RoutedEventArgs e)
         {
             String fechaContrato = DateTime.Now.ToString("yyyyMMddHHmm");
-            this.txtNumContrato.Text = fechaContrato;
+            //this.txtNumContrato.Text = fechaContrato;
         }
 
         private void btnBuscarContrato_Click_1(object sender, RoutedEventArgs e)
