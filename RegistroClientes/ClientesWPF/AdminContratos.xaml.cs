@@ -71,8 +71,6 @@ namespace ClientesWPF
             this.txtNumContrato.Text= string.Empty;
             this.txtFechaInicio.Text = string.Empty;
             this.txtFechaTermino.Text = string.Empty;
-            this.txtCreacion.Text = string.Empty;
-            this.txtTermino.Text = string.Empty;
             this.txtDireccion.Text = string.Empty;
             this.txtObservacion.Text = string.Empty;
             this.txtRut.Text = string.Empty;

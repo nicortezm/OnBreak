@@ -17,6 +17,7 @@ using MahApps.Metro.Controls.Dialogs;
 using MahApps.Metro.Behaviours;
 using ClientesWPF;
 using MahApps.Metro;
+using System.Text.RegularExpressions;
 
 namespace ClientesWPF
 {
@@ -316,6 +317,18 @@ namespace ClientesWPF
                 await this.ShowMessageAsync("Alerta:", "Debe ingresar rut para poder buscar");
             }
 
+        }
+
+        private void txtTelefono_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            Regex regex = new Regex("[^0-9]+");
+            e.Handled = regex.IsMatch(e.Text);
+        }
+
+        private void txtRut_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            Regex regex = new Regex("[^0-9]+");
+            e.Handled = regex.IsMatch(e.Text);
         }
     }
 }

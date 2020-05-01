@@ -56,7 +56,7 @@
         <Label x:Name="lblTitulo" Content="Administracion  de Clientes" HorizontalAlignment="Left" Margin="353,-3,0,0" VerticalAlignment="Top" Height="77" Width="810" FontSize="48" Grid.Column="1"/>
         <Image x:Name="imgLogoTransparent" Margin="1117,555,4,-4" Source="Imagenes\logo_transparent_background.png" Stretch="Fill" Grid.Column="1"/>
         <!--Rut-->
-        <TextBox Controls:TextBoxHelper.ClearTextButton="True" Controls:TextBoxHelper.Watermark="ej: 12582430"  x:Name="txtRut" HorizontalAlignment="Left" Height="32" Margin="411,112,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="151" FontSize="18"  Grid.Column="1" />
+        <TextBox Controls:TextBoxHelper.ClearTextButton="True" Controls:TextBoxHelper.Watermark="ej: 12582430"  x:Name="txtRut" HorizontalAlignment="Left" Height="32" Margin="411,112,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="151" FontSize="18"  Grid.Column="1" PreviewTextInput="txtRut_PreviewTextInput" />
         <Label x:Name="lblRut" Content="Rut*" HorizontalAlignment="Left" Margin="365,111,0,0" VerticalAlignment="Top" FontSize="18" Grid.Column="1"/>
         <!--Razon Social-->
         <Label x:Name="lblRazonSocial" Content="Razón Social*" HorizontalAlignment="Left" Margin="694,109,0,0" VerticalAlignment="Top" FontSize="18" Grid.Column="1"/>
@@ -75,7 +75,7 @@
         <ComboBox x:Name="cboActividad" HorizontalAlignment="Left" Margin="824,404,0,0" VerticalAlignment="Top" Width="156" FontSize="18" Grid.Column="1" Text="Seleccione"/>
         <!--Telefono-->
         <Label x:Name="lblTelefon" Content="Teléfono*" HorizontalAlignment="Left" Margin="325,309,0,0" VerticalAlignment="Top" FontSize="18" Grid.Column="1"/>
-        <TextBox Controls:TextBoxHelper.ClearTextButton="True" Controls:TextBoxHelper.Watermark="ej: 911223344 " x:Name="txtTelefono" HorizontalAlignment="Left" Height="32" Margin="411,310,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="151" FontSize="18" Grid.Column="1"/>
+        <TextBox Controls:TextBoxHelper.ClearTextButton="True" Controls:TextBoxHelper.Watermark="ej: 911223344 " x:Name="txtTelefono" HorizontalAlignment="Left" Height="32" Margin="411,310,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="151" FontSize="18" Grid.Column="1" PreviewTextInput="txtTelefono_PreviewTextInput" />
         <!--Direccion -->
         <Label x:Name="lblDireccion" Content="Dirección*" HorizontalAlignment="Left" Margin="731,309,0,0" VerticalAlignment="Top" FontSize="18" Grid.Column="1"/>
         <TextBox Controls:TextBoxHelper.ClearTextButton="True" x:Name="txtDireccion" HorizontalAlignment="Left" Height="32" Margin="824,310,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="228" FontSize="18"  Grid.Column="1"/>
