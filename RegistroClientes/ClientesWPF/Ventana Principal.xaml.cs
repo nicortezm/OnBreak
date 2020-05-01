@@ -15,9 +15,11 @@ namespace ClientesWPF
     /// <summary>
     /// Lógica de interacción para Ventana_Principal.xaml
     /// </summary>
+    /// 
+    
     public partial class Ventana_Principal : MetroWindow
     {
-
+        
         public static ClienteCollection listaClientes = new ClienteCollection();
         public static ContratoCollection listaContratos = new ContratoCollection();
         public static TipoEventoCollection listaTipoEvento = new TipoEventoCollection();
@@ -25,8 +27,9 @@ namespace ClientesWPF
         //public event pasarEstado enviado;
         public Ventana_Principal()
         {
-           
+            
             InitializeComponent();
+          
             //llenarClientes();
         }
 
@@ -76,38 +79,47 @@ namespace ClientesWPF
 
         private void switchCambioBack_Checked(object sender, RoutedEventArgs e)
         {
-            AdminClientes adcli = new AdminClientes();
+
             //ThemeManager.AddAppTheme("CustomDark", new Uri("pack://application:,,,/CustomDark.xaml"));
             //enviado(true);
-            //this.Background = Brushes.Black;
+            this.Background = Brushes.Black;
             switchCambioBack.Foreground = Brushes.White;
             switchCambioBack.ThumbIndicatorBrush = Brushes.White;
-            ThemeManager.ChangeAppStyle(Application.Current,
-                                        ThemeManager.GetAccent("Blue"),
-                                        ThemeManager.GetAppTheme("BaseDark"));
-            adcli.EstadoBool(true);
+            //ThemeManager.ChangeAppStyle(Application.Current,
+            //                            ThemeManager.GetAccent("Blue"),
+            //                            ThemeManager.GetAppTheme("BaseDark"));
 
-  
+            AdminClientes adcli = new AdminClientes();
+
+            //adcli.switchCambioBack.OnLabel = " ";
+
+            adcli.switchCambioBack.IsChecked = true;
+            adcli.switchCambioBack.IsEnabled = true;
+            //adcli.lblSwitch.Content = "SI";
+            //adcli.ShowDialog();
+
         }
 
         private void switchCambioBack_IsCheckedChanged(object sender, EventArgs e)
         {
 
-            AdminClientes adm = new AdminClientes();
+            AdminClientes adcli = new AdminClientes();
 
 
-            //this.Background = Brushes.White;
-           
+            this.Background = Brushes.White;
+
             switchCambioBack.Foreground = Brushes.Black;
             switchCambioBack.ThumbIndicatorBrush = Brushes.Black;
-            ThemeManager.ChangeAppStyle(Application.Current,
-                                        ThemeManager.GetAccent("blue"),
-                                        ThemeManager.GetAppTheme("BaseLight"));
-            
-        
+            adcli.switchCambioBack.IsChecked = false;
+            //adcli.ShowDialog();
+            //ThemeManager.ChangeAppStyle(Application.Current,
+            //                            ThemeManager.GetAccent("blue"),
+            //                            ThemeManager.GetAppTheme("BaseLight"));
+
+
 
         }
         //ThemeManager.ChangeAppTheme(ThemeManager.AddAppTheme.Ba )
-    
+
     }
 }

@@ -66,13 +66,11 @@
         <ComboBox x:Name="cboActividad" HorizontalAlignment="Left" Margin="1076,260,0,0" VerticalAlignment="Top" Width="120" FontSize="18" SelectionChanged="cboActividad_SelectionChanged"/>
         <!-- CReacion -->
         <Label x:Name="lblCreacion" Content="Creacion*" HorizontalAlignment="Left" Margin="688,77,0,0" VerticalAlignment="Top" FontSize="18"/>
-        <TextBox x:Name="txtCreacion" Controls:TextBoxHelper.Watermark="" HorizontalAlignment="Left" Height="32" Margin="777,78,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="121" FontSize="18" TextChanged="txtCreacion_TextChanged" Background="#FFF4F4F5" IsEnabled="False"/>
         <!-- Direccion -->
         <Label x:Name="lblDreccion" Content="Dirección*" HorizontalAlignment="Left" Margin="985,169,0,0" VerticalAlignment="Top" FontSize="18"/>
         <TextBox x:Name="txtDireccion" Controls:TextBoxHelper.Watermark="" HorizontalAlignment="Left" Height="32" Margin="1076,170,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="236" FontSize="18" TextChanged="txtDireccion_TextChanged"/>
         <!-- Termino -->
         <Label x:Name="lblTermino" Content="Termino*" HorizontalAlignment="Left" Margin="993,77,0,0" VerticalAlignment="Top" FontSize="18"/>
-        <TextBox x:Name="txtTermino" Controls:TextBoxHelper.Watermark="" HorizontalAlignment="Left" Height="32" Margin="1076,78,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="121" FontSize="18" TextChanged="txtTermino_TextChanged" Background="#FFF4F4F5"/>
         <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="211" Margin="406,512,0,0" Stroke="Black" VerticalAlignment="Top" Width="674"/>
         <!-- Rut -->
         <Label x:Name="lblRut" Content="Rut*" HorizontalAlignment="Left" Margin="457,565,0,0" VerticalAlignment="Top" FontSize="18"/>
@@ -87,6 +85,8 @@
         <Controls:ToggleSwitch x:Name="switchCambioBack" Checked="switchCambioBack_Checked" IsCheckedChanged="switchCambioBack_IsCheckedChanged" OnLabel="" OffLabel="" Margin="1233,0,0,625" FontSize="24" Content="" VerticalContentAlignment="Stretch" Header="&#xA;Dark Mode" Width="93" VerticalAlignment="Bottom" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Height="96" ContentDirection="RightToLeft" OnSwitchBrush="#FF085394"/>
         <Label x:Name="lblObservacion" Content="Observacion*" HorizontalAlignment="Left" Margin="659,333,0,0" VerticalAlignment="Top" FontSize="18"/>
         <TextBox x:Name="txtObservacion" HorizontalAlignment="Left" Height="32" Margin="776,334,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="301"  Controls:TextBoxHelper.ClearTextButton="True" Controls:TextBoxHelper.Watermark="ej:" FontSize="18"/>
+        <DatePicker x:Name="dtpCreacion" HorizontalAlignment="Left" Margin="776,78,0,0" VerticalAlignment="Top" FontSize="18" Height="32" Width="121"/>
+        <DatePicker x:Name="dtpTermino" HorizontalAlignment="Left" Margin="1076,78,0,0" VerticalAlignment="Top" FontSize="18" Height="32" Width="120"/>
 
     </Grid>
 </Controls:MetroWindow>

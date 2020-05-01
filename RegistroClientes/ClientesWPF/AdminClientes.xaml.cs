@@ -32,7 +32,14 @@ namespace ClientesWPF
         {
             
             InitializeComponent();
-      
+            //if (this.switchCambioBack.OnLabel == " ")
+            //{
+            //    this.switchCambioBack.IsChecked = true;
+            //}
+            //else if (this.switchCambioBack.OnLabel == "")
+            //{
+            //    this.switchCambioBack.IsChecked = false;
+            //}
             CargaCombo();
         }
 
@@ -208,15 +215,15 @@ namespace ClientesWPF
            
             ListadoClientes listm = new ListadoClientes();
             Ventana_Principal ven = new Ventana_Principal();
-            
-          
-            //this.Background = Brushes.Black;
+
+
+            this.Background = Brushes.Black;
             switchCambioBack.Foreground = Brushes.White;
             switchCambioBack.ThumbIndicatorBrush = Brushes.White;
-            //this.btnLimpiar.BorderBrush = (Brush)bc.ConvertFrom("#2b78e4");
-            ThemeManager.ChangeAppStyle(Application.Current,
-                                    ThemeManager.GetAccent("Blue"),
-                                    ThemeManager.GetAppTheme("BaseDark"));
+            this.btnLimpiar.BorderBrush = (Brush)bc.ConvertFrom("#2b78e4");
+            //ThemeManager.ChangeAppStyle(Application.Current,
+            //                        ThemeManager.GetAccent("Blue"),
+            //                        ThemeManager.GetAppTheme("BaseDark"));
 
             this.btnLimpiar.Foreground = Brushes.Black;
             this.lblTitulo.Foreground = (Brush)bc.ConvertFrom("#2b78e4");
@@ -233,37 +240,22 @@ namespace ClientesWPF
             
 
         }
-        public void EstadoBool(bool estado)
-        {
-            if (estado==true)
-            {
-                this.switchCambioBack.IsChecked = true;
-            }
-           
-        }
-
-    
-
-        private void Ventana(bool estado)
-        {
-            throw new NotImplementedException();
-        }
-
-        private void Vent_enviado1(bool estado)
-        {
-            throw new NotImplementedException();
-        }
-
-        private void Vent_enviado(bool estado)
-        {
-            throw new NotImplementedException();
-        }
-
+       //public void ActivaSwitch()
+       // {
+       //     if (this.switchCambioBack.OnLabel==" ")
+       //     {
+       //         this.switchCambioBack.IsChecked = true;
+       //     }
+       //     else if (this.switchCambioBack.OnLabel == "")
+       //     {
+       //         this.switchCambioBack.IsChecked = false;
+       //     }
+       // }
         private void switchCambioBack_IsCheckedChanged(object sender, EventArgs e)
         {
-            ThemeManager.ChangeAppStyle(Application.Current,
-                                       ThemeManager.GetAccent("blue"),
-                                       ThemeManager.GetAppTheme("BaseLight"));
+            //ThemeManager.ChangeAppStyle(Application.Current,
+            //                           ThemeManager.GetAccent("blue"),
+            //                           ThemeManager.GetAppTheme("BaseLight"));
 
             this.Background = Brushes.White;
             switchCambioBack.Foreground = Brushes.Black;
