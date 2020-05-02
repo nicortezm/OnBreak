@@ -120,13 +120,45 @@ namespace ClientesWPF
 
         private void btnRegistrarContrato_Click(object sender, RoutedEventArgs e)
         {
-            String fechaContrato = DateTime.Now.ToString("yyyyMMddHHmm");
+            bool vigenteIs = EstadoVigencia();
+            Contrato contrato = new Contrato
+            {
+                NumeroContrato = int.Parse(DateTime.Now.ToString("yyyyMMddHHmm")),
+                Creacion = this.dtpCreacion.SelectedDate.ToString(),
+                Termino = this.dtpCreacion.SelectedDate.ToString(),
+               //Termino =this.dtpCreacion.SelectedDate.ToString(),
+                EstaVigente = vigenteIs,
+                Observaciones=this.txtObservacion.Text,
+                Direccion=this.txtDireccion.Text,
+                FechaHoraInicio= DateTime.Now.ToString("yyyyMMddHHmm"),
+                FechaHoraTermino = "------------"
+
+
+
+            };
+            //String fechaContrato = DateTime.Now.ToString("yyyyMMddHHmm");
+            //int fechaContrato = int.Parse(DateTime.Now.ToString("yyyyMMddHHmm"));
             //this.txtNumContrato.Text = fechaContrato;
+        }
+
+        public bool EstadoVigencia()
+        {
+            bool vigente = false;
+            if (this.rdbActiva.IsChecked == true)
+            {
+                vigente = true;
+            }
+            else if (this.rdbInactiva.IsChecked == true)
+            {
+                vigente = false;
+
+            }
+            return vigente;
         }
 
         private void btnBuscarContrato_Click_1(object sender, RoutedEventArgs e)
         {
-
+           
         }
 
         private void btnAztualizContrat_Click(object sender, RoutedEventArgs e)
