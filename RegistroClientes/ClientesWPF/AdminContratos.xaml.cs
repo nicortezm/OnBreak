@@ -20,6 +20,7 @@ namespace ClientesWPF
     /// </summary>
     public partial class AdminContratos :MetroWindow
     {
+        private bool darktheme;
         public AdminContratos()
         {
            
@@ -34,6 +35,10 @@ namespace ClientesWPF
         private void btnListarClientes_Click(object sender, RoutedEventArgs e)
         {
             ListadoClientes listar = new ListadoClientes(1);
+            if (darktheme)
+            {
+                listar.dark();
+            }
             listar.pasado += new ListadoClientes.pasar(ejecutar);
             listar.Show();
         }
@@ -58,6 +63,10 @@ namespace ClientesWPF
         private void btnVentanaPrincipal_Click(object sender, RoutedEventArgs e)
         {
             this.Close(); Ventana_Principal vp = new Ventana_Principal();
+            if (darktheme)
+            {
+                vp.dark();
+            }
             this.Close();
             vp.Show();
         }
@@ -168,6 +177,11 @@ namespace ClientesWPF
 
         private void switchCambioBack_Checked(object sender, RoutedEventArgs e)
         {
+
+            dark();
+        }
+        public void dark()
+        {
             var bc = new BrushConverter();
             this.Background = Brushes.Black;
             switchCambioBack.Foreground = Brushes.White;
@@ -179,7 +193,6 @@ namespace ClientesWPF
             this.lblFechaTermino.Foreground = (Brush)bc.ConvertFrom("#2b78e4");
             this.lblNombre.Foreground = (Brush)bc.ConvertFrom("#2b78e4");
             this.lblApel.Foreground = (Brush)bc.ConvertFrom("#2b78e4");
-            this.lblNumContrato.Foreground = (Brush)bc.ConvertFrom("#2b78e4");
             this.lblRut.Foreground = (Brush)bc.ConvertFrom("#2b78e4");
             this.lblTermino.Foreground = (Brush)bc.ConvertFrom("#2b78e4");
             this.lblTipo.Foreground = (Brush)bc.ConvertFrom("#2b78e4");
@@ -188,11 +201,17 @@ namespace ClientesWPF
             this.rdbInactiva.Foreground = (Brush)bc.ConvertFrom("#2b78e4");
             this.rdbActiva.BorderBrush = (Brush)bc.ConvertFrom("#2b78e4");
             this.rdbInactiva.BorderBrush = (Brush)bc.ConvertFrom("#2b78e4");
-            this.btnLimpiarControles.BorderBrush= (Brush)bc.ConvertFrom("#2b78e4");
+            this.btnLimpiarControles.BorderBrush = (Brush)bc.ConvertFrom("#2b78e4");
+            darktheme = true;
+            switchCambioBack.IsChecked = true;
 
         }
 
         private void switchCambioBack_IsCheckedChanged(object sender, EventArgs e)
+        {
+            light();
+        }
+        public void light()
         {
             var bc = new BrushConverter();
             this.Background = Brushes.White;
@@ -205,7 +224,6 @@ namespace ClientesWPF
             this.lblFechaTermino.Foreground = Brushes.Black;
             this.lblNombre.Foreground = Brushes.Black;
             this.lblApel.Foreground = Brushes.Black;
-            this.lblNumContrato.Foreground = Brushes.Black;
             this.lblRut.Foreground = Brushes.Black;
             this.lblTermino.Foreground = Brushes.Black;
             this.lblTipo.Foreground = Brushes.Black;
@@ -215,6 +233,7 @@ namespace ClientesWPF
             this.rdbActiva.BorderBrush = Brushes.Black;
             this.rdbInactiva.BorderBrush = Brushes.Black;
             this.btnLimpiarControles.BorderBrush = Brushes.Black;
+            darktheme = false;
         }
 
         private void TextBox_TextChanged_1(object sender, TextChangedEventArgs e)
@@ -222,13 +241,17 @@ namespace ClientesWPF
 
         }
 
-        public void ejecutar(Cliente cliente)
+        public void ejecutar(Cliente cliente,bool dark)
         {
             txtRut.Text = cliente.Rut.ToString();
             string nombrecontacto = cliente.NombreContacto;
             string[] listnombre = nombrecontacto.Split(' ');
             txtNombre.Text = listnombre[0];
             txtApel.Text = listnombre[1];
+            if (dark)
+            {
+                this.dark();
+            }
         }
 
     }

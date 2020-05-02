@@ -19,7 +19,7 @@ namespace ClientesWPF
     
     public partial class Ventana_Principal : MetroWindow
     {
-        
+        private bool darktheme;
         public static ClienteCollection listaClientes = new ClienteCollection();
         public static ContratoCollection listaContratos = new ContratoCollection();
         public static TipoEventoCollection listaTipoEvento = new TipoEventoCollection();
@@ -37,6 +37,10 @@ namespace ClientesWPF
         {
 
             AdminClientes ac = new AdminClientes();
+            if (darktheme)
+            {
+                ac.dark();
+            }
             ac.Show();
             this.Close();
         }
@@ -45,27 +49,23 @@ namespace ClientesWPF
         {
 
             ListadoClientes listm = new ListadoClientes();
+            if (darktheme)
+            {
+                listm.dark();
+            }
             listm.Show();
             this.Close();
 
         }
-        /*
-        private void llenarClientes()
-        {
-            Cliente cliente = new Cliente()
-            {
-                Rut = 123,
-                RazonSocial = "xd",
-                NombreContacto = "xd",
-                MailContacto = "xd",
-                Telefono = 123
-            };
-            listaClientes.Add(cliente);
-        }*/
+
 
         private void btnListarContratos_Click(object sender, RoutedEventArgs e)
         {
             ListadoContratos listco = new ListadoContratos();
+            if (darktheme)
+            {
+                listco.dark();
+            }
             listco.Show();
             this.Close();
         }
@@ -73,6 +73,10 @@ namespace ClientesWPF
         private void btnAdminContratos_Click(object sender, RoutedEventArgs e)
         {
             AdminContratos adcon = new AdminContratos();
+            if (darktheme)
+            {
+                adcon.dark();
+            }
             adcon.Show();
             this.Close();
         }
@@ -80,46 +84,33 @@ namespace ClientesWPF
         private void switchCambioBack_Checked(object sender, RoutedEventArgs e)
         {
 
-            //ThemeManager.AddAppTheme("CustomDark", new Uri("pack://application:,,,/CustomDark.xaml"));
-            //enviado(true);
-            this.Background = Brushes.Black;
-            switchCambioBack.Foreground = Brushes.White;
-            switchCambioBack.ThumbIndicatorBrush = Brushes.White;
-            //ThemeManager.ChangeAppStyle(Application.Current,
-            //                            ThemeManager.GetAccent("Blue"),
-            //                            ThemeManager.GetAppTheme("BaseDark"));
-
-            AdminClientes adcli = new AdminClientes();
-
-            //adcli.switchCambioBack.OnLabel = " ";
-
-            adcli.switchCambioBack.IsChecked = true;
-            adcli.switchCambioBack.IsEnabled = true;
-            //adcli.lblSwitch.Content = "SI";
-            //adcli.ShowDialog();
+            dark();
 
         }
 
         private void switchCambioBack_IsCheckedChanged(object sender, EventArgs e)
         {
-
-            AdminClientes adcli = new AdminClientes();
-
-
-            this.Background = Brushes.White;
-
-            switchCambioBack.Foreground = Brushes.Black;
-            switchCambioBack.ThumbIndicatorBrush = Brushes.Black;
-            adcli.switchCambioBack.IsChecked = false;
-            //adcli.ShowDialog();
-            //ThemeManager.ChangeAppStyle(Application.Current,
-            //                            ThemeManager.GetAccent("blue"),
-            //                            ThemeManager.GetAppTheme("BaseLight"));
-
+            
+            light();
+            
 
 
         }
-        //ThemeManager.ChangeAppTheme(ThemeManager.AddAppTheme.Ba )
+        public void dark()
+        {
+            this.Background = Brushes.Black;
+            switchCambioBack.Foreground = Brushes.White;
+            switchCambioBack.ThumbIndicatorBrush = Brushes.White;
+            switchCambioBack.IsChecked = true;
+            darktheme = true;
+        }
+        public void light()
+        {
+            this.Background = Brushes.White;
+            switchCambioBack.Foreground = Brushes.Black;
+            switchCambioBack.ThumbIndicatorBrush = Brushes.Black;
+            darktheme = false;
+        }
 
     }
 }

@@ -24,8 +24,9 @@ namespace ClientesWPF
     public partial class ListadoClientes : MetroWindow
     {
         //creo delegado pa enviar datos
-        public delegate void pasar(Cliente dato);
+        public delegate void pasar(Cliente dato,bool dark);
         public event pasar pasado;
+        private bool darktheme;
         public ListadoClientes()
         {
 
@@ -68,6 +69,12 @@ namespace ClientesWPF
 
         private void switchCambioBack_Checked(object sender, RoutedEventArgs e)
         {
+
+            dark();
+        }
+
+        public void dark()
+        {
             var bc = new BrushConverter();
             this.Background = Brushes.Black;
             switchCambioBack.Foreground = Brushes.White;
@@ -80,10 +87,17 @@ namespace ClientesWPF
             lblTIpo.Foreground = (Brush)bc.ConvertFrom("#2b78e4");
             lblActividad.Foreground = (Brush)bc.ConvertFrom("#2b78e4");
             lblTitulo.Foreground = (Brush)bc.ConvertFrom("#2b78e4");
+            switchCambioBack.IsChecked = true;
+            darktheme = true;
 
         }
 
         private void switchCambioBack_IsCheckedChanged(object sender, EventArgs e)
+        {
+            light();
+        }
+
+        public void light()
         {
             var bc = new BrushConverter();
             this.Background = Brushes.White;
@@ -96,8 +110,8 @@ namespace ClientesWPF
             lblTIpo.Foreground = Brushes.Black;
             lblActividad.Foreground = Brushes.Black;
             lblTitulo.Foreground = Brushes.Black;
+            darktheme = false;
         }
-
         private void btnLimpiar_Click(object sender, RoutedEventArgs e)
         {
             txtRut.Text = string.Empty;
@@ -113,12 +127,18 @@ namespace ClientesWPF
         private void btnVentanaPrincipal_Click(object sender, RoutedEventArgs e)
         {
             Ventana_Principal vp = new Ventana_Principal();
+            if (darktheme)
+            {
+                vp.dark();
+            }
             vp.Show();
             this.Close();
         }
 
         private void btnAtras_Click(object sender, RoutedEventArgs e)
         {
+            Cliente cli = new Cliente();
+            pasado(cli, darktheme);
             this.Close();
             
         }
@@ -134,7 +154,8 @@ namespace ClientesWPF
         {
             if (!string.IsNullOrWhiteSpace(txtAux.Text))
             {
-                pasado(Ventana_Principal.listaClientes.BuscarCliente(int.Parse(txtAux.Text)));
+
+                pasado(Ventana_Principal.listaClientes.BuscarCliente(int.Parse(txtAux.Text)),darktheme);
                 this.Close();
             }
             else

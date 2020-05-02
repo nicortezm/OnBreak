@@ -27,44 +27,15 @@ namespace ClientesWPF
     
     public partial class AdminClientes : MetroWindow
     {
-        
-        Ventana_Principal vp = new Ventana_Principal();
+        public bool darktheme;
         public AdminClientes()
         {
             
             InitializeComponent();
-            //if (this.switchCambioBack.OnLabel == " ")
-            //{
-            //    this.switchCambioBack.IsChecked = true;
-            //}
-            //else if (this.switchCambioBack.OnLabel == "")
-            //{
-            //    this.switchCambioBack.IsChecked = false;
-            //}
+
             CargaCombo();
         }
 
-     
-
-        //public AdminClientes(int rut)
-        //{
-        //    InitializeComponent();
-        //    CargaCombo();
-        //    Cliente cliente = new Cliente();
-        //    cliente = Ventana_Principal.listaClientes.BuscarCliente(rut);
-        //    if (cliente != null)
-        //    {
-        //        txtRut.Text = cliente.Rut.ToString();
-        //        txtRazonSocial.Text = cliente.RazonSocial;
-        //        txtNomContacto.Text = cliente.NombreContacto;
-        //        txtMailContact.Text = cliente.MailContacto;
-        //        txtDireccion.Text = cliente.Direccion;
-        //        txtTelefono.Text = cliente.Telefono.ToString();
-        //        cboActividad.SelectedItem = cliente.ActividadEmpresa;
-        //        cboTIpo.SelectedItem = cliente.TipoEmpresa;
-        //    }
-
-        //}
 
         private void CargaCombo()
         {
@@ -174,10 +145,14 @@ namespace ClientesWPF
         private void btnListar_Click(object sender, RoutedEventArgs e)
         {
             ListadoClientes listar = new ListadoClientes(1);
+            if (darktheme)
+            {
+                listar.dark();
+            }
             listar.pasado += new ListadoClientes.pasar(ejecutar);
             listar.Show();
         }
-        public void ejecutar(Cliente cliente)
+        public void ejecutar(Cliente cliente,bool dark)
         {
             txtRut.Text = cliente.Rut.ToString();
             txtRazonSocial.Text = cliente.RazonSocial;
@@ -187,22 +162,25 @@ namespace ClientesWPF
             txtTelefono.Text = cliente.Telefono.ToString();
             cboActividad.SelectedItem = cliente.ActividadEmpresa;
             cboTIpo.SelectedItem = cliente.TipoEmpresa;
+            if (dark)
+            {
+                this.dark();
+            }
+            else
+            {
+                this.light();
+                switchCambioBack.IsChecked = false;
+            }
         }
 
-        private void Listar_pasado(int dato)
-        {
-            throw new NotImplementedException();
-        }
-
-        //metodo para la recepcion de parametros
-        private void recepcionParametros(string param)
-        {
-            txtRut.Text = param;
-        }
 
         private void btnVentanaPrincipal_Click(object sender, RoutedEventArgs e)
         {
             Ventana_Principal vp = new Ventana_Principal();
+            if (darktheme)
+            {
+                vp.dark();
+            }
             this.Close();
             vp.Show();
 
@@ -210,26 +188,25 @@ namespace ClientesWPF
 
         private void switchCambioBack_Checked(object sender, RoutedEventArgs e)
         {
+
+            dark();
+
+
+        }
+        public void dark()
+        {
             //variable que convierte que cambia los parametros de escojer color..
             var bc = new BrushConverter();
-            
-           
-            ListadoClientes listm = new ListadoClientes();
-            Ventana_Principal ven = new Ventana_Principal();
-
-
             this.Background = Brushes.Black;
             switchCambioBack.Foreground = Brushes.White;
             switchCambioBack.ThumbIndicatorBrush = Brushes.White;
             this.btnLimpiar.BorderBrush = (Brush)bc.ConvertFrom("#2b78e4");
-            //ThemeManager.ChangeAppStyle(Application.Current,
-            //                        ThemeManager.GetAccent("Blue"),
-            //                        ThemeManager.GetAppTheme("BaseDark"));
+
 
             this.btnLimpiar.Foreground = Brushes.Black;
             this.lblTitulo.Foreground = (Brush)bc.ConvertFrom("#2b78e4");
             this.lblTIpo.Foreground = (Brush)bc.ConvertFrom("#2b78e4");
-            lblRazonSocial.Foreground = (Brush)bc.ConvertFrom("#2b78e4");
+            this.lblRazonSocial.Foreground = (Brush)bc.ConvertFrom("#2b78e4");
             this.lblMailContact.Foreground = (Brush)bc.ConvertFrom("#2b78e4");
             this.lblRut.Foreground = (Brush)bc.ConvertFrom("#2b78e4");
             this.lblNomContact.Foreground = (Brush)bc.ConvertFrom("#2b78e4");
@@ -238,26 +215,18 @@ namespace ClientesWPF
             this.lblDireccion.Foreground = (Brush)bc.ConvertFrom("#2b78e4");
             this.brSeparador.BorderBrush = (Brush)bc.ConvertFrom("#2b78e4");
             this.brSeparador.Background = (Brush)bc.ConvertFrom("#2b78e4");
-            
+            darktheme = true;
+            switchCambioBack.IsChecked = true;
 
         }
-       //public void ActivaSwitch()
-       // {
-       //     if (this.switchCambioBack.OnLabel==" ")
-       //     {
-       //         this.switchCambioBack.IsChecked = true;
-       //     }
-       //     else if (this.switchCambioBack.OnLabel == "")
-       //     {
-       //         this.switchCambioBack.IsChecked = false;
-       //     }
-       // }
+
         private void switchCambioBack_IsCheckedChanged(object sender, EventArgs e)
         {
-            //ThemeManager.ChangeAppStyle(Application.Current,
-            //                           ThemeManager.GetAccent("blue"),
-            //                           ThemeManager.GetAppTheme("BaseLight"));
-
+            light();
+            
+        }
+        public void light()
+        {
             this.Background = Brushes.White;
             switchCambioBack.Foreground = Brushes.Black;
             switchCambioBack.ThumbIndicatorBrush = Brushes.Black;
@@ -273,6 +242,7 @@ namespace ClientesWPF
             this.lblDireccion.Foreground = Brushes.Black;
             this.brSeparador.BorderBrush = Brushes.Black;
             this.brSeparador.Background = Brushes.Black;
+            darktheme = false;
         }
 
         private void btnLimpiar_Click(object sender, RoutedEventArgs e)

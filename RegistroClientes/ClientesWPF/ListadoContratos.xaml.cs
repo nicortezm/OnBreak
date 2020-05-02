@@ -20,12 +20,17 @@ namespace ClientesWPF
     /// </summary>
     public partial class ListadoContratos : MetroWindow
     {
+        private bool darktheme;
         public ListadoContratos()
         {
             InitializeComponent();
         }
 
         private void switchCambioBack_Checked(object sender, RoutedEventArgs e)
+        {
+            dark();
+        }
+        public void dark()
         {
             var bc = new BrushConverter();
             this.Background = Brushes.Black;
@@ -38,9 +43,14 @@ namespace ClientesWPF
             this.lblNroContrato.Foreground = (Brush)bc.ConvertFrom("#2b78e4");
             this.lblRut.Foreground = (Brush)bc.ConvertFrom("#2b78e4");
             this.lblTIpo.Foreground = (Brush)bc.ConvertFrom("#2b78e4");
+            switchCambioBack.IsChecked = true;
+            darktheme = true;
         }
-
         private void switchCambioBack_IsCheckedChanged(object sender, EventArgs e)
+        {
+            light();
+        }
+        public void light()
         {
             this.Background = Brushes.White;
             switchCambioBack.Foreground = Brushes.Black;
@@ -52,11 +62,16 @@ namespace ClientesWPF
             this.lblNroContrato.Foreground = Brushes.Black;
             this.lblRut.Foreground = Brushes.Black;
             this.lblTIpo.Foreground = Brushes.Black;
+            darktheme = false;
         }
 
         private void btnVentanaPrincipal_Click(object sender, RoutedEventArgs e)
         {
-            Ventana_Principal vp = new Ventana_Principal();   
+            Ventana_Principal vp = new Ventana_Principal();
+            if (darktheme)
+            {
+                vp.dark();
+            }
             this.Close();
             vp.Show();
         }
