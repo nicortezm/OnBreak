@@ -57,11 +57,9 @@
         <RadioButton x:Name="rdbActiva" Content="Activa" HorizontalAlignment="Left" Margin="497,258,0,0" VerticalAlignment="Top"  FontSize="18" Width="89" Height="37" Foreground="Black" OpacityMask="#FFF3E7E7" BorderBrush="Black" Checked="rdbActiva_Checked"/>
         <RadioButton x:Name="rdbInactiva" Content="Inactiva" HorizontalAlignment="Left" Margin="497,316,0,0" VerticalAlignment="Top"  FontSize="18" Width="99" Height="30" BorderBrush="Black" Checked="rdbInactiva_Checked"/>
         <!-- Tipo -->
-        <Label x:Name="lblTipo" Content="Tipo*" HorizontalAlignment="Left" Margin="723,258,0,0" VerticalAlignment="Top" FontSize="18"/>
+        <Label x:Name="lblTipo" Content="   Tipo*&#xD;&#xA;Evento" HorizontalAlignment="Left" Margin="707,246,0,0" VerticalAlignment="Top" FontSize="18"/>
         <ComboBox x:Name="cboTIpo" HorizontalAlignment="Left" Margin="776,260,0,0" VerticalAlignment="Top" Width="122" FontSize="18" SelectionChanged="cboTIpo_SelectionChanged"/>
         <!-- Actividad -->
-        <Label x:Name="lblActividad" Content="Actividad*" HorizontalAlignment="Left" Margin="985,258,0,0" VerticalAlignment="Top" FontSize="18"/>
-        <ComboBox x:Name="cboActividad" HorizontalAlignment="Left" Margin="1076,260,0,0" VerticalAlignment="Top" Width="120" FontSize="18" SelectionChanged="cboActividad_SelectionChanged"/>
         <!-- CReacion -->
         <Label x:Name="lblCreacion" Content="Creacion*" HorizontalAlignment="Left" Margin="391,77,0,0" VerticalAlignment="Top" FontSize="18"/>
         <!-- Direccion -->

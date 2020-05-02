@@ -83,7 +83,6 @@ namespace ClientesWPF
             this.txtDireccion.Text = string.Empty;
             this.txtObservacion.Text = string.Empty;
             this.txtRut.Text = string.Empty;
-            this.cboActividad.SelectedIndex = 0;
             this.cboTIpo.SelectedIndex = 0;
             this.txtNombre.Text = string.Empty;
             this.txtApel.Text = string.Empty;
@@ -186,7 +185,7 @@ namespace ClientesWPF
             this.Background = Brushes.Black;
             switchCambioBack.Foreground = Brushes.White;
             switchCambioBack.ThumbIndicatorBrush = Brushes.White;
-            this.lblActividad.Foreground = (Brush)bc.ConvertFrom("#2b78e4");
+           
             this.lblCreacion.Foreground = (Brush)bc.ConvertFrom("#2b78e4");
             this.lblDreccion.Foreground = (Brush)bc.ConvertFrom("#2b78e4");
             this.lblFechaInicio.Foreground = (Brush)bc.ConvertFrom("#2b78e4");
@@ -217,7 +216,6 @@ namespace ClientesWPF
             this.Background = Brushes.White;
             switchCambioBack.Foreground = Brushes.Black;
             switchCambioBack.ThumbIndicatorBrush = Brushes.Black;
-            this.lblActividad.Foreground = Brushes.Black;
             this.lblCreacion.Foreground = Brushes.Black;
             this.lblDreccion.Foreground = Brushes.Black;
             this.lblFechaInicio.Foreground = Brushes.Black;
