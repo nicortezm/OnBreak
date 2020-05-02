@@ -13,6 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using BibliotecaClientes;
 using MahApps.Metro.Controls;
+using MahApps.Metro.Controls.Dialogs;
+
 namespace ClientesWPF
 {
     /// <summary>
@@ -92,7 +94,28 @@ namespace ClientesWPF
 
         private void btnBuscarClientes_Click(object sender, RoutedEventArgs e)
         {
-
+            if (!string.IsNullOrWhiteSpace(txtRut.Text))
+            {
+                Cliente cliente = new Cliente();
+                cliente = Ventana_Principal.listaClientes.BuscarCliente(int.Parse(txtRut.Text));
+                if (cliente != null)
+                {
+                    txtRut.Text = cliente.Rut.ToString();
+                    string [] separaNomcontact= cliente.NombreContacto.Split(' ');
+                    this.txtNombre.Text= separaNomcontact.ElementAt(0);
+                    this.txtApel.Text = separaNomcontact.ElementAt(1);
+            
+                }
+                else
+                {
+                    //await this.ShowMessageAsync("Alerta:",
+                    //        string.Format("El Cliente con Rut: {0}, NO existe!!", txtRut.Text));
+                }
+            }
+            else
+            {
+                //await this.ShowMessageAsync("Alerta:", "Debe ingresar rut para poder buscar");
+            }
         }
 
         private void btnRegistrarContrato_Click(object sender, RoutedEventArgs e)
