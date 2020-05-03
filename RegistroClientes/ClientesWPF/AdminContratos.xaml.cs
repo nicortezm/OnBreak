@@ -25,10 +25,34 @@ namespace ClientesWPF
         private bool darktheme;
         public AdminContratos()
         {
-           
             InitializeComponent();
+            LlenarTipoEvento();
+            CargarCboTipoEvento();
+        }
+        public void CargarCboTipoEvento()
+        {
+            //this.cboTIpo.ItemsSource = "Seleccione";
+            this.cboTIpo.DisplayMemberPath = "Nombre";
+            this.cboTIpo.SelectedValuePath = "Id";
+            this.cboTIpo.ItemsSource = Ventana_Principal.listaTipoEvento;
+            this.cboTIpo.SelectedIndex = 0;
+
+        }
+        public void LlenarTipoEvento()
+        {
+            TipoEvento tipev = new TipoEvento();
+            tipev = new TipoEvento { Id =0001, Nombre = "Seleccione", ValorBase = 0, PersonalBase = 0 };
+            Ventana_Principal.listaTipoEvento.Add(tipev);
+            tipev = new TipoEvento{ Id = 1111, Nombre = "Cumpleaños", ValorBase = 25000,PersonalBase=12};
+            Ventana_Principal.listaTipoEvento.Add(tipev);
+            tipev = new TipoEvento{ Id = 1112, Nombre = "Casamiento", ValorBase = 45000, PersonalBase = 30 };
+            Ventana_Principal.listaTipoEvento.Add(tipev);
+            tipev = new TipoEvento { Id = 1113, Nombre = "Fiesta de Gala", ValorBase = 30000, PersonalBase = 40 };
+            Ventana_Principal.listaTipoEvento.Add(tipev);
+      
         }
 
+        
         private void btnBuscarContrato_Click(object sender, RoutedEventArgs e)
         {
 
@@ -64,12 +88,15 @@ namespace ClientesWPF
 
         private void btnVentanaPrincipal_Click(object sender, RoutedEventArgs e)
         {
+            TipoEvento tipev = new TipoEvento();
             Ventana_Principal vp = new Ventana_Principal();
             if (darktheme)
             {
                 vp.dark();
             }
             vp.Show();
+            Ventana_Principal.listaTipoEvento.Remove(tipev);
+            //this.cboTIpo.Items.Clear();
             this.Close();
             
         }
@@ -215,6 +242,7 @@ namespace ClientesWPF
             this.lblTermino.Foreground = (Brush)bc.ConvertFrom("#2b78e4");
             this.lblTipo.Foreground = (Brush)bc.ConvertFrom("#2b78e4");
             this.lblVigencia.Foreground = (Brush)bc.ConvertFrom("#2b78e4");
+            this.lblObservacion.Foreground = (Brush)bc.ConvertFrom("#2b78e4");
             this.rdbActiva.Foreground = (Brush)bc.ConvertFrom("#2b78e4");
             this.rdbInactiva.Foreground = (Brush)bc.ConvertFrom("#2b78e4");
             this.rdbActiva.BorderBrush = (Brush)bc.ConvertFrom("#2b78e4");
@@ -245,6 +273,7 @@ namespace ClientesWPF
             this.lblTermino.Foreground = Brushes.Black;
             this.lblTipo.Foreground = Brushes.Black;
             this.lblVigencia.Foreground = Brushes.Black;
+            this.lblObservacion.Foreground = Brushes.Black;
             this.rdbActiva.Foreground = Brushes.Black;
             this.rdbInactiva.Foreground = Brushes.Black;
             this.rdbActiva.BorderBrush = Brushes.Black;

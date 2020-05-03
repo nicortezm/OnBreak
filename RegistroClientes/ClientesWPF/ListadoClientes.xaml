@@ -16,14 +16,14 @@
         <Label x:Name="lblTitulo" Content="Listado de Clientes" HorizontalAlignment="Left" Margin="472,22,0,0" VerticalAlignment="Top" FontSize="36"/>
         <DataGrid x:Name="dgClientes" HorizontalAlignment="Left" Height="274" Margin="135,237,0,0" VerticalAlignment="Top" Width="1120" AutoGenerateColumns="False"  IsReadOnly="True" SelectionChanged="dgClientes_SelectionChanged">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Rut" Width="80" Binding="{Binding Path=Rut}"/>
-                <DataGridTextColumn Header="Razon Social" Width="140" Binding="{Binding Path=RazonSocial}"/>
+                <DataGridTextColumn Header="     Rut" Width="80" Binding="{Binding Path=Rut}"/>
+                <DataGridTextColumn Header="     Razon Social" Width="140" Binding="{Binding Path=RazonSocial}"/>
                 <DataGridTextColumn Header="Nombre Contacto" Width="140" Binding="{Binding Path=NombreContacto}"/>
-                <DataGridTextColumn Header="Mail Contacto" Width="160"  Binding="{Binding Path=MailContacto}"/>
-                <DataGridTextColumn Header="Direccion" Width="200" Binding="{Binding Path=Direccion}"/>
+                <DataGridTextColumn Header="      Mail Contacto" Width="160"  Binding="{Binding Path=MailContacto}"/>
+                <DataGridTextColumn Header="                  Direccion" Width="200" Binding="{Binding Path=Direccion}"/>
                 <DataGridTextColumn Header="Telefono" Width="80" Binding="{Binding Path=Telefono}"/>
-                <DataGridTextColumn Header="Tipo Empresa" Width="160" Binding="{Binding Path=TipoEmpresa}"/>
-                <DataGridTextColumn Header="Actividad Empresa" Width="160" Binding="{Binding Path=ActividadEmpresa}"/>
+                <DataGridTextColumn Header="        Tipo Empresa" Width="160" Binding="{Binding Path=TipoEmpresa}"/>
+                <DataGridTextColumn Header="   Actividad Empresa" Width="160" Binding="{Binding Path=ActividadEmpresa}"/>
             </DataGrid.Columns>
         </DataGrid>
         <Label x:Name="lblTIpo" Content="Tipo*" HorizontalAlignment="Left" Margin="556,110,0,0" VerticalAlignment="Top" FontSize="18" RenderTransformOrigin="-5.691,0.181" Height="34" Width="52"/>
