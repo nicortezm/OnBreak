@@ -108,10 +108,6 @@ namespace ClientesWPF
                             dgClientes.Items.Add(cliente);
                         }
                     }
-                    //else if (string.IsNullOrWhiteSpace(txtRut.Text) && cboActividad.SelectedIndex == 0 && cboTIpo.SelectedIndex == 0) // 5
-                    //{
-
-                    //}
                     else if (string.IsNullOrWhiteSpace(txtRut.Text) && cboActividad.SelectedIndex == 0 && cboTIpo.SelectedIndex != 0) //6
                     {
                         if (cboTIpo.SelectedItem.ToString() == cliente.TipoEmpresa.ToString())

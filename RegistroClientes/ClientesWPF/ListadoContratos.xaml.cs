@@ -27,15 +27,30 @@ namespace ClientesWPF
         public ListadoContratos()
         {
             InitializeComponent();
+            Init();
             btnSelectContrato.Visibility = Visibility.Collapsed;
             btnAtras.Visibility = Visibility.Collapsed;
         }
         public ListadoContratos(int number)
         {
             InitializeComponent();
+            Init();
             btnSelectContrato.Visibility = Visibility.Visible;
             btnVentanaPrincipal.Visibility = Visibility.Collapsed;
             btnAtras.Visibility = Visibility.Visible;
+        }
+
+        private void Init()
+        {
+            dgContratos.Items.Clear();
+            foreach (var cliente in Ventana_Principal.listaClientes)
+            {
+                foreach (var contrato in cliente.Contrato)
+                {
+                    dgContratos.Items.Add(contrato);
+                }
+            }
+
         }
 
         private void switchCambioBack_Checked(object sender, RoutedEventArgs e)

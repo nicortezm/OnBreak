@@ -23,8 +23,7 @@ namespace ClientesWPF
         public static ClienteCollection listaClientes = new ClienteCollection();
         public static ContratoCollection listaContratos = new ContratoCollection();
         public static TipoEventoCollection listaTipoEvento = new TipoEventoCollection();
-        //public delegate void pasarEstado(bool estado); 
-        //public event pasarEstado enviado;
+
         public Ventana_Principal()
         {
             

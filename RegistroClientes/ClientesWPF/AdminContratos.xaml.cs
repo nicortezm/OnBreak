@@ -26,7 +26,6 @@ namespace ClientesWPF
         public AdminContratos()
         {
             InitializeComponent();
-            LlenarTipoEvento();
             CargarCboTipoEvento();
         }
         public void CargarCboTipoEvento()
@@ -38,19 +37,7 @@ namespace ClientesWPF
             this.cboTIpo.SelectedIndex = 0;
 
         }
-        public void LlenarTipoEvento()
-        {
-            TipoEvento tipev = new TipoEvento();
-            tipev = new TipoEvento { Id =0001, Nombre = "Seleccione", ValorBase = 0, PersonalBase = 0 };
-            Ventana_Principal.listaTipoEvento.Add(tipev);
-            tipev = new TipoEvento{ Id = 1111, Nombre = "Cumpleaños", ValorBase = 25000,PersonalBase=12};
-            Ventana_Principal.listaTipoEvento.Add(tipev);
-            tipev = new TipoEvento{ Id = 1112, Nombre = "Casamiento", ValorBase = 45000, PersonalBase = 30 };
-            Ventana_Principal.listaTipoEvento.Add(tipev);
-            tipev = new TipoEvento { Id = 1113, Nombre = "Fiesta de Gala", ValorBase = 30000, PersonalBase = 40 };
-            Ventana_Principal.listaTipoEvento.Add(tipev);
-      
-        }
+
 
         
         private void btnBuscarContrato_Click(object sender, RoutedEventArgs e)
@@ -67,18 +54,6 @@ namespace ClientesWPF
             }
             listar.pasado += new ListadoClientes.pasar(ejecutar);
             listar.Show();
-        }
-
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void txtNumContrato_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            //String fechaContrato = DateTime.Today.ToString("dd/MM/yyyy");
-           
-            
         }
 
         private void RadioButton_Checked(object sender, RoutedEventArgs e)
@@ -108,6 +83,8 @@ namespace ClientesWPF
         public void LimpiaControles()
         {
             //this.txtNumContrato.Text= string.Empty;
+            this.dtpCreacion.SelectedDate = DateTime.Now;
+            this.dtpTermino.SelectedDate = DateTime.Now;
             this.txtFechaInicio.Text = string.Empty;
             this.txtFechaTermino.Text = string.Empty;
             this.txtDireccion.Text = string.Empty;
@@ -150,31 +127,49 @@ namespace ClientesWPF
         {
             if (!String.IsNullOrWhiteSpace(this.txtObservacion.Text) &&!string.Empty.Equals(this.txtDireccion.Text)
                 //&& !String.IsNullOrWhiteSpace(this.txtFechaInicio.Text) && !String.IsNullOrWhiteSpace(this.txtFechaTermino.Text)
-                 && this.cboTIpo.SelectedIndex!=0 && this.rdbActiva.IsChecked==true)
+                 && this.cboTIpo.SelectedIndex!=0 && this.rdbActiva.IsChecked==true && !String.IsNullOrWhiteSpace(this.txtRut.Text))
             {
                 
                 bool vigenteIs = EstadoVigencia();
+                bool seAgrego = false;
                 Contrato contrato = new Contrato
                 {
-                    NumeroContrato = int.Parse(DateTime.Now.ToString("yyyyMMddHHmm")),
-                    Creacion = this.dtpCreacion.SelectedDate.ToString(),
-                    Termino = String.Empty,
+                    NumeroContrato = long.Parse(DateTime.Now.ToString("yyyyMMddHHmm")),
+                    Creacion = this.dtpCreacion.SelectedDate.Value,
+                    Termino = this.dtpTermino.SelectedDate.Value,
                     IdTipo = int.Parse(this.cboTIpo.SelectedValue.ToString()),
                     EstaVigente = vigenteIs,
                     Observaciones = this.txtObservacion.Text,
                     Direccion = this.txtDireccion.Text,
-                    FechaHoraInicio = DateTime.Now.ToString("yyyyMMddHHmm"),
+                    FechaHoraInicio = String.Empty,
                     FechaHoraTermino = String.Empty
 
                 };
-               this.ShowMessageAsync("Confirmacion:",
+                foreach (var cliente in Ventana_Principal.listaClientes)
+                {
+                    if (txtRut.Text == cliente.Rut.ToString())
+                    {
+                        cliente.Contrato.Add(contrato);
+                        seAgrego = true;
+                        break;
+                    }
+                }
+                if (!seAgrego)
+                {
+                    this.ShowMessageAsync("Alerta:", "Error al agregar contrato");
+                }
+                else
+                {
+                    this.ShowMessageAsync("Confirmacion:",
                         string.Format("El COntrato con numero Contrato: {0}, fué agregado con exito!!", contrato.NumeroContrato.ToString()));
+                }
+               
                 
-                Ventana_Principal.listaContratos.Add(contrato);
+               
             }
             else
             {
-
+                 this.ShowMessageAsync("Alerta:", "Debe Completar todos los datos");
             }
             //String fechaContrato = DateTime.Now.ToString("yyyyMMddHHmm");
             //int fechaContrato = int.Parse(DateTime.Now.ToString("yyyyMMddHHmm"));

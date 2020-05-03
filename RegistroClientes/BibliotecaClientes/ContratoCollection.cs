@@ -11,6 +11,7 @@ namespace BibliotecaClientes
         public ContratoCollection()
         {
 
+
         }
         public Contrato BuscarContrato(int numcont)
         {

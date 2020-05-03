@@ -12,9 +12,9 @@ namespace BibliotecaClientes
         private int _ValorBase { get; set; }
         private int _PersonalBase { get; set; }
 
-        public int NumeroContrato { get; set; }
-        public string Creacion { get; set; }
-        public string Termino { get; set; }
+        public long NumeroContrato { get; set; }
+        public DateTime Creacion { get; set; }
+        public DateTime Termino { get; set; }
         public string FechaHoraInicio { get; set; }
         public string FechaHoraTermino { get; set; }
         public string Direccion { get; set; }
@@ -35,8 +35,8 @@ namespace BibliotecaClientes
         private void Init()
         {
             NumeroContrato = 0;
-            Creacion = string.Empty;
-            Termino = string.Empty;
+            Creacion = DateTime.Now;
+            Termino = DateTime.Now;
             FechaHoraInicio = string.Empty;
             FechaHoraTermino = string.Empty;
             Direccion = string.Empty;
