@@ -121,22 +121,36 @@ namespace ClientesWPF
 
         private void btnRegistrarContrato_Click(object sender, RoutedEventArgs e)
         {
-            bool vigenteIs = EstadoVigencia();
-            Contrato contrato = new Contrato
+            if (!String.IsNullOrWhiteSpace(this.txtRut.Text)&& !String.IsNullOrWhiteSpace(this.txtObservacion.Text)
+                && !String.IsNullOrWhiteSpace(this.txtFechaInicio.Text) && !String.IsNullOrWhiteSpace(this.txtFechaTermino.Text)
+                 && this.cboTIpo.SelectedIndex!=0 && this.rdbActiva.IsChecked==true)
             {
-                NumeroContrato = int.Parse(DateTime.Now.ToString("yyyyMMddHHmm")),
-                Creacion = this.dtpCreacion.SelectedDate.ToString(),
-                Termino = this.dtpCreacion.SelectedDate.ToString(),
-               //Termino =this.dtpCreacion.SelectedDate.ToString(),
-                EstaVigente = vigenteIs,
-                Observaciones=this.txtObservacion.Text,
-                Direccion=this.txtDireccion.Text,
-                FechaHoraInicio= DateTime.Now.ToString("yyyyMMddHHmm"),
-                FechaHoraTermino = "------------"
+                if (true)
+                {
+                    bool vigenteIs = EstadoVigencia();
+                    Contrato contrato = new Contrato
+                    {
+                        NumeroContrato = int.Parse(DateTime.Now.ToString("yyyyMMddHHmm")),
+                        Creacion = this.dtpCreacion.SelectedDate.ToString(),
+                        Termino = this.dtpCreacion.SelectedDate.ToString(),
+                        //Termino =this.dtpCreacion.SelectedDate.ToString(),
+                        EstaVigente = vigenteIs,
+                        Observaciones = this.txtObservacion.Text,
+                        Direccion = this.txtDireccion.Text,
+                        FechaHoraInicio = DateTime.Now.ToString("yyyyMMddHHmm"),
+                        FechaHoraTermino = "------------",
+                       
+                    };
+                }
+                else
+                {
 
+                }
+            }
+            else
+            {
 
-
-            };
+            }
             //String fechaContrato = DateTime.Now.ToString("yyyyMMddHHmm");
             //int fechaContrato = int.Parse(DateTime.Now.ToString("yyyyMMddHHmm"));
             //this.txtNumContrato.Text = fechaContrato;

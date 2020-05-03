@@ -94,5 +94,10 @@ namespace ClientesWPF
             pasado(con, false, darktheme);
             this.Close();
         }
+
+        private void dgContratos_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }

@@ -26,7 +26,20 @@
         <Label x:Name="lblNroContrato" Content="N° Contrato*" HorizontalAlignment="Left" Margin="788,110,0,0" VerticalAlignment="Top" FontSize="18"/>
         <TextBox x:Name="txtNumContrato" HorizontalAlignment="Left" Height="32" Margin="903,110,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
         <Label x:Name="lblTitulo" Content="Listado de Contratos" HorizontalAlignment="Left" Margin="372,22,0,0" VerticalAlignment="Top" FontSize="36"/>
-        <DataGrid x:Name="dgContratos" HorizontalAlignment="Left" Height="274"  Margin="135,237,0,0" VerticalAlignment="Top" Width="1120"/>
+        <DataGrid x:Name="dgContratos" HorizontalAlignment="Left" Height="274"  Margin="135,237,0,0" VerticalAlignment="Top" Width="1120" SelectionChanged="dgContratos_SelectionChanged">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="    ´Número&#xA;de contrato" Width="109" Binding="{Binding Path=Rut}"/>
+                <DataGridTextColumn Header="    Creación" Width="109" Binding="{Binding Path=Rut}"/>
+                <DataGridTextColumn Header="    Término" Width="109" Binding="{Binding Path=Rut}"/>
+                <DataGridTextColumn Header="  Fecha Hora&#xA;        Inicio" Width="109" Binding="{Binding Path=Rut}"/>
+                <DataGridTextColumn Header="  Fecha Hora&#xA;     Término" Width="109" Binding="{Binding Path=Rut}"/>
+                <DataGridTextColumn Header="                 Dirección" Width="200" Binding="{Binding Path=Rut}" />
+                <DataGridTextColumn Header="Está Vigente" Width="99" Binding="{Binding Path=Rut}"/>
+                <DataGridTextColumn Header="Tipo Evento" Width="96" Binding="{Binding Path=Rut}"/>
+                <DataGridTextColumn Header="         Observación" Width="200" Binding="{Binding Path=Rut}"/>
+            </DataGrid.Columns>
+            
+        </DataGrid>
         <Image x:Name="imgLogoTransparent" Margin="1168,555,4,-4" Source="Imagenes/logo_transparent_background.png" Stretch="Fill"/>
         <Controls:ToggleSwitch x:Name="switchCambioBack"  OnLabel="" OffLabel="" Margin="1233,0,0,625" FontSize="24" Content="" VerticalContentAlignment="Stretch" Header="&#xA;Dark Mode" Width="93" VerticalAlignment="Bottom" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Height="96" ContentDirection="RightToLeft" OnSwitchBrush="#FF085394" Checked="switchCambioBack_Checked" IsCheckedChanged="switchCambioBack_IsCheckedChanged"/>
         <Controls:Tile x:Name="btnAtras" Margin="198,588,950,83" Width="Auto" Height="Auto" Background="#085394" HorizontalTitleAlignment="Center" VerticalAlignment="Center" TitleFontSize="18" Title="Volver&#xA;Atras"  HorizontalContentAlignment="Left" Click="btnAtras_Click">
