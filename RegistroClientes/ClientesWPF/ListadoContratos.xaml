@@ -46,6 +46,6 @@
             <Image Source="Imagenes/Previous.png" />
 
         </Controls:Tile>
-        <Button Style="{DynamicResource SquareButtonStyle}" x:Name="btnSelectContrato" Content="Seleccionar Contrato" HorizontalAlignment="Left" Margin="928,521,0,0" VerticalAlignment="Top" Width="178" FontSize="18" />
+        <Button Style="{DynamicResource SquareButtonStyle}" x:Name="btnSelectContrato" Content="Seleccionar Contrato" HorizontalAlignment="Left" Margin="928,521,0,0" VerticalAlignment="Top" Width="178" FontSize="18" Click="btnSelectContrato_Click" />
     </Grid>
 </Controls:MetroWindow>

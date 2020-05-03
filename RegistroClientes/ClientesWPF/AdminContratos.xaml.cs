@@ -68,9 +68,9 @@ namespace ClientesWPF
             if (Rut != 0)
             {
                 this.txtContrato.Text = xd.NumeroContrato.ToString();
-                DateTime creacion = DateTime.ParseExact(xd.Creacion, "dd-MM-yyyy",
+                DateTime creacion = DateTime.ParseExact(xd.Creacion, "MM-dd-yyyy",
                                        System.Globalization.CultureInfo.InvariantCulture);
-                DateTime termino = DateTime.ParseExact(xd.Termino, "dd-MM-yyyy",
+                DateTime termino = DateTime.ParseExact(xd.Termino, "MM-dd-yyyy",
                                        System.Globalization.CultureInfo.InvariantCulture);
                 this.dtpCreacion.SelectedDate = creacion;
                 this.dtpTermino.SelectedDate = termino;
@@ -166,13 +166,13 @@ namespace ClientesWPF
                 }
                 else
                 {
-                    //await this.ShowMessageAsync("Alerta:",
-                    //        string.Format("El Cliente con Rut: {0}, NO existe!!", txtRut.Text));
+                    this.ShowMessageAsync("Alerta:",
+                            string.Format("El Cliente con Rut: {0}, NO existe!!", txtRut.Text));
                 }
             }
             else
             {
-                //await this.ShowMessageAsync("Alerta:", "Debe ingresar rut para poder buscar");
+                this.ShowMessageAsync("Alerta:", "Debe ingresar rut para poder buscar");
             }
         }
 
@@ -188,8 +188,8 @@ namespace ClientesWPF
                 Contrato contrato = new Contrato
                 {
                     NumeroContrato = long.Parse(DateTime.Now.ToString("yyyyMMddHHmm")),
-                    Creacion = this.dtpCreacion.SelectedDate.Value.ToString("MM/dd/yyyy"),
-                    Termino = this.dtpTermino.SelectedDate.Value.ToString("MM/dd/yyyy"),
+                    Creacion = this.dtpCreacion.SelectedDate.Value.ToString("MM-dd-yyyy"),
+                    Termino = this.dtpTermino.SelectedDate.Value.ToString("MM-dd-yyyy"),
                     IdTipo = int.Parse(this.cboTIpo.SelectedValue.ToString()),
                     EstaVigente = vigenteIs,
                     Observaciones = this.txtObservacion.Text,
@@ -248,7 +248,51 @@ namespace ClientesWPF
 
         private void btnAztualizContrat_Click(object sender, RoutedEventArgs e)
         {
+            if (!String.IsNullOrWhiteSpace(this.txtObservacion.Text) && !string.Empty.Equals(this.txtDireccion.Text)
+                 //&& !String.IsNullOrWhiteSpace(this.txtFechaInicio.Text) && !String.IsNullOrWhiteSpace(this.txtFechaTermino.Text)
+                 && this.cboTIpo.SelectedIndex != 0 && this.rdbActiva.IsChecked == true && !String.IsNullOrWhiteSpace(this.txtRut.Text))
+            {
+                bool seAgrego = false;
+                foreach (var cliente in Ventana_Principal.listaClientes)
+                {
+                    foreach (var contrato in cliente.Contrato)
+                    {
+                        if (contrato.NumeroContrato.ToString() == txtContrato.Text)
+                        {
+                            bool vigenteIs = EstadoVigencia();
 
+                            Contrato xd = new Contrato
+                            {
+                                NumeroContrato = long.Parse(DateTime.Now.ToString("yyyyMMddHHmm")),
+                                Creacion = this.dtpCreacion.SelectedDate.Value.ToString("MM/dd/yyyy"),
+                                Termino = this.dtpTermino.SelectedDate.Value.ToString("MM/dd/yyyy"),
+                                IdTipo = int.Parse(this.cboTIpo.SelectedValue.ToString()),
+                                EstaVigente = vigenteIs,
+                                Observaciones = this.txtObservacion.Text,
+                                Direccion = this.txtDireccion.Text,
+                                FechaHoraInicio = this.dtpFechInicio.SelectedDate.Value,
+                                FechaHoraTermino = this.dtpFechTermino.SelectedDate.Value
+
+                            };
+
+                            cliente.Contrato[cliente.Contrato.FindIndex(ind => ind.NumeroContrato == long.Parse(txtContrato.Text))] = xd;
+                            seAgrego = true;
+                            break;
+                        }
+                    }
+                    if (seAgrego)
+                    {
+                        this.ShowMessageAsync("Confirmacion:",
+                        string.Format("El Contrato con numero Contrato: {0}, fué modificado con exito!!", txtContrato.Text));
+                        break;
+                    }
+
+                }
+            }
+            else
+            {
+                this.ShowMessageAsync("Alerta:", "Debe Completar todos los datos");
+            }
         }
 
         private void btnListar_Click(object sender, RoutedEventArgs e)
@@ -350,6 +394,30 @@ namespace ClientesWPF
         {
             if (seleccionado)
             {
+                txtDireccion.Text = contrato.Direccion;
+                string[] aux = Ventana_Principal.listaClientes.EncontrarNombre(contrato.NumeroContrato).Split(' ');
+                txtNombre.Text = aux[0];
+                txtApel.Text = aux[1];
+                DateTime creacion = DateTime.ParseExact(contrato.Creacion, "MM-dd-yyyy",
+                                       System.Globalization.CultureInfo.InvariantCulture);
+                DateTime termino = DateTime.ParseExact(contrato.Termino, "MM-dd-yyyy",
+                                       System.Globalization.CultureInfo.InvariantCulture);
+                this.dtpCreacion.SelectedDate = creacion;
+                this.dtpTermino.SelectedDate = termino;
+                this.dtpFechInicio.SelectedDate = contrato.FechaHoraInicio;
+                this.dtpFechTermino.SelectedDate = contrato.FechaHoraTermino;
+                this.txtDireccion.Text = contrato.Direccion;
+                this.txtObservacion.Text = contrato.Observaciones;
+                this.txtRut.Text = Ventana_Principal.listaClientes.EncontrarRut(contrato.NumeroContrato);
+                this.cboTIpo.SelectedItem = Ventana_Principal.listaTipoEvento.NomEvento((contrato.IdTipo));
+                if (contrato.EstaVigente)
+                {
+                    this.rdbActiva.IsChecked = true;
+                }
+                else
+                {
+                    this.rdbInactiva.IsChecked = true;
+                }
 
             }
             if (dark)

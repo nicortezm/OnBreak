@@ -101,6 +101,76 @@ namespace BibliotecaClientes
 
 
         }
+        public string EncontrarNombre(long numcontrato)
+        {
+
+            try
+            {
+                foreach (var cliente in this)
+                {
+                    foreach (var contrato in cliente.Contrato)
+                    {
+                        if (numcontrato == contrato.NumeroContrato)
+                        {
+                            return cliente.NombreContacto;
+                        }
+                    }
+                }
+                return string.Empty;
+            }
+            catch (Exception)
+            {
+
+                return string.Empty;
+            }
+        }
+        public string EncontrarRut(long numcontrato)
+        {
+            try
+            {
+                foreach (var cliente in this)
+                {
+                    foreach (var contrato in cliente.Contrato)
+                    {
+                        if (numcontrato == contrato.NumeroContrato)
+                        {
+                            return cliente.Rut.ToString();
+                        }
+                    }
+                }
+                return string.Empty;
+            }
+            catch (Exception)
+            {
+
+                return string.Empty;
+            }
+
+        }
+        public Contrato BuscarContrato(long numcontrato)
+        {
+            try
+            {
+                foreach (var cliente in this)
+                {
+                    foreach (var contrato in cliente.Contrato)
+                    {
+                        if (numcontrato == contrato.NumeroContrato)
+                        {
+                            return contrato;
+                        }
+                    }
+                }
+
+                return null;
+            }
+            catch (Exception)
+            {
+
+                return null;
+            }
+
+        }
 
         //hay que crear un nuevo metodo para verificar si tiene contrato o no
         //Sellecionar las lineas y apretar ctrl + k + u para descomentar

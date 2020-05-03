@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using BibliotecaClientes;
 using MahApps.Metro.Controls;
+using MahApps.Metro.Controls.Dialogs;
 
 namespace ClientesWPF
 {
@@ -112,7 +113,23 @@ namespace ClientesWPF
 
         private void dgContratos_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            DataGrid gd = (DataGrid)sender;
+            dynamic rowSelected = gd.SelectedItem;
+            txtNumContrato.Text = rowSelected.NumeroContrato + string.Empty;
+        }
 
+        private void btnSelectContrato_Click(object sender, RoutedEventArgs e)
+        {
+            if (!string.IsNullOrWhiteSpace(txtNumContrato.Text))
+            {
+
+                pasado(Ventana_Principal.listaClientes.BuscarContrato(long.Parse(txtNumContrato.Text)), true, darktheme);
+                this.Close();
+            }
+            else
+            {
+                this.ShowMessageAsync("Alerta:", "Debe Seleccionar un Cliente");
+            }
         }
     }
 }
