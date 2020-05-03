@@ -13,10 +13,10 @@ namespace BibliotecaClientes
         private int _PersonalBase { get; set; }
 
         public long NumeroContrato { get; set; }
-        public DateTime Creacion { get; set; }
-        public DateTime Termino { get; set; }
-        public string FechaHoraInicio { get; set; }
-        public string FechaHoraTermino { get; set; }
+        public string Creacion { get; set; }
+        public string Termino { get; set; }
+        public DateTime FechaHoraInicio { get; set; }
+        public DateTime FechaHoraTermino { get; set; }
         public string Direccion { get; set; }
         public Boolean EstaVigente { get; set; }
         public int IdTipo { get; set; }
@@ -35,10 +35,10 @@ namespace BibliotecaClientes
         private void Init()
         {
             NumeroContrato = 0;
-            Creacion = DateTime.Now;
-            Termino = DateTime.Now;
-            FechaHoraInicio = string.Empty;
-            FechaHoraTermino = string.Empty;
+            Creacion = string.Empty;
+            Termino = string.Empty;
+            FechaHoraInicio = DateTime.Now;
+            FechaHoraTermino = DateTime.Now;
             Direccion = string.Empty;
             EstaVigente = false;
             IdTipo = 0;

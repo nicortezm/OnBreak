@@ -42,7 +42,60 @@ namespace ClientesWPF
         
         private void btnBuscarContrato_Click(object sender, RoutedEventArgs e)
         {
+            int Rut = 0;
+            string Nom = string.Empty;
+            Contrato xd = new Contrato();
+            bool salir = false;
+            foreach (var cliente in Ventana_Principal.listaClientes)
+            {
+                foreach (var contrato in cliente.Contrato)
+                {
+                    if (contrato.NumeroContrato.ToString() == txtContrato.Text)
+                    {
+                        xd = contrato;
+                        Rut = cliente.Rut;
+                        Nom = cliente.NombreContacto;
+                        salir = true;
+                        break;
+                    }
+                }
+                if (salir)
+                {
+                    break;
+                }
+            }
 
+            if (Rut != 0)
+            {
+                this.txtContrato.Text = xd.NumeroContrato.ToString();
+                DateTime creacion = DateTime.ParseExact(xd.Creacion, "dd-MM-yyyy",
+                                       System.Globalization.CultureInfo.InvariantCulture);
+                DateTime termino = DateTime.ParseExact(xd.Termino, "dd-MM-yyyy",
+                                       System.Globalization.CultureInfo.InvariantCulture);
+                this.dtpCreacion.SelectedDate = creacion;
+                this.dtpTermino.SelectedDate = termino;
+                this.dtpFechInicio.SelectedDate = xd.FechaHoraInicio;
+                this.dtpFechTermino.SelectedDate = xd.FechaHoraTermino;
+                this.txtDireccion.Text = xd.Direccion;
+                this.txtObservacion.Text = xd.Observaciones;
+                this.txtRut.Text = Rut.ToString();
+                this.cboTIpo.SelectedItem = Ventana_Principal.listaTipoEvento.NomEvento((xd.IdTipo));
+                string[] nom_com = Nom.Split(' ');
+                this.txtNombre.Text = nom_com[0];
+                this.txtApel.Text = nom_com[1];
+                if (xd.EstaVigente)
+                {
+                    this.rdbActiva.IsChecked = true;
+                }
+                else
+                {
+                    this.rdbInactiva.IsChecked = true;
+                }   
+            }
+            else
+            {
+                this.ShowMessageAsync("Alerta:", "Contrato no existe");
+            }
         }
 
         private void btnListarClientes_Click(object sender, RoutedEventArgs e)
@@ -82,11 +135,11 @@ namespace ClientesWPF
         }
         public void LimpiaControles()
         {
-            //this.txtNumContrato.Text= string.Empty;
+            this.txtContrato.Text= string.Empty;
             this.dtpCreacion.SelectedDate = DateTime.Now;
             this.dtpTermino.SelectedDate = DateTime.Now;
-            this.txtFechaInicio.Text = string.Empty;
-            this.txtFechaTermino.Text = string.Empty;
+            this.dtpFechInicio.SelectedDate = DateTime.Now;
+            this.dtpFechTermino.SelectedDate = DateTime.Now;
             this.txtDireccion.Text = string.Empty;
             this.txtObservacion.Text = string.Empty;
             this.txtRut.Text = string.Empty;
@@ -135,14 +188,14 @@ namespace ClientesWPF
                 Contrato contrato = new Contrato
                 {
                     NumeroContrato = long.Parse(DateTime.Now.ToString("yyyyMMddHHmm")),
-                    Creacion = this.dtpCreacion.SelectedDate.Value,
-                    Termino = this.dtpTermino.SelectedDate.Value,
+                    Creacion = this.dtpCreacion.SelectedDate.Value.ToString("MM/dd/yyyy"),
+                    Termino = this.dtpTermino.SelectedDate.Value.ToString("MM/dd/yyyy"),
                     IdTipo = int.Parse(this.cboTIpo.SelectedValue.ToString()),
                     EstaVigente = vigenteIs,
                     Observaciones = this.txtObservacion.Text,
                     Direccion = this.txtDireccion.Text,
-                    FechaHoraInicio = String.Empty,
-                    FechaHoraTermino = String.Empty
+                    FechaHoraInicio = this.dtpFechInicio.SelectedDate.Value,
+                    FechaHoraTermino = this.dtpFechTermino.SelectedDate.Value
 
                 };
                 foreach (var cliente in Ventana_Principal.listaClientes)
@@ -191,10 +244,7 @@ namespace ClientesWPF
             return vigente;
         }
 
-        private void btnBuscarContrato_Click_1(object sender, RoutedEventArgs e)
-        {
-           
-        }
+
 
         private void btnAztualizContrat_Click(object sender, RoutedEventArgs e)
         {
@@ -314,5 +364,9 @@ namespace ClientesWPF
 
         }
 
+        private void btnnumcontrato_Click(object sender, RoutedEventArgs e)
+        {
+            txtContrato.IsEnabled = true;
+        }
     }
 }

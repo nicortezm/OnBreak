@@ -17,7 +17,7 @@
             <Image Source="/Imagenes/Save.png" RenderTransformOrigin="0.545,1.935" UseLayoutRounding="False" />
         </Controls:Tile>
         <!--boton Buscar Contrato-->
-        <Controls:Tile x:Name="btnBuscarContrato"  Margin="50,128,1098,543" Width="Auto" Height="Auto" TitleFontSize="18" Title="Buscar&#xa;Contrato" HorizontalTitleAlignment="Center" VerticalAlignment="Center" Background="#FF2B78E4" HorizontalContentAlignment="Stretch" Click="btnBuscarContrato_Click_1">
+        <Controls:Tile x:Name="btnBuscarContrato"  Margin="50,128,1098,543" Width="Auto" Height="Auto" TitleFontSize="18" Title="Buscar&#xa;Contrato" HorizontalTitleAlignment="Center" VerticalAlignment="Center" Background="#FF2B78E4" HorizontalContentAlignment="Stretch" Click="btnBuscarContrato_Click" >
             <Image Source="/Imagenes/Buscar.png" />
         </Controls:Tile>
 
@@ -48,10 +48,9 @@
         <!-- Numero Contrato-->
         <!-- Fecha Inicio -->
         <Label x:Name="lblFechaInicio" Content="Fecha, Hora *&#xA;Inicio" HorizontalAlignment="Left" Margin="361,157,0,0" VerticalAlignment="Top" FontSize="18"/>
-        <TextBox x:Name="txtFechaInicio" Controls:TextBoxHelper.Watermark="" HorizontalAlignment="Left" Height="32" Margin="479,170,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="121" FontSize="18" Background="#FFF4F4F5" IsEnabled="False"  />
+
         <!-- Fecha Termino -->
         <Label x:Name="lblFechaTermino" Content="Fecha, Hora*&#xA;Termino" HorizontalAlignment="Left" Margin="664,157,0,0" VerticalAlignment="Top" FontSize="18"/>
-        <TextBox x:Name="txtFechaTermino" Controls:TextBoxHelper.Watermark="" HorizontalAlignment="Left" Height="32" Margin="776,170,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="121" FontSize="18" Background="#FFF4F4F5" IsEnabled="False" />
         <!-- Vigencia -->
         <Label x:Name="lblVigencia" Content="Vigencia *" HorizontalAlignment="Left" Margin="387,258,0,0" VerticalAlignment="Top" FontSize="18"/>
         <RadioButton x:Name="rdbActiva" Content="Activa" HorizontalAlignment="Left" Margin="497,258,0,0" VerticalAlignment="Top"  FontSize="18" Width="89" Height="37" Foreground="Black" OpacityMask="#FFF3E7E7" BorderBrush="Black" />
@@ -63,8 +62,8 @@
         <!-- CReacion -->
         <Label x:Name="lblCreacion" Content="Creacion*" HorizontalAlignment="Left" Margin="391,77,0,0" VerticalAlignment="Top" FontSize="18"/>
         <!-- Direccion -->
-        <Label x:Name="lblDreccion" Content="Dirección*" HorizontalAlignment="Left" Margin="947,169,0,0" VerticalAlignment="Top" FontSize="18"/>
-        <TextBox x:Name="txtDireccion" Controls:TextBoxHelper.Watermark="" HorizontalAlignment="Left" Height="32" Margin="1038,170,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="236" FontSize="18" />
+        <Label x:Name="lblDreccion" Content="Dirección*" HorizontalAlignment="Left" Margin="970,168,0,0" VerticalAlignment="Top" FontSize="18"/>
+        <TextBox x:Name="txtDireccion" Controls:TextBoxHelper.Watermark="" HorizontalAlignment="Left" Height="32" Margin="1067,170,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="236" FontSize="18" />
         <!-- Termino -->
         <Label x:Name="lblTermino" Content="Termino*" HorizontalAlignment="Left" Margin="694,77,0,0" VerticalAlignment="Top" FontSize="18"/>
         <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="211" Margin="406,512,0,0" Stroke="Black" VerticalAlignment="Top" Width="674"/>
@@ -83,6 +82,11 @@
         <TextBox x:Name="txtObservacion" HorizontalAlignment="Left" Height="32" Margin="776,334,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="301"  Controls:TextBoxHelper.ClearTextButton="True" Controls:TextBoxHelper.Watermark="ej:" FontSize="18"/>
         <DatePicker x:Name="dtpCreacion" HorizontalAlignment="Left" Margin="479,78,0,0" VerticalAlignment="Top" FontSize="18" Height="32" Width="177" Text="ddd" Controls:TextBoxHelper.WatermarkTrimming="WordEllipsis" Controls:TextBoxHelper.Watermark="Seleccione fecha" Controls:TextBoxHelper.HasText="True"/>
         <DatePicker x:Name="dtpTermino" HorizontalAlignment="Left" Margin="776,78,0,0" VerticalAlignment="Top" FontSize="18" Height="32" Width="177" Controls:TextBoxHelper.Watermark="Seleccione fecha" Controls:TextBoxHelper.WatermarkTrimming="WordEllipsis"/>
+        <DatePicker x:Name="dtpFechInicio" HorizontalAlignment="Left" Height="32" Margin="479,170,0,0" Text="" VerticalAlignment="Top" Width="177" FontSize="18"  Controls:TextBoxHelper.Watermark="Seleccione fecha" Controls:TextBoxHelper.WatermarkTrimming="WordEllipsis"/>
+        <DatePicker x:Name="dtpFechTermino" HorizontalAlignment="Left" Height="32" Margin="776,171,0,0" Text="" VerticalAlignment="Top" Width="177" FontSize="18"  Controls:TextBoxHelper.Watermark="Seleccione fecha" Controls:TextBoxHelper.WatermarkTrimming="WordEllipsis"/>
+        <TextBox Controls:TextBoxHelper.ClearTextButton="True" Controls:TextBoxHelper.Watermark="ej: 1546421512"  x:Name="txtContrato" HorizontalAlignment="Left" Height="32" Margin="438,21,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="175" FontSize="18" IsEnabled="False" />
+        <Label x:Name="lblnumcontrato" Content="Numero contrato *" HorizontalAlignment="Left" Margin="273,21,0,0" VerticalAlignment="Top" FontSize="18"/>
+        <Button Style= "{StaticResource SquareButtonStyle}" x:Name="btnnumcontrato"   Content="desbloquear num contrato" HorizontalAlignment="Left" Margin="642,21,0,0" VerticalAlignment="Top" Width="262" FontSize="18" Click="btnnumcontrato_Click"/>
 
     </Grid>
 </Controls:MetroWindow>

@@ -31,8 +31,8 @@
                 <DataGridTextColumn Header="Numero&#xA;de contrato"  Width="109" Binding="{Binding Path=NumeroContrato}"/>
                 <DataGridTextColumn Header="Creacion" Width="109" Binding="{Binding Path=Creacion}"/>
                 <DataGridTextColumn Header="Término" Width="109" Binding="{Binding Path=Termino}"/>
-                <!--<DataGridTextColumn Header="Fecha Hora&#xA;Inicio" Width="109" Binding="{Binding Path=FechaHoraInicio}"/>
-                <DataGridTextColumn Header="Fecha Hora&#xA;Término" Width="109" Binding="{Binding Path=FechaHoraTermino}"/>-->
+                <DataGridTextColumn Header="Fecha Hora&#xA;Inicio" Width="109" Binding="{Binding Path=FechaHoraInicio}"/>
+                <DataGridTextColumn Header="Fecha Hora&#xA;Término" Width="109" Binding="{Binding Path=FechaHoraTermino}"/>
                 <DataGridTextColumn Header="Dirección" Width="200" Binding="{Binding Path=Direccion}" />
                 <DataGridCheckBoxColumn Header="Esta Vigente" Width="99" Binding="{Binding Path=EstaVigente}"/>
                 <DataGridTextColumn Header="Tipo Evento" Width="96" Binding="{Binding Path=IdTipo}"/>

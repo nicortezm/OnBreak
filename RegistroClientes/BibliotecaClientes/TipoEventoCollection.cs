@@ -32,6 +32,19 @@ namespace BibliotecaClientes
             }
 
         }
+        public string NomEvento(int id)
+        {
+            try
+            {
+                TipoEvento evento = this.First(x => x.Id == id);
+                return evento.Nombre;
+            }
+            catch (Exception)
+            {
+
+                return null;
+            }
+        }
 
     }
 }
