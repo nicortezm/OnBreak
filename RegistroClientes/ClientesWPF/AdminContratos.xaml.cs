@@ -148,31 +148,29 @@ namespace ClientesWPF
 
         private void btnRegistrarContrato_Click(object sender, RoutedEventArgs e)
         {
-            if (!String.IsNullOrWhiteSpace(this.txtRut.Text)&& !String.IsNullOrWhiteSpace(this.txtObservacion.Text)
-                && !String.IsNullOrWhiteSpace(this.txtFechaInicio.Text) && !String.IsNullOrWhiteSpace(this.txtFechaTermino.Text)
+            if (!String.IsNullOrWhiteSpace(this.txtObservacion.Text) &&!string.Empty.Equals(this.txtDireccion.Text)
+                //&& !String.IsNullOrWhiteSpace(this.txtFechaInicio.Text) && !String.IsNullOrWhiteSpace(this.txtFechaTermino.Text)
                  && this.cboTIpo.SelectedIndex!=0 && this.rdbActiva.IsChecked==true)
             {
-                if (true)
+                
+                bool vigenteIs = EstadoVigencia();
+                Contrato contrato = new Contrato
                 {
-                    bool vigenteIs = EstadoVigencia();
-                    Contrato contrato = new Contrato
-                    {
-                        NumeroContrato = int.Parse(DateTime.Now.ToString("yyyyMMddHHmm")),
-                        Creacion = this.dtpCreacion.SelectedDate.ToString(),
-                        Termino = this.dtpCreacion.SelectedDate.ToString(),
-                        //Termino =this.dtpCreacion.SelectedDate.ToString(),
-                        EstaVigente = vigenteIs,
-                        Observaciones = this.txtObservacion.Text,
-                        Direccion = this.txtDireccion.Text,
-                        FechaHoraInicio = DateTime.Now.ToString("yyyyMMddHHmm"),
-                        FechaHoraTermino = "------------",
-                       
-                    };
-                }
-                else
-                {
+                    NumeroContrato = int.Parse(DateTime.Now.ToString("yyyyMMddHHmm")),
+                    Creacion = this.dtpCreacion.SelectedDate.ToString(),
+                    Termino = String.Empty,
+                    IdTipo = int.Parse(this.cboTIpo.SelectedValue.ToString()),
+                    EstaVigente = vigenteIs,
+                    Observaciones = this.txtObservacion.Text,
+                    Direccion = this.txtDireccion.Text,
+                    FechaHoraInicio = DateTime.Now.ToString("yyyyMMddHHmm"),
+                    FechaHoraTermino = String.Empty
 
-                }
+                };
+               this.ShowMessageAsync("Confirmacion:",
+                        string.Format("El COntrato con numero Contrato: {0}, fué agregado con exito!!", contrato.NumeroContrato.ToString()));
+                
+                Ventana_Principal.listaContratos.Add(contrato);
             }
             else
             {
