@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
 namespace BibliotecaClientes
 {
     public class Cliente{
@@ -15,7 +16,7 @@ namespace BibliotecaClientes
         public int Telefono { get; set; }
         public TipoEmpresa TipoEmpresa { get; set; }
         public ActividadEmpresa ActividadEmpresa { get; set; }
-        public Contrato Contrato { get; set; }
+        public ContratoCollection Contrato { get; set; }
 
         public Cliente()
         {
@@ -32,7 +33,7 @@ namespace BibliotecaClientes
             Telefono = 0;
             TipoEmpresa = TipoEmpresa.Seleccione;
             ActividadEmpresa = ActividadEmpresa.Seleccione;
-            Contrato = new Contrato();
+            Contrato = new ContratoCollection();
         }
 
     }

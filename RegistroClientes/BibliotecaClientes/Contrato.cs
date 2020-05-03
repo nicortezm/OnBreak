@@ -40,7 +40,7 @@ namespace BibliotecaClientes
             FechaHoraInicio = string.Empty;
             FechaHoraTermino = string.Empty;
             Direccion = string.Empty;
-            EstaVigente = true;
+            EstaVigente = false;
             IdTipo = 0;
             Observaciones = string.Empty;
         }
