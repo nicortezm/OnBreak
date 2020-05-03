@@ -29,5 +29,10 @@
         <DataGrid x:Name="dgContratos" HorizontalAlignment="Left" Height="274"  Margin="135,237,0,0" VerticalAlignment="Top" Width="1120"/>
         <Image x:Name="imgLogoTransparent" Margin="1168,555,4,-4" Source="Imagenes/logo_transparent_background.png" Stretch="Fill"/>
         <Controls:ToggleSwitch x:Name="switchCambioBack"  OnLabel="" OffLabel="" Margin="1233,0,0,625" FontSize="24" Content="" VerticalContentAlignment="Stretch" Header="&#xA;Dark Mode" Width="93" VerticalAlignment="Bottom" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Height="96" ContentDirection="RightToLeft" OnSwitchBrush="#FF085394" Checked="switchCambioBack_Checked" IsCheckedChanged="switchCambioBack_IsCheckedChanged"/>
+        <Controls:Tile x:Name="btnAtras" Margin="198,588,950,83" Width="Auto" Height="Auto" Background="#085394" HorizontalTitleAlignment="Center" VerticalAlignment="Center" TitleFontSize="18" Title="Volver&#xA;Atras"  HorizontalContentAlignment="Left" Click="btnAtras_Click">
+            <Image Source="Imagenes/Previous.png" />
+
+        </Controls:Tile>
+        <Button Style="{DynamicResource SquareButtonStyle}" x:Name="btnSelectContrato" Content="Seleccionar Contrato" HorizontalAlignment="Left" Margin="928,521,0,0" VerticalAlignment="Top" Width="178" FontSize="18" />
     </Grid>
 </Controls:MetroWindow>

@@ -152,16 +152,19 @@ namespace ClientesWPF
             listar.pasado += new ListadoClientes.pasar(ejecutar);
             listar.Show();
         }
-        public void ejecutar(Cliente cliente,bool dark)
+        public void ejecutar(Cliente cliente,bool seleccionado,bool dark)
         {
-            txtRut.Text = cliente.Rut.ToString();
-            txtRazonSocial.Text = cliente.RazonSocial;
-            txtNomContacto.Text = cliente.NombreContacto;
-            txtMailContact.Text = cliente.MailContacto;
-            txtDireccion.Text = cliente.Direccion;
-            txtTelefono.Text = cliente.Telefono.ToString();
-            cboActividad.SelectedItem = cliente.ActividadEmpresa;
-            cboTIpo.SelectedItem = cliente.TipoEmpresa;
+            if (seleccionado)
+            {
+                txtRut.Text = cliente.Rut.ToString();
+                txtRazonSocial.Text = cliente.RazonSocial;
+                txtNomContacto.Text = cliente.NombreContacto;
+                txtMailContact.Text = cliente.MailContacto;
+                txtDireccion.Text = cliente.Direccion;
+                txtTelefono.Text = cliente.Telefono.ToString();
+                cboActividad.SelectedItem = cliente.ActividadEmpresa;
+                cboTIpo.SelectedItem = cliente.TipoEmpresa;
+            }
             if (dark)
             {
                 this.dark();
@@ -171,6 +174,7 @@ namespace ClientesWPF
                 this.light();
                 switchCambioBack.IsChecked = false;
             }
+
         }
 
 

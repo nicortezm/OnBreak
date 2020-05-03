@@ -24,15 +24,17 @@ namespace ClientesWPF
     public partial class ListadoClientes : MetroWindow
     {
         //creo delegado pa enviar datos
-        public delegate void pasar(Cliente dato,bool dark);
+        public delegate void pasar(Cliente dato,bool seleccionado,bool dark);
         public event pasar pasado;
         private bool darktheme;
         public ListadoClientes()
         {
 
             InitializeComponent();
-            dgClientes.ItemsSource = Ventana_Principal.listaClientes;
+
+            //dgClientes.ItemsSource = Ventana_Principal.listaClientes;
             CargaCombo();
+            Init();
             btnSelectCliente.Visibility = Visibility.Collapsed;
             btnAtras.Visibility = Visibility.Collapsed;
         }
@@ -40,13 +42,24 @@ namespace ClientesWPF
 
         {
             InitializeComponent();
-            dgClientes.ItemsSource = Ventana_Principal.listaClientes;
+            //dgClientes.ItemsSource = Ventana_Principal.listaClientes;
             CargaCombo();
+            Init();
             btnSelectCliente.Visibility = Visibility.Visible;
             btnVentanaPrincipal.Visibility = Visibility.Collapsed;
             btnAtras.Visibility = Visibility.Visible;
 
         }
+        private void Init()
+        {
+            dgClientes.Items.Clear();
+            txtRut.Text = string.Empty;
+            foreach (var cliente in Ventana_Principal.listaClientes)
+            {
+                dgClientes.Items.Add(cliente);
+            }
+        }
+
         private void CargaCombo()
         {
             cboActividad.ItemsSource = Enum.GetValues(typeof(ActividadEmpresa));
@@ -56,13 +69,72 @@ namespace ClientesWPF
         }
 
 
-        private void btnBuscar_Click(object sender, RoutedEventArgs e)
+        private async void btnBuscar_Click(object sender, RoutedEventArgs e)
         {
-        }
+            dgClientes.Items.Clear();
+            if (string.IsNullOrWhiteSpace(txtRut.Text) && cboTIpo.SelectedIndex == 0 && cboActividad.SelectedIndex == 0)
+            {
+                await this.ShowMessageAsync("Alerta:", "Porfavor edite los filtros  para buscar cientes");
+            }
+            else
+            {
+                foreach (var cliente in Ventana_Principal.listaClientes)
+                {
+                    if (!string.IsNullOrWhiteSpace(txtRut.Text) && cboActividad.SelectedIndex == 0 && cboTIpo.SelectedIndex == 0) // 1
+                    {
+                        if (txtRut.Text == cliente.Rut.ToString())
+                        {
+                            dgClientes.Items.Add(cliente);
+                        }
+                    }
+                    else if (!string.IsNullOrWhiteSpace(txtRut.Text) && cboActividad.SelectedIndex == 0 && cboTIpo.SelectedIndex != 0) //2
+                    {
+                        if (txtRut.Text == cliente.Rut.ToString() && cboTIpo.SelectedItem.ToString() == cliente.TipoEmpresa.ToString())
+                        {
+                            dgClientes.Items.Add(cliente);
+                        }
+                    }
+                    else if (!string.IsNullOrWhiteSpace(txtRut.Text) && cboActividad.SelectedIndex != 0 && cboTIpo.SelectedIndex == 0)// 3
+                    {
+                        if (txtRut.Text == cliente.Rut.ToString() && cboActividad.SelectedItem.ToString() == cliente.ActividadEmpresa.ToString())
+                        {
+                            dgClientes.Items.Add(cliente);
+                        }
+                    }
+                    else if (!string.IsNullOrWhiteSpace(txtRut.Text) && cboActividad.SelectedIndex != 0 && cboTIpo.SelectedIndex != 0) // 4
+                    {
+                        if (txtRut.Text == cliente.Rut.ToString() && cboActividad.SelectedItem.ToString() == cliente.ActividadEmpresa.ToString() && cboTIpo.SelectedItem.ToString() == cliente.TipoEmpresa.ToString())
+                        {
+                            dgClientes.Items.Add(cliente);
+                        }
+                    }
+                    //else if (string.IsNullOrWhiteSpace(txtRut.Text) && cboActividad.SelectedIndex == 0 && cboTIpo.SelectedIndex == 0) // 5
+                    //{
 
-        private void txtRut_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
+                    //}
+                    else if (string.IsNullOrWhiteSpace(txtRut.Text) && cboActividad.SelectedIndex == 0 && cboTIpo.SelectedIndex != 0) //6
+                    {
+                        if (cboTIpo.SelectedItem.ToString() == cliente.TipoEmpresa.ToString())
+                        {
+                            dgClientes.Items.Add(cliente);
+                        }
+                    }
+                    else if (string.IsNullOrWhiteSpace(txtRut.Text) && cboActividad.SelectedIndex != 0 && cboTIpo.SelectedIndex == 0) //7 
+                    {
+                        if (cboActividad.SelectedItem.ToString() == cliente.ActividadEmpresa.ToString())
+                        {
+                            dgClientes.Items.Add(cliente);
+                        }
+                    }
+                    else if (string.IsNullOrWhiteSpace(txtRut.Text) && cboActividad.SelectedIndex != 0 && cboTIpo.SelectedIndex != 0) //8
+                    {
+                        if (cboActividad.SelectedItem.ToString() == cliente.ActividadEmpresa.ToString() && cboTIpo.SelectedItem.ToString() == cliente.TipoEmpresa.ToString())
+                        {
+                            dgClientes.Items.Add(cliente);
+                        }
+                    }
+                }
+            }
         }
 
 
@@ -114,15 +186,12 @@ namespace ClientesWPF
         }
         private void btnLimpiar_Click(object sender, RoutedEventArgs e)
         {
+            Init();
             txtRut.Text = string.Empty;
             cboActividad.SelectedIndex = 0;
             cboTIpo.SelectedIndex = 0;
         }
 
-        private void cboActividad_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
 
         private void btnVentanaPrincipal_Click(object sender, RoutedEventArgs e)
         {
@@ -138,7 +207,7 @@ namespace ClientesWPF
         private void btnAtras_Click(object sender, RoutedEventArgs e)
         {
             Cliente cli = new Cliente();
-            pasado(cli, darktheme);
+            pasado(cli,false, darktheme);
             this.Close();
             
         }
@@ -155,7 +224,7 @@ namespace ClientesWPF
             if (!string.IsNullOrWhiteSpace(txtAux.Text))
             {
 
-                pasado(Ventana_Principal.listaClientes.BuscarCliente(int.Parse(txtAux.Text)),darktheme);
+                pasado(Ventana_Principal.listaClientes.BuscarCliente(int.Parse(txtAux.Text)),true,darktheme);
                 this.Close();
             }
             else

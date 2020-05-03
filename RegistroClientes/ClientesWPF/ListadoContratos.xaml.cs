@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using BibliotecaClientes;
 using MahApps.Metro.Controls;
 
 namespace ClientesWPF
@@ -21,9 +22,20 @@ namespace ClientesWPF
     public partial class ListadoContratos : MetroWindow
     {
         private bool darktheme;
+        public delegate void pasar(Contrato dato, bool seleccionado, bool dark);
+        public event pasar pasado;
         public ListadoContratos()
         {
             InitializeComponent();
+            btnSelectContrato.Visibility = Visibility.Collapsed;
+            btnAtras.Visibility = Visibility.Collapsed;
+        }
+        public ListadoContratos(int number)
+        {
+            InitializeComponent();
+            btnSelectContrato.Visibility = Visibility.Visible;
+            btnVentanaPrincipal.Visibility = Visibility.Collapsed;
+            btnAtras.Visibility = Visibility.Visible;
         }
 
         private void switchCambioBack_Checked(object sender, RoutedEventArgs e)
@@ -74,6 +86,13 @@ namespace ClientesWPF
             }
             this.Close();
             vp.Show();
+        }
+
+        private void btnAtras_Click(object sender, RoutedEventArgs e)
+        {
+            Contrato con = new Contrato();
+            pasado(con, false, darktheme);
+            this.Close();
         }
     }
 }

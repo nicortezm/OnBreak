@@ -64,13 +64,14 @@ namespace ClientesWPF
 
         private void btnVentanaPrincipal_Click(object sender, RoutedEventArgs e)
         {
-            this.Close(); Ventana_Principal vp = new Ventana_Principal();
+            Ventana_Principal vp = new Ventana_Principal();
             if (darktheme)
             {
                 vp.dark();
             }
-            this.Close();
             vp.Show();
+            this.Close();
+            
         }
 
         private void btnLimpiarControles_Click(object sender, RoutedEventArgs e)
@@ -168,64 +169,13 @@ namespace ClientesWPF
 
         private void btnListar_Click(object sender, RoutedEventArgs e)
         {
-            ListadoContratos listco = new ListadoContratos();
-            listco.Show();
-            this.Close();
-
-        }
-
-        private void txtCreacion_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void txtTermino_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void txtFechaInicio_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void txtFechaTermino_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void txtDireccion_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void cboTIpo_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
-
-        private void cboActividad_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
-
-        private void txtRut_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void txtNombre_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void rdbActiva_Checked(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void rdbInactiva_Checked(object sender, RoutedEventArgs e)
-        {
+            ListadoContratos listar = new ListadoContratos(1);
+            if (darktheme)
+            {
+                listar.dark();
+            }
+            listar.pasado += new ListadoContratos.pasar(ejecutar_contrato);
+            listar.Show();
 
         }
 
@@ -289,22 +239,43 @@ namespace ClientesWPF
             darktheme = false;
         }
 
-        private void TextBox_TextChanged_1(object sender, TextChangedEventArgs e)
+        public void ejecutar(Cliente cliente,bool seleccionado,bool dark)
         {
-
-        }
-
-        public void ejecutar(Cliente cliente,bool dark)
-        {
-            txtRut.Text = cliente.Rut.ToString();
-            string nombrecontacto = cliente.NombreContacto;
-            string[] listnombre = nombrecontacto.Split(' ');
-            txtNombre.Text = listnombre[0];
-            txtApel.Text = listnombre[1];
+            if (seleccionado)
+            {
+                txtRut.Text = cliente.Rut.ToString();
+                string nombrecontacto = cliente.NombreContacto;
+                string[] listnombre = nombrecontacto.Split(' ');
+                txtNombre.Text = listnombre[0];
+                txtApel.Text = listnombre[1];
+            }
             if (dark)
             {
                 this.dark();
             }
+            else
+            {
+                this.light();
+                switchCambioBack.IsChecked = false;
+            }
+
+        }
+        public void ejecutar_contrato(Contrato contrato,bool seleccionado, bool dark)
+        {
+            if (seleccionado)
+            {
+
+            }
+            if (dark)
+            {
+                this.dark();
+            }
+            else
+            {
+                this.light();
+                switchCambioBack.IsChecked = false;
+            }
+
         }
 
     }
