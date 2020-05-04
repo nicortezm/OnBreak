@@ -8,7 +8,7 @@
         xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"    
         xmlns:local="clr-namespace:ClientesWPF"
         mc:Ignorable="d"
-        Title="AdminClientes" Height="763" Width="1366"
+        Title="OnBreak - Administracion de Clientes" Height="763" Width="1366"
         WindowStartupLocation ="CenterScreen">
     <Grid Margin="2,0,-2,0" >
         <Grid.ColumnDefinitions>
@@ -79,6 +79,6 @@
         <!--Direccion -->
         <Label x:Name="lblDireccion" Content="Dirección*" HorizontalAlignment="Left" Margin="731,309,0,0" VerticalAlignment="Top" FontSize="18" Grid.Column="1"/>
         <TextBox Controls:TextBoxHelper.ClearTextButton="True" x:Name="txtDireccion" HorizontalAlignment="Left" Height="32" Margin="824,310,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="228" FontSize="18"  Grid.Column="1"/>
-        <Controls:ToggleSwitch x:Name="switchCambioBack" Checked="switchCambioBack_Checked" IsCheckedChanged="switchCambioBack_IsCheckedChanged" OnLabel="" OffLabel="" Margin="1182,0,0,625" FontSize="24" Content="" VerticalContentAlignment="Stretch" Header="&#xA;Dark Mode" Width="93" VerticalAlignment="Bottom" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Height="96" ContentDirection="RightToLeft" OnSwitchBrush="#FF085394" Grid.Column="1" IsChecked="False" />
+        <Controls:ToggleSwitch x:Name="switchCambioBack" Checked="switchCambioBack_Checked" IsCheckedChanged="switchCambioBack_IsCheckedChanged" OnLabel="" OffLabel="" Margin="1182,0,0,625" FontSize="24" Content="" VerticalContentAlignment="Stretch" Header="&#xA;Dark Mode" Width="93" VerticalAlignment="Bottom" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Height="96" ContentDirection="RightToLeft" OnSwitchBrush="#FF085394" Grid.Column="1" IsChecked="False" ToolTip="Switch para cambiar Contraste" />
     </Grid>
 </Controls:MetroWindow>

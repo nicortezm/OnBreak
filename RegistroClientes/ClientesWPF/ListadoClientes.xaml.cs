@@ -31,7 +31,6 @@ namespace ClientesWPF
         {
 
             InitializeComponent();
-            this.switchCambioBack.ToolTip = "Switch para cambiar Contraste";
             //dgClientes.ItemsSource = Ventana_Principal.listaClientes;
             CargaCombo();
             Init();
@@ -42,7 +41,6 @@ namespace ClientesWPF
 
         {
             InitializeComponent();
-            this.switchCambioBack.ToolTip = "Switch para cambiar Contraste";
             //dgClientes.ItemsSource = Ventana_Principal.listaClientes;
             CargaCombo();
             Init();

@@ -26,7 +26,6 @@ namespace ClientesWPF
         private bool darktheme;
         public AdminContratos()
         {
-            this.switchCambioBack.ToolTip = "Switch para cambiar Contraste";
             InitializeComponent();
             CargarCboTipoEvento();
             txtAsistentes.Visibility = Visibility.Hidden;
@@ -151,9 +150,13 @@ namespace ClientesWPF
         {
             this.txtContrato.Text= string.Empty;
             this.dtpCreacion.SelectedDate = DateTime.Now;
+            this.dtpCreacion.Text = string.Empty;
             this.dtpTermino.SelectedDate = DateTime.Now;
+            this.dtpTermino.Text = string.Empty;
             this.dtpFechInicio.SelectedDate = DateTime.Now;
+            this.dtpFechInicio.Text = string.Empty;
             this.dtpFechTermino.SelectedDate = DateTime.Now;
+            this.dtpFechTermino.Text = string.Empty;
             this.txtDireccion.Text = string.Empty;
             this.txtObservacion.Text = string.Empty;
             this.txtRut.Text = string.Empty;

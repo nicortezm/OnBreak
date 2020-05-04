@@ -172,34 +172,38 @@ namespace BibliotecaClientes
 
         }
 
-        //hay que crear un nuevo metodo para verificar si tiene contrato o no
-        //Sellecionar las lineas y apretar ctrl + k + u para descomentar
+        public bool TieneContrato(int rut) 
+        {
+            try
+            {
+                if (Existe(rut))
+                {
+                    Cliente cliente = this.First(c => c.Rut == rut);
+                    if (cliente.Contrato.Count > 0)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+                else
+                {
+                    return false;
+                }
 
-        //public bool TieneContrato(int rut) //terminar
-        //{
-        //    try
-        //    {
-        //        if (Existe(rut))
-        //        {
-        //            Cliente cliente = this.First(c => c.Rut == rut);
-        //            return cliente.Contrato.EstaVigente;
-        //        }
-        //        else
-        //        {
-        //            return false;
-        //        }
 
 
 
+            }
+            catch (Exception)
+            {
 
-        //    }
-        //    catch (Exception)
-        //    {
+                return false;
+            }
 
-        //        return false;
-        //    }
-
-        //}
+        }
 
 
     }

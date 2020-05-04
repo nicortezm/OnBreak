@@ -9,7 +9,7 @@
 
         xmlns:local="clr-namespace:ClientesWPF"
         mc:Ignorable="d"
-        Title="ListadoClientes" Height="768" Width="1366"
+        Title="OnBreak - Listado de Clientes" Height="768" Width="1366"
         WindowStartupLocation ="CenterScreen">
     <Grid>
         <Border x:Name="brCuadroDataGrid" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="342" Margin="75,220,0,0" VerticalAlignment="Top" Width="1230"/>
@@ -38,7 +38,7 @@
         <ComboBox x:Name="cboActividad" HorizontalAlignment="Left" Margin="880,114,0,0" VerticalAlignment="Top" Width="150" FontSize="18"  Height="29"/>
         <Button Style="{DynamicResource SquareButtonStyle}" x:Name="btnSelectCliente" Content="Seleccionar Cliente" HorizontalAlignment="Left" Margin="928,521,0,0" VerticalAlignment="Top" Width="178" FontSize="18" Click="btnSelectCliente_Click"  />
         <Label x:Name="lblActividad" Content="Actividad*" HorizontalAlignment="Left" Margin="788,110,0,0" VerticalAlignment="Top" FontSize="18" Height="38" Width="92"/>
-        <Controls:ToggleSwitch x:Name="switchCambioBack" Checked="switchCambioBack_Checked" IsCheckedChanged="switchCambioBack_IsCheckedChanged" OnLabel="" OffLabel="" Margin="1233,0,0,625" FontSize="24" Content="" VerticalContentAlignment="Stretch" Header="&#xA;Dark Mode" Width="93" VerticalAlignment="Bottom" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Height="96" ContentDirection="RightToLeft" OnSwitchBrush="#FF085394"/>
+        <Controls:ToggleSwitch x:Name="switchCambioBack" Checked="switchCambioBack_Checked" IsCheckedChanged="switchCambioBack_IsCheckedChanged" OnLabel="" OffLabel="" Margin="1233,0,0,625" FontSize="24" Content="" VerticalContentAlignment="Stretch" Header="&#xA;Dark Mode" Width="93" VerticalAlignment="Bottom" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Height="96" ContentDirection="RightToLeft" OnSwitchBrush="#FF085394" ToolTip="Switch para cambiar Contraste"/>
         <Controls:Tile x:Name="btnVentanaPrincipal" Margin="198,588,950,83" Width="Auto" Height="Auto" Background="#085394" HorizontalTitleAlignment="Center" VerticalAlignment="Center" TitleFontSize="18" Title="Menu&#xA;Principal"  HorizontalContentAlignment="Left" Click="btnVentanaPrincipal_Click">
             <Image Source="Imagenes/MenuPrincipal.png" />
 

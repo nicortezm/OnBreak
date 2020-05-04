@@ -32,7 +32,6 @@ namespace ClientesWPF
         {
             
             InitializeComponent();
-            this.switchCambioBack.ToolTip = "Switch para cambiar Contraste";
             CargaCombo();
         }
 
@@ -130,25 +129,34 @@ namespace ClientesWPF
 
         }
 
-        private async void btnEliminarCliente_Click(object sender, RoutedEventArgs e)
+        private void btnEliminarCliente_Click(object sender, RoutedEventArgs e)
         {
             if (!string.IsNullOrWhiteSpace(txtRut.Text))
             {
-                if (Ventana_Principal.listaClientes.EliminarCliente(int.Parse(txtRut.Text)))
+                if (!Ventana_Principal.listaClientes.TieneContrato(int.Parse(txtRut.Text)))
                 {
-                    await this.ShowMessageAsync("Confirmacion:",
-                        string.Format("El Cliente con Rut: {0}, fue eliminado con exito!!", txtRut.Text));
+                    if (Ventana_Principal.listaClientes.EliminarCliente(int.Parse(txtRut.Text)))
+                    {
+                        this.ShowMessageAsync("Confirmacion:",
+                            string.Format("El Cliente con Rut: {0}, fue eliminado con exito!!", txtRut.Text));
+                    }
+                    else
+                    {
+                        this.ShowMessageAsync("Alerta:",
+                            string.Format("El Cliente con Rut: {0}, no existe o no se pudo eliminar!!", txtRut.Text));
+                    }
                 }
                 else
                 {
-                    await this.ShowMessageAsync("Alerta:",
-                        string.Format("El Cliente con Rut: {0}, no existe o no se pudo eliminar!!", txtRut.Text));
+                    this.ShowMessageAsync("Alerta:",
+                            string.Format("El Cliente con Rut: {0}, tiene contratos asociados!!", txtRut.Text));
                 }
-                
+
+
             }
             else
             {
-                await this.ShowMessageAsync("Alerta:", "Debe ingresar rut valido para eliminar");
+                this.ShowMessageAsync("Alerta:", "Debe ingresar rut valido para eliminar");
             }
         }
 

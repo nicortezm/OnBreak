@@ -28,7 +28,6 @@ namespace ClientesWPF
         {
             
             InitializeComponent();
-            this.switchCambioBack.ToolTip = "Switch para cambiar Contraste";
 
             //llenarClientes();
         }

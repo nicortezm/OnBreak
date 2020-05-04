@@ -9,7 +9,7 @@
         xmlns:behaviours="clr-namespace:MahApps.Metro.Behaviours;assembly=MahApps.Metro"
         xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
 
-        Title="ListadoContratosMenu" Height="768" Width="1366"
+        Title="OnBreak - Listado de Contratos" Height="768" Width="1366"
         WindowStartupLocation ="CenterScreen">
     <Grid>
         <Border x:Name="brCuadroDataGrid" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="342" Margin="75,220,0,0"  VerticalAlignment="Top" Width="1230"/>
@@ -42,7 +42,7 @@
         </DataGrid>
         <TextBox x:Name="txtAux" HorizontalAlignment="Left" Height="23" Margin="101,80,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Visibility="Hidden"/>
         <Image x:Name="imgLogoTransparent" Margin="1168,555,4,-4" Source="Imagenes/logo_transparent_background.png" Stretch="Fill"/>
-        <Controls:ToggleSwitch x:Name="switchCambioBack"  OnLabel="" OffLabel="" Margin="1233,0,0,625" FontSize="24" Content="" VerticalContentAlignment="Stretch" Header="&#xA;Dark Mode" Width="93" VerticalAlignment="Bottom" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Height="96" ContentDirection="RightToLeft" OnSwitchBrush="#FF085394" Checked="switchCambioBack_Checked" IsCheckedChanged="switchCambioBack_IsCheckedChanged"/>
+        <Controls:ToggleSwitch x:Name="switchCambioBack"  OnLabel="" OffLabel="" Margin="1233,0,0,625" FontSize="24" Content="" VerticalContentAlignment="Stretch" Header="&#xA;Dark Mode" Width="93" VerticalAlignment="Bottom" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Height="96" ContentDirection="RightToLeft" OnSwitchBrush="#FF085394" Checked="switchCambioBack_Checked" IsCheckedChanged="switchCambioBack_IsCheckedChanged" ToolTip="Switch para cambiar Contraste"/>
         <Controls:Tile x:Name="btnAtras" Margin="198,588,950,83" Width="Auto" Height="Auto" Background="#085394" HorizontalTitleAlignment="Center" VerticalAlignment="Center" TitleFontSize="18" Title="Volver&#xA;Atras"  HorizontalContentAlignment="Left" Click="btnAtras_Click">
             <Image Source="Imagenes/Previous.png" />
 

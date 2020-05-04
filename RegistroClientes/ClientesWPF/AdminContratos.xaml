@@ -9,7 +9,7 @@
         xmlns:behaviours="clr-namespace:MahApps.Metro.Behaviours;assembly=MahApps.Metro"
         xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
 
-        Title="AdminContratos" Height="768" Width="1366"
+        Title="OnBreak - Administracion de Contratos" Height="768" Width="1366"
         WindowStartupLocation ="CenterScreen">
     <Grid Margin="0,2,0,-2">
         <!--boton Registrar Contrato-->
@@ -68,7 +68,7 @@
         <TextBox x:Name="txtApel" Controls:TextBoxHelper.Watermark="" HorizontalAlignment="Left" Height="32" Margin="789,653,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="174" FontSize="18" IsEnabled="False" Background="#FFE4DFDF" />
 
         <Button Style= "{StaticResource SquareButtonStyle}" x:Name="btnLimpiarControles"   Content="Limpiar Controles" HorizontalAlignment="Left" Margin="633,529,0,0" VerticalAlignment="Top" Width="182" Click="btnLimpiarControles_Click" FontSize="18"/>
-        <Controls:ToggleSwitch x:Name="switchCambioBack" Checked="switchCambioBack_Checked" IsCheckedChanged="switchCambioBack_IsCheckedChanged" OnLabel="" OffLabel="" Margin="1233,0,0,625" FontSize="24" Content="" VerticalContentAlignment="Stretch" Header="&#xA;Dark Mode" Width="93" VerticalAlignment="Bottom" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Height="96" ContentDirection="RightToLeft" OnSwitchBrush="#FF085394"/>
+        <Controls:ToggleSwitch x:Name="switchCambioBack" Checked="switchCambioBack_Checked" IsCheckedChanged="switchCambioBack_IsCheckedChanged" OnLabel="" OffLabel="" Margin="1233,0,0,625" FontSize="24" Content="" VerticalContentAlignment="Stretch" Header="&#xA;Dark Mode" Width="93" VerticalAlignment="Bottom" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Height="96" ContentDirection="RightToLeft" OnSwitchBrush="#FF085394" ToolTip="Switch para cambiar Contraste"/>
         <!-- Observacion -->
         <Label x:Name="lblObservacion" Content="Observación*" HorizontalAlignment="Left" Margin="659,315,0,0" VerticalAlignment="Top" FontSize="18"/>
         <TextBox x:Name="txtObservacion" HorizontalAlignment="Left" Height="32" Margin="776,316,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="301"  Controls:TextBoxHelper.ClearTextButton="True" Controls:TextBoxHelper.Watermark="" FontSize="18"/>
