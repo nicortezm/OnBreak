@@ -30,24 +30,26 @@ namespace ClientesWPF
         public ListadoClientes()
         {
             InitializeComponent();
+            Init();
             if (dgClientes.Items.Count == 0)
             {
                 this.ShowMessageAsync("Alerta:", "No hay clientes registrados");
             }
             CargaCombo();
-            Init();
+            
             btnSelectCliente.Visibility = Visibility.Collapsed;
             btnAtras.Visibility = Visibility.Collapsed;
         }
         public ListadoClientes(int number)
         {
             InitializeComponent();
+            Init();
             if (dgClientes.Items.Count == 0)
             {
-
+                this.ShowMessageAsync("Alerta:", "No hay clientes registrados");
             }
             CargaCombo();
-            Init();
+            
             btnSelectCliente.Visibility = Visibility.Visible;
             btnVentanaPrincipal.Visibility = Visibility.Collapsed;
             btnAtras.Visibility = Visibility.Visible;

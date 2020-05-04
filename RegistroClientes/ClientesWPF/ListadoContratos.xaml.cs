@@ -28,18 +28,20 @@ namespace ClientesWPF
         public ListadoContratos()
         {
             InitializeComponent();
+            Init();
             if (dgContratos.Items.Count == 0)
             {
                 this.ShowMessageAsync("Alerta:", "No hay contratos registrados");
             }
             CargarCboTipoEvento();
-            Init();
+            
             btnSelectContrato.Visibility = Visibility.Collapsed;
             btnAtras.Visibility = Visibility.Collapsed;
         }
         public ListadoContratos(int number)
         {
             InitializeComponent();
+            Init();
             if (dgContratos.Items.Count == 0)
             {
                 this.ShowMessageAsync("Alerta:", "No hay contratos registrados");
