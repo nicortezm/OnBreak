@@ -26,6 +26,7 @@ namespace ClientesWPF
         private bool darktheme;
         public AdminContratos()
         {
+            this.switchCambioBack.ToolTip = "Switch para cambiar Contraste";
             InitializeComponent();
             CargarCboTipoEvento();
             txtAsistentes.Visibility = Visibility.Hidden;

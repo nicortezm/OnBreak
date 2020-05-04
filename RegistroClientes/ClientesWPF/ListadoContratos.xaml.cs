@@ -27,6 +27,7 @@ namespace ClientesWPF
         public event pasar pasado;
         public ListadoContratos()
         {
+            this.switchCambioBack.ToolTip = "Switch para cambiar Contraste";
             InitializeComponent();
             CargarCboTipoEvento();
             Init();
@@ -35,6 +36,7 @@ namespace ClientesWPF
         }
         public ListadoContratos(int number)
         {
+            this.switchCambioBack.ToolTip = "Switch para cambiar Contraste";
             InitializeComponent();
             Init();
             CargarCboTipoEvento();
