@@ -29,19 +29,23 @@ namespace ClientesWPF
         private bool darktheme;
         public ListadoClientes()
         {
-
             InitializeComponent();
-            //dgClientes.ItemsSource = Ventana_Principal.listaClientes;
+            if (dgClientes.Items.Count == 0)
+            {
+                this.ShowMessageAsync("Alerta:", "No hay clientes registrados");
+            }
             CargaCombo();
             Init();
             btnSelectCliente.Visibility = Visibility.Collapsed;
             btnAtras.Visibility = Visibility.Collapsed;
         }
         public ListadoClientes(int number)
-
         {
             InitializeComponent();
-            //dgClientes.ItemsSource = Ventana_Principal.listaClientes;
+            if (dgClientes.Items.Count == 0)
+            {
+
+            }
             CargaCombo();
             Init();
             btnSelectCliente.Visibility = Visibility.Visible;

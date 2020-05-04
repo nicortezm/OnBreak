@@ -28,6 +28,10 @@ namespace ClientesWPF
         public ListadoContratos()
         {
             InitializeComponent();
+            if (dgContratos.Items.Count == 0)
+            {
+                this.ShowMessageAsync("Alerta:", "No hay contratos registrados");
+            }
             CargarCboTipoEvento();
             Init();
             btnSelectContrato.Visibility = Visibility.Collapsed;
@@ -36,6 +40,10 @@ namespace ClientesWPF
         public ListadoContratos(int number)
         {
             InitializeComponent();
+            if (dgContratos.Items.Count == 0)
+            {
+                this.ShowMessageAsync("Alerta:", "No hay contratos registrados");
+            }
             Init();
             CargarCboTipoEvento();
             btnSelectContrato.Visibility = Visibility.Visible;
