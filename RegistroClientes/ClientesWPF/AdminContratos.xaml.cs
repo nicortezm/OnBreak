@@ -341,6 +341,8 @@ namespace ClientesWPF
             this.rdbInactiva.BorderBrush = (Brush)bc.ConvertFrom("#2b78e4");/*#FFE4DFDF*/
             this.txtTotalFinal.Background = (Brush)bc.ConvertFrom("#2b78e4");
             this.txtValorBase.Background = (Brush)bc.ConvertFrom("#2b78e4"); /*FFF4F4F5*/
+            this.btnCalcular.BorderBrush = (Brush)bc.ConvertFrom("#2b78e4");
+            this.btnnumcontrato.BorderBrush = (Brush)bc.ConvertFrom("#2b78e4");
             this.btnLimpiarControles.BorderBrush = (Brush)bc.ConvertFrom("#2b78e4");
             darktheme = true;
             switchCambioBack.IsChecked = true;
@@ -379,6 +381,8 @@ namespace ClientesWPF
             this.rdbInactiva.BorderBrush = Brushes.Black; /*FFF4F4F5*/
             this.txtTotalFinal.Background = (Brush)bc.ConvertFrom("#FFF4F4F5");
             this.txtValorBase.Background = (Brush)bc.ConvertFrom("#FFF4F4F5");
+            this.btnCalcular.BorderBrush = Brushes.Black;
+            this.btnnumcontrato.BorderBrush = Brushes.Black;
             this.btnLimpiarControles.BorderBrush = Brushes.Black;
             darktheme = false;
         }

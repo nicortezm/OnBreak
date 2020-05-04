@@ -98,6 +98,7 @@
         <!-- Total Final -->
         <Label x:Name="lblTotalFInal" Content="Total Final*" HorizontalAlignment="Left" Margin="610,466,0,0" VerticalAlignment="Top" FontSize="18"/>
         <TextBox x:Name="txtTotalFinal" HorizontalAlignment="Left" Height="32" Margin="708,467,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="122" FontSize="18" TextChanged="txtAsistentes_TextChanged" Background="#FFF4F4F5" IsEnabled="False"/>
+        <Button Style= "{StaticResource SquareButtonStyle}" x:Name="btnCalcular"   Content="Calcular total" HorizontalAlignment="Left" Margin="468,464,0,0" VerticalAlignment="Top" Width="130"  FontSize="18"/>
 
     </Grid>
 </Controls:MetroWindow>
