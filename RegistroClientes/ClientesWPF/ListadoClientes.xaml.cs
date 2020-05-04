@@ -131,6 +131,14 @@ namespace ClientesWPF
                         }
                     }
                 }
+                if (dgClientes.Items.Count == 0)
+                {
+                    this.ShowMessageAsync("Alerta:", "No hay clientes que cumplan con los filtros");
+                    Init();
+                    txtRut.Text = string.Empty;
+                    cboActividad.SelectedIndex = 0;
+                    cboTIpo.SelectedIndex = 0;
+                }
             }
         }
 

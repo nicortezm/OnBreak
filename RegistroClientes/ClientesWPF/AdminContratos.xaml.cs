@@ -107,7 +107,7 @@ namespace ClientesWPF
             }
             else
             {
-                this.ShowMessageAsync("Alerta:", "Contrato no existe");
+                this.ShowMessageAsync("Alerta:", "Contrato no existe!");
             }
         }
 
@@ -249,7 +249,7 @@ namespace ClientesWPF
                     lblUF.Visibility = Visibility.Visible;
                     lblUF2.Visibility = Visibility.Visible;
                     this.ShowMessageAsync("Confirmacion:",
-                        string.Format("El COntrato con numero Contrato: {0}, fué agregado con exito!!", contrato.NumeroContrato.ToString()));
+                        string.Format("El Contrato con numero Contrato: {0}, fué agregado con exito!!", contrato.NumeroContrato.ToString()));
                 }
                
                 

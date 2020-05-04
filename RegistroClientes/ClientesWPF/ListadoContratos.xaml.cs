@@ -228,12 +228,18 @@ namespace ClientesWPF
                             }
                         }
                     }
-                    //else if (string.IsNullOrWhiteSpace(txtNumContrato.Text) && cboTIpo.SelectedIndex == 0 && string.IsNullOrWhiteSpace(txtRut.Text))
-                    //{
+                }
+                if (dgContratos.Items.Count == 0)
+                {
+                    this.ShowMessageAsync("Alerta:", "No hay contratos que cumplan con los filtros");
+                    Init();
+                    txtRut.Text = string.Empty;
+                    cboTIpo.SelectedIndex = 0;
+                    txtNumContrato.Text = string.Empty;
 
-                    //}
                 }
             }
+           
 
         }
 
