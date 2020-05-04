@@ -329,11 +329,18 @@ namespace ClientesWPF
             this.lblTermino.Foreground = (Brush)bc.ConvertFrom("#2b78e4");
             this.lblTipo.Foreground = (Brush)bc.ConvertFrom("#2b78e4");
             this.lblVigencia.Foreground = (Brush)bc.ConvertFrom("#2b78e4");
+            this.lblAsistentes.Foreground = (Brush)bc.ConvertFrom("#2b78e4");
+            this.lblPersonalAdicional.Foreground = (Brush)bc.ConvertFrom("#2b78e4");
+            this.lblTotalFInal.Foreground = (Brush)bc.ConvertFrom("#2b78e4");
+            this.lblValorBase.Foreground = (Brush)bc.ConvertFrom("#2b78e4");
+            this.lblnumcontrato.Foreground = (Brush)bc.ConvertFrom("#2b78e4");
             this.lblObservacion.Foreground = (Brush)bc.ConvertFrom("#2b78e4");
             this.rdbActiva.Foreground = (Brush)bc.ConvertFrom("#2b78e4");
             this.rdbInactiva.Foreground = (Brush)bc.ConvertFrom("#2b78e4");
             this.rdbActiva.BorderBrush = (Brush)bc.ConvertFrom("#2b78e4");
-            this.rdbInactiva.BorderBrush = (Brush)bc.ConvertFrom("#2b78e4");
+            this.rdbInactiva.BorderBrush = (Brush)bc.ConvertFrom("#2b78e4");/*#FFE4DFDF*/
+            this.txtTotalFinal.Background = (Brush)bc.ConvertFrom("#2b78e4");
+            this.txtValorBase.Background = (Brush)bc.ConvertFrom("#2b78e4"); /*FFF4F4F5*/
             this.btnLimpiarControles.BorderBrush = (Brush)bc.ConvertFrom("#2b78e4");
             darktheme = true;
             switchCambioBack.IsChecked = true;
@@ -361,10 +368,17 @@ namespace ClientesWPF
             this.lblTipo.Foreground = Brushes.Black;
             this.lblVigencia.Foreground = Brushes.Black;
             this.lblObservacion.Foreground = Brushes.Black;
+            this.lblAsistentes.Foreground = Brushes.Black;
+            this.lblPersonalAdicional.Foreground = Brushes.Black;
+            this.lblTotalFInal.Foreground = Brushes.Black;
+            this.lblValorBase.Foreground = Brushes.Black;
+            this.lblnumcontrato.Foreground = Brushes.Black;
             this.rdbActiva.Foreground = Brushes.Black;
             this.rdbInactiva.Foreground = Brushes.Black;
             this.rdbActiva.BorderBrush = Brushes.Black;
-            this.rdbInactiva.BorderBrush = Brushes.Black;
+            this.rdbInactiva.BorderBrush = Brushes.Black; /*FFF4F4F5*/
+            this.txtTotalFinal.Background = (Brush)bc.ConvertFrom("#FFF4F4F5");
+            this.txtValorBase.Background = (Brush)bc.ConvertFrom("#FFF4F4F5");
             this.btnLimpiarControles.BorderBrush = Brushes.Black;
             darktheme = false;
         }
@@ -435,6 +449,11 @@ namespace ClientesWPF
         private void btnnumcontrato_Click(object sender, RoutedEventArgs e)
         {
             txtContrato.IsEnabled = true;
+        }
+
+        private void txtAsistentes_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
         }
     }
 }

@@ -45,48 +45,59 @@
 
         </Controls:Tile>
         <Image x:Name="imgLogoTransparent" Margin="1168,555,4,-4" Source="Imagenes/logo_transparent_background.png" Stretch="Fill"/>
-        <!-- Numero Contrato-->
-        <!-- Fecha Inicio -->
-        <Label x:Name="lblFechaInicio" Content="Fecha, Hora *&#xA;Inicio" HorizontalAlignment="Left" Margin="361,157,0,0" VerticalAlignment="Top" FontSize="18"/>
-
-        <!-- Fecha Termino -->
-        <Label x:Name="lblFechaTermino" Content="Fecha, Hora*&#xA;Termino" HorizontalAlignment="Left" Margin="664,157,0,0" VerticalAlignment="Top" FontSize="18"/>
         <!-- Vigencia -->
-        <Label x:Name="lblVigencia" Content="Vigencia *" HorizontalAlignment="Left" Margin="387,258,0,0" VerticalAlignment="Top" FontSize="18"/>
-        <RadioButton x:Name="rdbActiva" Content="Activa" HorizontalAlignment="Left" Margin="497,258,0,0" VerticalAlignment="Top"  FontSize="18" Width="89" Height="37" Foreground="Black" OpacityMask="#FFF3E7E7" BorderBrush="Black" />
-        <RadioButton x:Name="rdbInactiva" Content="Inactiva" HorizontalAlignment="Left" Margin="497,316,0,0" VerticalAlignment="Top"  FontSize="18" Width="99" Height="30" BorderBrush="Black" />
+        <Label x:Name="lblVigencia" Content="Vigencia *" HorizontalAlignment="Left" Margin="375,246,0,0" VerticalAlignment="Top" FontSize="18"/>
+        <RadioButton x:Name="rdbActiva" Content="Activa" HorizontalAlignment="Left" Margin="485,246,0,0" VerticalAlignment="Top"  FontSize="18" Width="89" Height="37" Foreground="Black" OpacityMask="#FFF3E7E7" BorderBrush="Black" />
+        <RadioButton x:Name="rdbInactiva" Content="Inactiva" HorizontalAlignment="Left" Margin="485,304,0,0" VerticalAlignment="Top"  FontSize="18" Width="99" Height="30" BorderBrush="Black" />
         <!-- Tipo -->
-        <Label x:Name="lblTipo" Content="   Tipo*&#xD;&#xA;Evento" HorizontalAlignment="Left" Margin="707,246,0,0" VerticalAlignment="Top" FontSize="18"/>
-        <ComboBox x:Name="cboTIpo" HorizontalAlignment="Left" Margin="776,260,0,0" VerticalAlignment="Top" Width="155" FontSize="18" />
-        <!-- Actividad -->
-        <!-- CReacion -->
-        <Label x:Name="lblCreacion" Content="Creacion*" HorizontalAlignment="Left" Margin="391,77,0,0" VerticalAlignment="Top" FontSize="18"/>
+        <Label x:Name="lblTipo" Content="   Tipo*&#xD;&#xA;Evento" HorizontalAlignment="Left" Margin="707,234,0,0" VerticalAlignment="Top" FontSize="18"/>
+        <ComboBox x:Name="cboTIpo" HorizontalAlignment="Left" Margin="776,248,0,0" VerticalAlignment="Top" Width="155" FontSize="18" />
         <!-- Direccion -->
         <Label x:Name="lblDreccion" Content="Dirección*" HorizontalAlignment="Left" Margin="970,168,0,0" VerticalAlignment="Top" FontSize="18"/>
-        <TextBox x:Name="txtDireccion" Controls:TextBoxHelper.Watermark="" HorizontalAlignment="Left" Height="32" Margin="1067,170,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="236" FontSize="18" />
-        <!-- Termino -->
-        <Label x:Name="lblTermino" Content="Termino*" HorizontalAlignment="Left" Margin="694,77,0,0" VerticalAlignment="Top" FontSize="18"/>
-        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="211" Margin="406,512,0,0" Stroke="Black" VerticalAlignment="Top" Width="674"/>
+        <TextBox x:Name="txtDireccion" Controls:TextBoxHelper.Watermark="" HorizontalAlignment="Left" Height="32" Margin="1067,170,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="236" FontSize="18" Controls:TextBoxHelper.ClearTextButton="True"/>
+
+        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="121" Margin="463,581,0,0" Stroke="Black" VerticalAlignment="Top" Width="515"/>
         <!-- Rut -->
-        <Label x:Name="lblRut" Content="Rut*" HorizontalAlignment="Left" Margin="457,565,0,0" VerticalAlignment="Top" FontSize="18"/>
-        <TextBox x:Name="txtRut" Controls:TextBoxHelper.ClearTextButton="True" Controls:TextBoxHelper.Watermark="ej: 12582430" HorizontalAlignment="Left" Height="32" Margin="505,566,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="151" FontSize="18" />
+        <Label x:Name="lblRut" Content="Rut*" HorizontalAlignment="Left" Margin="511,599,0,0" VerticalAlignment="Top" FontSize="18"/>
+        <TextBox x:Name="txtRut" Controls:TextBoxHelper.ClearTextButton="True" Controls:TextBoxHelper.Watermark="ej: 12582430" HorizontalAlignment="Left" Height="32" Margin="559,600,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="151" FontSize="18" />
         <!-- Nombre Completo -->
-        <Label x:Name="lblNombre" Content="Nombre*" HorizontalAlignment="Left" Margin="419,618,0,0" VerticalAlignment="Top" FontSize="18"/>
-        <TextBox x:Name="txtNombre" Controls:TextBoxHelper.Watermark="" HorizontalAlignment="Left" Height="32" Margin="505,619,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="108" FontSize="18"  IsEnabled="False" Background="#FFE4DFDF"/>
-        <!-- Nombre Completo -->
-        <Label x:Name="lblApel" Content="Apellidos*" HorizontalAlignment="Left" Margin="642,618,0,0" VerticalAlignment="Top" FontSize="18"/>
-        <TextBox x:Name="txtApel" Controls:TextBoxHelper.Watermark="" HorizontalAlignment="Left" Height="32" Margin="735,619,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="174" FontSize="18" IsEnabled="False" Background="#FFE4DFDF" />
-        <Button Style= "{StaticResource SquareButtonStyle}" x:Name="btnLimpiarControles"   Content="Limpiar Controles" HorizontalAlignment="Left" Margin="647,459,0,0" VerticalAlignment="Top" Width="182" Click="btnLimpiarControles_Click" FontSize="18"/>
+        <Label x:Name="lblNombre" Content="Nombre*" HorizontalAlignment="Left" Margin="473,652,0,0" VerticalAlignment="Top" FontSize="18"/>
+        <TextBox x:Name="txtNombre" Controls:TextBoxHelper.Watermark="" HorizontalAlignment="Left" Height="32" Margin="559,653,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="108" FontSize="18"  IsEnabled="False" Background="#FFE4DFDF"/>
+        <!-- Apellido -->
+        <Label x:Name="lblApel" Content="Apellidos*" HorizontalAlignment="Left" Margin="696,652,0,0" VerticalAlignment="Top" FontSize="18"/>
+        <TextBox x:Name="txtApel" Controls:TextBoxHelper.Watermark="" HorizontalAlignment="Left" Height="32" Margin="789,653,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="174" FontSize="18" IsEnabled="False" Background="#FFE4DFDF" />
+
+        <Button Style= "{StaticResource SquareButtonStyle}" x:Name="btnLimpiarControles"   Content="Limpiar Controles" HorizontalAlignment="Left" Margin="633,529,0,0" VerticalAlignment="Top" Width="182" Click="btnLimpiarControles_Click" FontSize="18"/>
         <Controls:ToggleSwitch x:Name="switchCambioBack" Checked="switchCambioBack_Checked" IsCheckedChanged="switchCambioBack_IsCheckedChanged" OnLabel="" OffLabel="" Margin="1233,0,0,625" FontSize="24" Content="" VerticalContentAlignment="Stretch" Header="&#xA;Dark Mode" Width="93" VerticalAlignment="Bottom" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Height="96" ContentDirection="RightToLeft" OnSwitchBrush="#FF085394"/>
-        <Label x:Name="lblObservacion" Content="Observacion*" HorizontalAlignment="Left" Margin="659,333,0,0" VerticalAlignment="Top" FontSize="18"/>
-        <TextBox x:Name="txtObservacion" HorizontalAlignment="Left" Height="32" Margin="776,334,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="301"  Controls:TextBoxHelper.ClearTextButton="True" Controls:TextBoxHelper.Watermark="ej:" FontSize="18"/>
-        <DatePicker x:Name="dtpCreacion" HorizontalAlignment="Left" Margin="479,78,0,0" VerticalAlignment="Top" FontSize="18" Height="32" Width="177" Text="ddd" Controls:TextBoxHelper.WatermarkTrimming="WordEllipsis" Controls:TextBoxHelper.Watermark="Seleccione fecha" Controls:TextBoxHelper.HasText="True"/>
-        <DatePicker x:Name="dtpTermino" HorizontalAlignment="Left" Margin="776,78,0,0" VerticalAlignment="Top" FontSize="18" Height="32" Width="177" Controls:TextBoxHelper.Watermark="Seleccione fecha" Controls:TextBoxHelper.WatermarkTrimming="WordEllipsis"/>
-        <DatePicker x:Name="dtpFechInicio" HorizontalAlignment="Left" Height="32" Margin="479,170,0,0" Text="" VerticalAlignment="Top" Width="177" FontSize="18"  Controls:TextBoxHelper.Watermark="Seleccione fecha" Controls:TextBoxHelper.WatermarkTrimming="WordEllipsis"/>
+        <!-- Observacion -->
+        <Label x:Name="lblObservacion" Content="Observación*" HorizontalAlignment="Left" Margin="659,315,0,0" VerticalAlignment="Top" FontSize="18"/>
+        <TextBox x:Name="txtObservacion" HorizontalAlignment="Left" Height="32" Margin="776,316,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="301"  Controls:TextBoxHelper.ClearTextButton="True" Controls:TextBoxHelper.Watermark="" FontSize="18"/>
+        <!-- Fechas creacion y termino -->
+        <DatePicker x:Name="dtpCreacion" HorizontalAlignment="Left" Margin="467,96,0,0" VerticalAlignment="Top" FontSize="18" Height="32" Width="177" Text="ddd" Controls:TextBoxHelper.WatermarkTrimming="WordEllipsis" Controls:TextBoxHelper.Watermark="Seleccione fecha" Controls:TextBoxHelper.HasText="True"/>
+        <Label x:Name="lblCreacion" Content="Creacion*" HorizontalAlignment="Left" Margin="379,95,0,0" VerticalAlignment="Top" FontSize="18"/>
+        <DatePicker x:Name="dtpTermino" HorizontalAlignment="Left" Margin="776,96,0,0" VerticalAlignment="Top" FontSize="18" Height="32" Width="177" Controls:TextBoxHelper.Watermark="Seleccione fecha" Controls:TextBoxHelper.WatermarkTrimming="WordEllipsis"/>
+        <Label x:Name="lblTermino" Content="Termino*" HorizontalAlignment="Left" Margin="694,95,0,0" VerticalAlignment="Top" FontSize="18"/>
+        <!-- Fechas inicio y termino -->
+        <DatePicker x:Name="dtpFechInicio" HorizontalAlignment="Left" Height="32" Margin="467,170,0,0" Text="" VerticalAlignment="Top" Width="177" FontSize="18"  Controls:TextBoxHelper.Watermark="Seleccione fecha" Controls:TextBoxHelper.WatermarkTrimming="WordEllipsis"/>
         <DatePicker x:Name="dtpFechTermino" HorizontalAlignment="Left" Height="32" Margin="776,171,0,0" Text="" VerticalAlignment="Top" Width="177" FontSize="18"  Controls:TextBoxHelper.Watermark="Seleccione fecha" Controls:TextBoxHelper.WatermarkTrimming="WordEllipsis"/>
-        <TextBox Controls:TextBoxHelper.ClearTextButton="True" Controls:TextBoxHelper.Watermark="ej: 1546421512"  x:Name="txtContrato" HorizontalAlignment="Left" Height="32" Margin="438,21,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="175" FontSize="18" IsEnabled="False" />
-        <Label x:Name="lblnumcontrato" Content="Numero contrato *" HorizontalAlignment="Left" Margin="273,21,0,0" VerticalAlignment="Top" FontSize="18"/>
-        <Button Style= "{StaticResource SquareButtonStyle}" x:Name="btnnumcontrato"   Content="desbloquear num contrato" HorizontalAlignment="Left" Margin="642,21,0,0" VerticalAlignment="Top" Width="262" FontSize="18" Click="btnnumcontrato_Click"/>
+        <Label x:Name="lblFechaInicio" Content="Fecha, Hora *&#xA;Inicio" HorizontalAlignment="Left" Margin="349,157,0,0" VerticalAlignment="Top" FontSize="18"/>
+        <Label x:Name="lblFechaTermino" Content="Fecha, Hora*&#xA;Termino" HorizontalAlignment="Left" Margin="664,157,0,0" VerticalAlignment="Top" FontSize="18"/>
+        <!-- Numero de contrato -->
+        <TextBox Controls:TextBoxHelper.ClearTextButton="True" Controls:TextBoxHelper.Watermark="ej: 1546421512"  x:Name="txtContrato" HorizontalAlignment="Left" Height="32" Margin="470,29,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="175" FontSize="18" IsEnabled="False" />
+        <Label x:Name="lblnumcontrato" Content="Numero*&#xA;contrato" HorizontalAlignment="Left" Margin="383,16,0,0" VerticalAlignment="Top" FontSize="18"/>
+        <Button Style= "{StaticResource SquareButtonStyle}" x:Name="btnnumcontrato"   Content="desbloquear num contrato" HorizontalAlignment="Left" Margin="686,29,0,0" VerticalAlignment="Top" Width="262" FontSize="18" Click="btnnumcontrato_Click"/>
+        <!-- Asistentes -->
+        <Label x:Name="lblAsistentes" Content="Asistentes*" HorizontalAlignment="Left" Margin="455,386,0,0" VerticalAlignment="Top" FontSize="18"/>
+        <TextBox x:Name="txtAsistentes" HorizontalAlignment="Left" Height="32" Margin="554,387,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="78" FontSize="18" TextChanged="txtAsistentes_TextChanged" Controls:TextBoxHelper.ClearTextButton="True"/>
+        <!-- Personal Adicional -->
+        <Label x:Name="lblPersonalAdicional" Content=" Personal*&#xA;Adicional" HorizontalAlignment="Left" Margin="662,373,0,0" VerticalAlignment="Top" FontSize="18"/>
+        <TextBox x:Name="txtPersonalAdicional" HorizontalAlignment="Left" Height="32" Margin="752,387,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="78" FontSize="18" Controls:TextBoxHelper.ClearTextButton="True"/>
+        <!-- Valor Base-->
+        <Label x:Name="lblValorBase" Content="Valor Base*" HorizontalAlignment="Left" Margin="852,386,0,0" VerticalAlignment="Top" FontSize="18"/>
+        <TextBox x:Name="txtValorBase" HorizontalAlignment="Left" Height="32" Margin="952,387,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="122" FontSize="18" TextChanged="txtAsistentes_TextChanged" Background="#FFF4F4F5" IsEnabled="False"/>
+        <!-- Total Final -->
+        <Label x:Name="lblTotalFInal" Content="Total Final*" HorizontalAlignment="Left" Margin="610,466,0,0" VerticalAlignment="Top" FontSize="18"/>
+        <TextBox x:Name="txtTotalFinal" HorizontalAlignment="Left" Height="32" Margin="708,467,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="122" FontSize="18" TextChanged="txtAsistentes_TextChanged" Background="#FFF4F4F5" IsEnabled="False"/>
 
     </Grid>
 </Controls:MetroWindow>
