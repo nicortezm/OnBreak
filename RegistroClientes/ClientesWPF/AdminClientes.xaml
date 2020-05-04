@@ -79,7 +79,6 @@
         <!--Direccion -->
         <Label x:Name="lblDireccion" Content="Dirección*" HorizontalAlignment="Left" Margin="731,309,0,0" VerticalAlignment="Top" FontSize="18" Grid.Column="1"/>
         <TextBox Controls:TextBoxHelper.ClearTextButton="True" x:Name="txtDireccion" HorizontalAlignment="Left" Height="32" Margin="824,310,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="228" FontSize="18"  Grid.Column="1"/>
-        <Border x:Name="brSeparador" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="737" Margin="253,0,0,0" VerticalAlignment="Top" Width="4" Background="Black" Grid.Column="1"/>
         <Controls:ToggleSwitch x:Name="switchCambioBack" Checked="switchCambioBack_Checked" IsCheckedChanged="switchCambioBack_IsCheckedChanged" OnLabel="" OffLabel="" Margin="1182,0,0,625" FontSize="24" Content="" VerticalContentAlignment="Stretch" Header="&#xA;Dark Mode" Width="93" VerticalAlignment="Bottom" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Height="96" ContentDirection="RightToLeft" OnSwitchBrush="#FF085394" Grid.Column="1" IsChecked="False" />
     </Grid>
 </Controls:MetroWindow>

@@ -152,7 +152,6 @@ namespace ClientesWPF
             switchCambioBack.ThumbIndicatorBrush = Brushes.White;
             this.btnLimpiar.BorderBrush = (Brush)bc.ConvertFrom("#2b78e4");
             this.btnBuscar.BorderBrush = (Brush)bc.ConvertFrom("#2b78e4");
-            this.brCuadroDataGrid.BorderBrush = Brushes.White;
             this.brCuadroDataGrid.Background = (Brush)bc.ConvertFrom("#2b78e4");
             this.lblRut.Foreground = (Brush)bc.ConvertFrom("#2b78e4");
             lblTIpo.Foreground = (Brush)bc.ConvertFrom("#2b78e4");
@@ -177,7 +176,6 @@ namespace ClientesWPF
             this.btnLimpiar.BorderBrush = Brushes.Black;
             this.btnBuscar.BorderBrush = Brushes.Black;
             this.brCuadroDataGrid.Background = Brushes.White;
-            this.brCuadroDataGrid.BorderBrush = Brushes.Black;
             lblTIpo.Foreground = Brushes.Black;
             lblActividad.Foreground = Brushes.Black;
             lblTitulo.Foreground = Brushes.Black;

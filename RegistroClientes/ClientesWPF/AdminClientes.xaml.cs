@@ -227,8 +227,6 @@ namespace ClientesWPF
             this.lblctividad.Foreground = (Brush)bc.ConvertFrom("#2b78e4");
             this.lblTelefon.Foreground = (Brush)bc.ConvertFrom("#2b78e4");
             this.lblDireccion.Foreground = (Brush)bc.ConvertFrom("#2b78e4");
-            this.brSeparador.BorderBrush = (Brush)bc.ConvertFrom("#2b78e4");
-            this.brSeparador.Background = (Brush)bc.ConvertFrom("#2b78e4");
             darktheme = true;
             switchCambioBack.IsChecked = true;
 
@@ -253,9 +251,7 @@ namespace ClientesWPF
             this.lblNomContact.Foreground = Brushes.Black;
             this.lblctividad.Foreground = Brushes.Black;
             this.lblTelefon.Foreground = Brushes.Black;
-            this.lblDireccion.Foreground = Brushes.Black;
-            this.brSeparador.BorderBrush = Brushes.Black;
-            this.brSeparador.Background = Brushes.Black;
+            //this.lblDireccion.Foreground = Brushes.Black;
             darktheme = false;
         }
 
