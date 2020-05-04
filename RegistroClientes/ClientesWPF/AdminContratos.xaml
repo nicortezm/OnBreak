@@ -51,7 +51,7 @@
         <RadioButton x:Name="rdbInactiva" Content="Inactiva" HorizontalAlignment="Left" Margin="485,304,0,0" VerticalAlignment="Top"  FontSize="18" Width="99" Height="30" BorderBrush="Black" />
         <!-- Tipo -->
         <Label x:Name="lblTipo" Content="   Tipo*&#xD;&#xA;Evento" HorizontalAlignment="Left" Margin="707,234,0,0" VerticalAlignment="Top" FontSize="18"/>
-        <ComboBox x:Name="cboTIpo" HorizontalAlignment="Left" Margin="776,248,0,0" VerticalAlignment="Top" Width="155" FontSize="18" />
+        <ComboBox x:Name="cboTIpo" HorizontalAlignment="Left" Margin="776,248,0,0" VerticalAlignment="Top" Width="155" FontSize="18" SelectionChanged="cboTIpo_SelectionChanged" />
         <!-- Direccion -->
         <Label x:Name="lblDreccion" Content="Dirección*" HorizontalAlignment="Left" Margin="970,168,0,0" VerticalAlignment="Top" FontSize="18"/>
         <TextBox x:Name="txtDireccion" Controls:TextBoxHelper.Watermark="" HorizontalAlignment="Left" Height="32" Margin="1067,170,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="236" FontSize="18" Controls:TextBoxHelper.ClearTextButton="True"/>
@@ -88,17 +88,20 @@
         <Button Style= "{StaticResource SquareButtonStyle}" x:Name="btnnumcontrato"   Content="desbloquear num contrato" HorizontalAlignment="Left" Margin="686,29,0,0" VerticalAlignment="Top" Width="262" FontSize="18" Click="btnnumcontrato_Click"/>
         <!-- Asistentes -->
         <Label x:Name="lblAsistentes" Content="Asistentes*" HorizontalAlignment="Left" Margin="455,386,0,0" VerticalAlignment="Top" FontSize="18"/>
-        <TextBox x:Name="txtAsistentes" HorizontalAlignment="Left" Height="32" Margin="554,387,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="78" FontSize="18" TextChanged="txtAsistentes_TextChanged" Controls:TextBoxHelper.ClearTextButton="True"/>
+        <TextBox x:Name="txtAsistentes" HorizontalAlignment="Left" Height="32" Margin="554,387,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="78" FontSize="18" TextChanged="txtAsistentes_TextChanged" Controls:TextBoxHelper.ClearTextButton="True" PreviewTextInput="txtAsistentes_PreviewTextInput" Text="1"/>
         <!-- Personal Adicional -->
         <Label x:Name="lblPersonalAdicional" Content=" Personal*&#xA;Adicional" HorizontalAlignment="Left" Margin="662,373,0,0" VerticalAlignment="Top" FontSize="18"/>
-        <TextBox x:Name="txtPersonalAdicional" HorizontalAlignment="Left" Height="32" Margin="752,387,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="78" FontSize="18" Controls:TextBoxHelper.ClearTextButton="True"/>
+        <TextBox x:Name="txtPersonalAdicional" HorizontalAlignment="Left" Height="32" Margin="752,387,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="78" FontSize="18" Controls:TextBoxHelper.ClearTextButton="True" PreviewTextInput="txtPersonalAdicional_PreviewTextInput" Text="0"/>
         <!-- Valor Base-->
         <Label x:Name="lblValorBase" Content="Valor Base*" HorizontalAlignment="Left" Margin="852,386,0,0" VerticalAlignment="Top" FontSize="18"/>
         <TextBox x:Name="txtValorBase" HorizontalAlignment="Left" Height="32" Margin="952,387,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="122" FontSize="18" TextChanged="txtAsistentes_TextChanged" Background="#FFF4F4F5" IsEnabled="False"/>
         <!-- Total Final -->
         <Label x:Name="lblTotalFInal" Content="Total Final*" HorizontalAlignment="Left" Margin="610,466,0,0" VerticalAlignment="Top" FontSize="18"/>
         <TextBox x:Name="txtTotalFinal" HorizontalAlignment="Left" Height="32" Margin="708,467,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="122" FontSize="18" TextChanged="txtAsistentes_TextChanged" Background="#FFF4F4F5" IsEnabled="False"/>
-        <Button Style= "{StaticResource SquareButtonStyle}" x:Name="btnCalcular"   Content="Calcular total" HorizontalAlignment="Left" Margin="468,464,0,0" VerticalAlignment="Top" Width="130"  FontSize="18"/>
+        <Button Style= "{StaticResource SquareButtonStyle}" x:Name="btnCalcular"   Content="Calcular total" HorizontalAlignment="Left" Margin="468,464,0,0" VerticalAlignment="Top" Width="130"  FontSize="18" Click="btnCalcular_Click"/>
+        <Label x:Name="lblUF" Content="UF" HorizontalAlignment="Left" Margin="1079,392,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblUF2" Content="UF" HorizontalAlignment="Left" Margin="835,471,0,0" VerticalAlignment="Top"/>
+
 
     </Grid>
 </Controls:MetroWindow>

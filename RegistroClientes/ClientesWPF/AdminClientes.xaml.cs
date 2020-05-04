@@ -48,35 +48,45 @@ namespace ClientesWPF
 
         private async void btnRegistrarCliente_Click(object sender, RoutedEventArgs e)
         {
-            //agregar if pa confirmar q todos los campos esten completos
+            
 
             if (!string.IsNullOrWhiteSpace(txtRut.Text) && !string.IsNullOrWhiteSpace(txtNomContacto.Text) && !string.IsNullOrWhiteSpace(txtRazonSocial.Text) && !string.IsNullOrWhiteSpace(txtMailContact.Text)
                 && !string.IsNullOrWhiteSpace(txtTelefono.Text) && cboActividad.SelectedIndex!=0 && cboTIpo.SelectedIndex!=0 )
             {
-                //if para la alerta si es que el cliente esta registrado
-                if (Ventana_Principal.listaClientes.Existe(int.Parse(txtRut.Text)))
+                string[] nomcom = txtNomContacto.Text.Split(' ');
+                if (nomcom.Length != 2)
                 {
-                    await this.ShowMessageAsync("Alerta:",
-                        string.Format("El Cliente con Rut: {0}, ya existe!!", txtRut.Text));
+                    await this.ShowMessageAsync("Alerta:", "Debe respetar el formato 'Nombre Apellido'");
                 }
                 else
                 {
-                    Cliente cliente = new Cliente
+                    //if para la alerta si es que el cliente esta registrado
+                    if (Ventana_Principal.listaClientes.Existe(int.Parse(txtRut.Text)))
                     {
-                        Rut = int.Parse(txtRut.Text),
-                        RazonSocial = txtRazonSocial.Text,
-                        NombreContacto = txtNomContacto.Text,
-                        MailContacto = txtMailContact.Text,
-                        Direccion = txtDireccion.Text,
-                        Telefono = int.Parse(txtTelefono.Text),
-                        TipoEmpresa = (TipoEmpresa)cboTIpo.SelectedValue,
-                        ActividadEmpresa = (ActividadEmpresa)cboActividad.SelectedValue
-                    };
-                    Ventana_Principal.listaClientes.Add(cliente);
-                    await this.ShowMessageAsync("Confirmacion:",
-                        string.Format("El Cliente con Rut: {0}, fue agregado con exito!!", txtRut.Text));
+                        await this.ShowMessageAsync("Alerta:",
+                            string.Format("El Cliente con Rut: {0}, ya existe!!", txtRut.Text));
+                    }
+                    else
+                    {
+                        Cliente cliente = new Cliente
+                        {
+                            Rut = int.Parse(txtRut.Text),
+                            RazonSocial = txtRazonSocial.Text,
+                            NombreContacto = txtNomContacto.Text,
+                            MailContacto = txtMailContact.Text,
+                            Direccion = txtDireccion.Text,
+                            Telefono = int.Parse(txtTelefono.Text),
+                            TipoEmpresa = (TipoEmpresa)cboTIpo.SelectedValue,
+                            ActividadEmpresa = (ActividadEmpresa)cboActividad.SelectedValue
+                        };
+                        Ventana_Principal.listaClientes.Add(cliente);
+                        await this.ShowMessageAsync("Confirmacion:",
+                            string.Format("El Cliente con Rut: {0}, fue agregado con exito!!", txtRut.Text));
 
+                    }
                 }
+
+                
             }
             else
             {

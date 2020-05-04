@@ -21,6 +21,7 @@ namespace BibliotecaClientes
         public Boolean EstaVigente { get; set; }
         public int IdTipo { get; set; }
         public string Observaciones { get; set; }
+    
 
 
         /* Propiedades customizadas */
@@ -43,6 +44,7 @@ namespace BibliotecaClientes
             EstaVigente = false;
             IdTipo = 0;
             Observaciones = string.Empty;
+
         }
         /// <summary>
         /// Método declarado en la interfaz

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -27,14 +28,25 @@ namespace ClientesWPF
         {
             InitializeComponent();
             CargarCboTipoEvento();
+            txtAsistentes.Visibility = Visibility.Hidden;
+            txtValorBase.Visibility = Visibility.Hidden;
+            txtPersonalAdicional.Visibility = Visibility.Hidden;
+            btnCalcular.Visibility = Visibility.Hidden;
+            txtTotalFinal.Visibility = Visibility.Hidden;
+            lblTotalFInal.Visibility = Visibility.Hidden;
+            lblValorBase.Visibility = Visibility.Hidden;
+            lblPersonalAdicional.Visibility = Visibility.Hidden;
+            lblAsistentes.Visibility = Visibility.Hidden;
+            lblUF.Visibility = Visibility.Hidden;
+            lblUF2.Visibility = Visibility.Hidden;
         }
         public void CargarCboTipoEvento()
         {
-            //this.cboTIpo.ItemsSource = "Seleccione";
-            this.cboTIpo.DisplayMemberPath = "Nombre";
-            this.cboTIpo.SelectedValuePath = "Id";
-            this.cboTIpo.ItemsSource = Ventana_Principal.listaTipoEvento;
-            this.cboTIpo.SelectedIndex = 0;
+            foreach (var evento in Ventana_Principal.listaTipoEvento)
+            {
+                cboTIpo.Items.Add(evento.Nombre);
+            }
+            cboTIpo.SelectedIndex = 0;
 
         }
 
@@ -80,6 +92,7 @@ namespace ClientesWPF
                 this.txtObservacion.Text = xd.Observaciones;
                 this.txtRut.Text = Rut.ToString();
                 this.cboTIpo.SelectedItem = Ventana_Principal.listaTipoEvento.NomEvento((xd.IdTipo));
+  
                 string[] nom_com = Nom.Split(' ');
                 this.txtNombre.Text = nom_com[0];
                 this.txtApel.Text = nom_com[1];
@@ -148,6 +161,10 @@ namespace ClientesWPF
             this.txtApel.Text = string.Empty;
             this.rdbActiva.IsChecked = false;
             this.rdbInactiva.IsChecked = false;
+            this.txtPersonalAdicional.Text = string.Empty;
+            this.txtAsistentes.Text = string.Empty;
+            this.txtValorBase.Text = string.Empty;
+            this.txtTotalFinal.Text = string.Empty;
         }
 
         private void btnBuscarClientes_Click(object sender, RoutedEventArgs e)
@@ -178,9 +195,9 @@ namespace ClientesWPF
 
         private void btnRegistrarContrato_Click(object sender, RoutedEventArgs e)
         {
-            if (!String.IsNullOrWhiteSpace(this.txtObservacion.Text) &&!string.Empty.Equals(this.txtDireccion.Text)
-                //&& !String.IsNullOrWhiteSpace(this.txtFechaInicio.Text) && !String.IsNullOrWhiteSpace(this.txtFechaTermino.Text)
-                 && this.cboTIpo.SelectedIndex!=0 && this.rdbActiva.IsChecked==true && !String.IsNullOrWhiteSpace(this.txtRut.Text))
+            if (!String.IsNullOrWhiteSpace(this.txtObservacion.Text) && !string.Empty.Equals(this.txtDireccion.Text) && dtpTermino.SelectedDate != DateTime.Now
+                && dtpFechTermino.SelectedDate != DateTime.Now 
+                 && this.cboTIpo.SelectedIndex!=0 && (this.rdbActiva.IsChecked==true || this.rdbInactiva.IsChecked == true) && !String.IsNullOrWhiteSpace(this.txtRut.Text))
             {
                 
                 bool vigenteIs = EstadoVigencia();
@@ -190,12 +207,14 @@ namespace ClientesWPF
                     NumeroContrato = long.Parse(DateTime.Now.ToString("yyyyMMddHHmm")),
                     Creacion = this.dtpCreacion.SelectedDate.Value.ToString("MM-dd-yyyy"),
                     Termino = this.dtpTermino.SelectedDate.Value.ToString("MM-dd-yyyy"),
-                    IdTipo = int.Parse(this.cboTIpo.SelectedValue.ToString()),
+                    IdTipo = Ventana_Principal.listaTipoEvento.GetidEvento(cboTIpo.SelectedItem.ToString()),
                     EstaVigente = vigenteIs,
                     Observaciones = this.txtObservacion.Text,
                     Direccion = this.txtDireccion.Text,
                     FechaHoraInicio = this.dtpFechInicio.SelectedDate.Value,
-                    FechaHoraTermino = this.dtpFechTermino.SelectedDate.Value
+                    FechaHoraTermino = this.dtpFechTermino.SelectedDate.Value,
+
+
 
                 };
                 foreach (var cliente in Ventana_Principal.listaClientes)
@@ -213,6 +232,18 @@ namespace ClientesWPF
                 }
                 else
                 {
+                    txtContrato.Text = contrato.NumeroContrato.ToString();
+                    txtAsistentes.Visibility = Visibility.Visible;
+                    txtValorBase.Visibility = Visibility.Visible;
+                    txtPersonalAdicional.Visibility = Visibility.Visible;
+                    btnCalcular.Visibility = Visibility.Visible;
+                    txtTotalFinal.Visibility = Visibility.Visible;
+                    lblTotalFInal.Visibility = Visibility.Visible;
+                    lblValorBase.Visibility = Visibility.Visible;
+                    lblPersonalAdicional.Visibility = Visibility.Visible;
+                    lblAsistentes.Visibility = Visibility.Visible;
+                    lblUF.Visibility = Visibility.Visible;
+                    lblUF2.Visibility = Visibility.Visible;
                     this.ShowMessageAsync("Confirmacion:",
                         string.Format("El COntrato con numero Contrato: {0}, fué agregado con exito!!", contrato.NumeroContrato.ToString()));
                 }
@@ -224,6 +255,7 @@ namespace ClientesWPF
             {
                  this.ShowMessageAsync("Alerta:", "Debe Completar todos los datos");
             }
+
             //String fechaContrato = DateTime.Now.ToString("yyyyMMddHHmm");
             //int fechaContrato = int.Parse(DateTime.Now.ToString("yyyyMMddHHmm"));
             //this.txtNumContrato.Text = fechaContrato;
@@ -248,9 +280,9 @@ namespace ClientesWPF
 
         private void btnAztualizContrat_Click(object sender, RoutedEventArgs e)
         {
-            if (!String.IsNullOrWhiteSpace(this.txtObservacion.Text) && !string.Empty.Equals(this.txtDireccion.Text)
-                 //&& !String.IsNullOrWhiteSpace(this.txtFechaInicio.Text) && !String.IsNullOrWhiteSpace(this.txtFechaTermino.Text)
-                 && this.cboTIpo.SelectedIndex != 0 && this.rdbActiva.IsChecked == true && !String.IsNullOrWhiteSpace(this.txtRut.Text))
+            if (!String.IsNullOrWhiteSpace(this.txtObservacion.Text) && !string.Empty.Equals(this.txtDireccion.Text) && dtpTermino.SelectedDate != DateTime.Now
+                && dtpFechTermino.SelectedDate != DateTime.Now
+                 && this.cboTIpo.SelectedIndex != 0 && (this.rdbActiva.IsChecked == true || this.rdbInactiva.IsChecked == true) && !String.IsNullOrWhiteSpace(this.txtRut.Text))
             {
                 bool seAgrego = false;
                 foreach (var cliente in Ventana_Principal.listaClientes)
@@ -266,12 +298,13 @@ namespace ClientesWPF
                                 NumeroContrato = long.Parse(DateTime.Now.ToString("yyyyMMddHHmm")),
                                 Creacion = this.dtpCreacion.SelectedDate.Value.ToString("MM/dd/yyyy"),
                                 Termino = this.dtpTermino.SelectedDate.Value.ToString("MM/dd/yyyy"),
-                                IdTipo = int.Parse(this.cboTIpo.SelectedValue.ToString()),
+                                IdTipo = Ventana_Principal.listaTipoEvento.GetidEvento(cboTIpo.SelectedItem.ToString()),
                                 EstaVigente = vigenteIs,
                                 Observaciones = this.txtObservacion.Text,
                                 Direccion = this.txtDireccion.Text,
                                 FechaHoraInicio = this.dtpFechInicio.SelectedDate.Value,
-                                FechaHoraTermino = this.dtpFechTermino.SelectedDate.Value
+                                FechaHoraTermino = this.dtpFechTermino.SelectedDate.Value,
+
 
                             };
 
@@ -412,6 +445,7 @@ namespace ClientesWPF
         {
             if (seleccionado)
             {
+                txtContrato.Text = contrato.NumeroContrato.ToString();
                 txtDireccion.Text = contrato.Direccion;
                 string[] aux = Ventana_Principal.listaClientes.EncontrarNombre(contrato.NumeroContrato).Split(' ');
                 txtNombre.Text = aux[0];
@@ -458,6 +492,46 @@ namespace ClientesWPF
         private void txtAsistentes_TextChanged(object sender, TextChangedEventArgs e)
         {
 
+        }
+
+        private void txtAsistentes_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            Regex regex = new Regex("[^0-9]+");
+            e.Handled = regex.IsMatch(e.Text);
+        }
+
+        private void txtPersonalAdicional_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            Regex regex = new Regex("[^0-9]+");
+            e.Handled = regex.IsMatch(e.Text);
+        }
+
+        private void cboTIpo_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (cboTIpo.SelectedIndex != 0)
+            {
+                foreach (var item in Ventana_Principal.listaTipoEvento)
+                {
+                    if (item.Id == Ventana_Principal.listaTipoEvento.GetidEvento(cboTIpo.SelectedItem.ToString()) )
+                    {
+                        txtValorBase.Text = item.ValorBase.ToString();
+                    }
+                }
+            }
+        }
+
+        private void btnCalcular_Click(object sender, RoutedEventArgs e)
+        {
+            if (!String.IsNullOrWhiteSpace(this.txtAsistentes.Text) && !String.IsNullOrWhiteSpace(this.txtPersonalAdicional.Text) && cboTIpo.SelectedIndex != 0)
+            {
+                Contrato contrato = new Contrato();
+                contrato = Ventana_Principal.listaClientes.BuscarContrato(long.Parse(txtContrato.Text));
+                txtTotalFinal.Text = contrato.ValorizaContrato(int.Parse(txtAsistentes.Text), int.Parse(txtPersonalAdicional.Text), Ventana_Principal.listaTipoEvento) + string.Empty;
+            }
+            else
+            {
+                this.ShowMessageAsync("Alerta:", "Debe Completar todos los datos para calcular");
+            }
         }
     }
 }

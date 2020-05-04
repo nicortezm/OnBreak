@@ -28,6 +28,7 @@ namespace ClientesWPF
         public ListadoContratos()
         {
             InitializeComponent();
+            CargarCboTipoEvento();
             Init();
             btnSelectContrato.Visibility = Visibility.Collapsed;
             btnAtras.Visibility = Visibility.Collapsed;
@@ -36,9 +37,18 @@ namespace ClientesWPF
         {
             InitializeComponent();
             Init();
+            CargarCboTipoEvento();
             btnSelectContrato.Visibility = Visibility.Visible;
             btnVentanaPrincipal.Visibility = Visibility.Collapsed;
             btnAtras.Visibility = Visibility.Visible;
+        }
+        public void CargarCboTipoEvento()
+        {
+            foreach (var evento in Ventana_Principal.listaTipoEvento)
+            {
+                cboTIpo.Items.Add(evento.Nombre);
+            }
+            cboTIpo.SelectedIndex = 0;
         }
 
         private void Init()
@@ -113,23 +123,126 @@ namespace ClientesWPF
 
         private void dgContratos_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            DataGrid gd = (DataGrid)sender;
-            dynamic rowSelected = gd.SelectedItem;
-            txtNumContrato.Text = rowSelected.NumeroContrato + string.Empty;
+            if (dgContratos.Items.Count != 0)
+            {
+                DataGrid gd = (DataGrid)sender;
+                dynamic rowSelected = gd.SelectedItem;
+                txtAux.Text = rowSelected.NumeroContrato + string.Empty;
+            }
+
         }
 
         private void btnSelectContrato_Click(object sender, RoutedEventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(txtNumContrato.Text))
+            if (!string.IsNullOrWhiteSpace(txtAux.Text))
             {
 
-                pasado(Ventana_Principal.listaClientes.BuscarContrato(long.Parse(txtNumContrato.Text)), true, darktheme);
+                pasado(Ventana_Principal.listaClientes.BuscarContrato(long.Parse(txtAux.Text)), true, darktheme);
                 this.Close();
             }
             else
             {
-                this.ShowMessageAsync("Alerta:", "Debe Seleccionar un Cliente");
+                this.ShowMessageAsync("Alerta:", "Debe Seleccionar un contrato");
             }
+        }
+
+        private void btnBuscar_Click(object sender, RoutedEventArgs e)
+        {
+            dgContratos.Items.Clear();
+            if (string.IsNullOrWhiteSpace(txtNumContrato.Text) && cboTIpo.SelectedIndex == 0 && string.IsNullOrWhiteSpace(txtRut.Text))
+            {
+                this.ShowMessageAsync("Alerta:", "Cambie los filtros para poder buscar");
+                Init();
+            }
+            else
+            {
+                foreach (var cliente in Ventana_Principal.listaClientes)
+                {
+                    if (!string.IsNullOrWhiteSpace(txtNumContrato.Text) && cboTIpo.SelectedIndex != 0 && !string.IsNullOrWhiteSpace(txtRut.Text))
+                    {
+                        foreach (var contrato in cliente.Contrato)
+                        {
+                            if (contrato.NumeroContrato.ToString() == txtNumContrato.Text && cboTIpo.SelectedItem.ToString() == Ventana_Principal.listaTipoEvento.NomEvento(contrato.IdTipo) && cliente.Rut.ToString() == txtRut.Text)
+                            {
+                                dgContratos.Items.Add(contrato);
+                            }
+                        }
+                    }
+                    else if (!string.IsNullOrWhiteSpace(txtNumContrato.Text) && cboTIpo.SelectedIndex != 0 && string.IsNullOrWhiteSpace(txtRut.Text))
+                    {
+                        foreach (var contrato in cliente.Contrato)
+                        {
+                            if (contrato.NumeroContrato.ToString() == txtNumContrato.Text && cboTIpo.SelectedItem.ToString() == Ventana_Principal.listaTipoEvento.NomEvento(contrato.IdTipo))
+                            {
+                                dgContratos.Items.Add(contrato);
+                            }
+                        }
+                    }
+                    else if (!string.IsNullOrWhiteSpace(txtNumContrato.Text) && cboTIpo.SelectedIndex == 0 && !string.IsNullOrWhiteSpace(txtRut.Text))
+                    {
+                        foreach (var contrato in cliente.Contrato)
+                        {
+                            if (contrato.NumeroContrato.ToString() == txtNumContrato.Text && cliente.Rut.ToString() == txtRut.Text)
+                            {
+                                dgContratos.Items.Add(contrato);
+                            }
+                        }
+                    }
+                    else if (!string.IsNullOrWhiteSpace(txtNumContrato.Text) && cboTIpo.SelectedIndex == 0 && string.IsNullOrWhiteSpace(txtRut.Text))
+                    {
+                        foreach (var contrato in cliente.Contrato)
+                        {
+                            if (contrato.NumeroContrato.ToString() == txtNumContrato.Text)
+                            {
+                                dgContratos.Items.Add(contrato);
+                            }
+                        }
+                    }
+                    else if (string.IsNullOrWhiteSpace(txtNumContrato.Text) && cboTIpo.SelectedIndex != 0 && !string.IsNullOrWhiteSpace(txtRut.Text))
+                    {
+                        foreach (var contrato in cliente.Contrato)
+                        {
+                            if (cboTIpo.SelectedItem.ToString() == Ventana_Principal.listaTipoEvento.NomEvento(contrato.IdTipo) && cliente.Rut.ToString() == txtRut.Text)
+                            {
+                                dgContratos.Items.Add(contrato);
+                            }
+                        }
+                    }
+                    else if (string.IsNullOrWhiteSpace(txtNumContrato.Text) && cboTIpo.SelectedIndex != 0 && string.IsNullOrWhiteSpace(txtRut.Text))
+                    {
+                        foreach (var contrato in cliente.Contrato)
+                        {
+                            if (cboTIpo.SelectedItem.ToString() == Ventana_Principal.listaTipoEvento.NomEvento(contrato.IdTipo))
+                            {
+                                dgContratos.Items.Add(contrato);
+                            }
+                        }
+                    }
+                    else if (string.IsNullOrWhiteSpace(txtNumContrato.Text) && cboTIpo.SelectedIndex == 0 && !string.IsNullOrWhiteSpace(txtRut.Text))
+                    {
+                        foreach (var contrato in cliente.Contrato)
+                        {
+                            if (cliente.Rut.ToString() == txtRut.Text)
+                            {
+                                dgContratos.Items.Add(contrato);
+                            }
+                        }
+                    }
+                    //else if (string.IsNullOrWhiteSpace(txtNumContrato.Text) && cboTIpo.SelectedIndex == 0 && string.IsNullOrWhiteSpace(txtRut.Text))
+                    //{
+
+                    //}
+                }
+            }
+
+        }
+
+        private void btnLimpiar_Click(object sender, RoutedEventArgs e)
+        {
+            Init();
+            txtRut.Text = string.Empty;
+            cboTIpo.SelectedIndex = 0;
+            txtNumContrato.Text = string.Empty;
         }
     }
 }

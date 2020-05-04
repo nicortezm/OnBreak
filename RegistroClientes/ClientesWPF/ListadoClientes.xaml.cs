@@ -24,7 +24,7 @@ namespace ClientesWPF
     public partial class ListadoClientes : MetroWindow
     {
         //creo delegado pa enviar datos
-        public delegate void pasar(Cliente dato,bool seleccionado,bool dark);
+        public delegate void pasar(Cliente dato, bool seleccionado, bool dark);
         public event pasar pasado;
         private bool darktheme;
         public ListadoClientes()
@@ -69,12 +69,14 @@ namespace ClientesWPF
         }
 
 
-        private async void btnBuscar_Click(object sender, RoutedEventArgs e)
+        private void btnBuscar_Click(object sender, RoutedEventArgs e)
         {
+
             dgClientes.Items.Clear();
             if (string.IsNullOrWhiteSpace(txtRut.Text) && cboTIpo.SelectedIndex == 0 && cboActividad.SelectedIndex == 0)
             {
-                await this.ShowMessageAsync("Alerta:", "Porfavor edite los filtros  para buscar cientes");
+                this.ShowMessageAsync("Alerta:", "Porfavor edite los filtros  para buscar cientes");
+                Init();
             }
             else
             {
@@ -203,24 +205,31 @@ namespace ClientesWPF
         private void btnAtras_Click(object sender, RoutedEventArgs e)
         {
             Cliente cli = new Cliente();
-            pasado(cli,false, darktheme);
+            pasado(cli, false, darktheme);
             this.Close();
-            
+
         }
 
         private void dgClientes_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            DataGrid gd = (DataGrid)sender;
-            dynamic rowSelected = gd.SelectedItem;
-            txtAux.Text = rowSelected.Rut + string.Empty;
+            if (dgClientes.Items.Count != 0)
+            {
+                DataGrid gd = (DataGrid)sender;
+                dynamic rowSelected = gd.SelectedItem;
+                txtAux.Text = rowSelected.Rut + string.Empty;
+            }
+
+
+
+
         }
 
-        private  async void btnSelectCliente_Click(object sender, RoutedEventArgs e)
+        private async void btnSelectCliente_Click(object sender, RoutedEventArgs e)
         {
             if (!string.IsNullOrWhiteSpace(txtAux.Text))
             {
 
-                pasado(Ventana_Principal.listaClientes.BuscarCliente(int.Parse(txtAux.Text)),true,darktheme);
+                pasado(Ventana_Principal.listaClientes.BuscarCliente(int.Parse(txtAux.Text)), true, darktheme);
                 this.Close();
             }
             else
@@ -228,8 +237,8 @@ namespace ClientesWPF
                 await this.ShowMessageAsync("Alerta:", "Debe Seleccionar un Cliente");
             }
 
-            
+
         }
-        
+
     }
 }
