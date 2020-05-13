@@ -8,17 +8,17 @@ Tendrás las instrucciones en la copia de repositorio que tengas en tu maquina l
 
 
 ### Prerrequisitos
-Visual studio 2019
+* Visual studio 2019
 
-Sql Server
+* Sql Server
 
-SQL Server Management Studio (SSMS)
+* SQL Server Management Studio (SSMS)
 
-Framework .net 4.6.1
+* Framework .net 4.6.1
 
-MetroUI Mahapps
+* MetroUI Mahapps
 
-EntityFramework
+* EntityFramework
 
 
 ### Instalacion
