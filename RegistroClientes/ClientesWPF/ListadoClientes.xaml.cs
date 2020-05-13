@@ -225,6 +225,7 @@ namespace ClientesWPF
         {
             if (dgClientes.Items.Count != 0)
             {
+                Cliente cliente = new Cliente();
                 DataGrid gd = (DataGrid)sender;
                 dynamic rowSelected = gd.SelectedItem;
                 txtAux.Text = rowSelected.Rut + string.Empty;
