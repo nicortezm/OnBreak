@@ -7,13 +7,17 @@ Contribuidores: Bixtsicor
 Tendrás las instrucciones en la copia de repositorio que tengas en tu maquina local para el desarrollo por partes, cada colaborador tendrá una rama para desarrollar una función. Despues de cada commit, después de cada implementación en la rama master deberás crear otra rama con tu nombre de usuario para crear la siguiente funcionalidad asignada.
 
 
-### Prerequisitos
-Visual studio 2019 
+### Prerrequisitos
+Visual studio 2019
+
 Sql Server
+
 SQL Server Management Studio (SSMS)
 
 Framework .net 4.6.1
+
 MetroUI Mahapps
+
 EntityFramework
 
 
